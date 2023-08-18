@@ -655,3 +655,18 @@ public:
         return cnt;
     }
 };
+
+42.
+class Solution {
+public:
+    bool isPrefixString(string s, vector<string>& words) {
+        string a = "";
+        int st = 0;
+        while(a.size() < s.size() and st < words.size()){
+            a += words[st];
+            st += 1;
+        }
+        if(a == s) return true;
+        return false;
+    }
+};
