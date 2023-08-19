@@ -37,6 +37,9 @@ NEW KNOWLEDGE
 
     + Input string have space: string s; getline(cin, s);
     + cin.ignore();
+    + s.substr(i, l):
+        - i: first index to take sub string;
+        - l: length of string you want substring to be (substring.size() = l);
 
 5. UPPER and LOWER:
 
@@ -73,8 +76,31 @@ NEW KNOWLEDGE
             + c.push_back(b);
         + }
 
+
+9. IF - ELSE STATEMENT
+    - Clean code:
+        + root:
+            if(d % 3 == 0 and d >= 0){
+                cout << "YES" << endl;
+            }else cout << "NO" << endl;
+        + change: cout << (d % 3 == 0 && d >= 0 ? "YES" : "NO") << endl
+        (condition -> ? -> :)
+ ;
+
 */
 
+// int noz(int n){
+//     vector<int> a; int res = 0;
+//     while(n != 0){
+//         if(n % 10 != 0){
+//             a.push_back(n % 10);
+//         }
+//         n /= 10;
+//     }
+//     reverse(a.begin(), a.end());
+//     for(int i = 0; i < a.size(); i++) res = 10 * res + a[i];
+//     return res;
+// }
 // bool check(vector<int> a){
 //     for(int i = 0; i < a.size(); i++){
 //         if(a[i] != 1 and a[i] != 4) return false;
@@ -349,6 +375,15 @@ NEW KNOWLEDGE
 //         st += 1;
 //     }
 //     return -1;
+// }
+// int count(string s, string ss){
+//     int cnt = 0;
+//     int length = ss.size();
+//     for(int i = 0; i < s.size() - length + 1; i++){
+//         string sss = s.substr(i, length);
+//         if(ss == sss) cnt += 1;
+//     }
+//     return cnt;
 // }
 // bool check(int n){
 //     set<int> s; int count = 0;
@@ -2869,6 +2904,23 @@ void solve(){
     //     board.push_back(cc);
     // }
     // string s; cin >> s;
+    // bool found = false;
+    // int length = s.size() - 1;
+    // while(length > 0){
+    //     for(int i = 0; i < s.size() - length + 1; i++){
+    //         string ss = s.substr(i, length);
+    //         if(count(s, ss) > 1){
+    //             cout << length << endl;
+    //             found = true;
+    //             break;
+    //         }
+    //     }
+    //     if(found == true) break;
+    //     length -= 1;
+    // }
+    // if(found == false) cout << 0 << endl;
+    //int a, b, c; cin >> a >> b >> c; cout << 7*min(a, min(b / 2, c / 4));
+    // string s; cin >> s;
     // cnt += min(find(s[0], board), 26 - find(s[0], board));
     // for(int i = 1; i < s.size(); i++){
     //     int st = find(s[i - 1], board);
@@ -3988,6 +4040,57 @@ void solve(){
     //         cout << a[i] << " ";
     //     }
     // }
+    // int t, a, b, a1 = 0, a2 = 0; cin >> t;
+    // while(t--){
+    //     cin >> a >> b;
+    //     if(a > b){
+    //         a1 += 1;
+    //     }else if(a < b){
+    //         a2 += 1;
+    //     }
+    // }
+    // if(a1 == a2){
+    //     cout << "Friendship is magic!^^" << endl;
+    // }else cout << (a1 > a2 ? "Mishka" : "Chris") << endl;
+    // int t; cin >> t;
+    // while(t--){
+    //     int length; cin >> length; vector<int> a(length);
+    //     for(int i = 0; i < length; i++) cin >> a[i];
+    //     int maxVal = *max_element(a.begin(), a.end());
+    //     int minVal = *min_element(a.begin(), a.end());
+    //     cout << maxVal - minVal << endl;
+    // }
+    // int t; cin >> t;
+    // while(t--){
+    //     int a, b, c; cin >> a >> b >> c;
+    //     int meat = b + c;
+    //     cout << (a >= meat + 1 ? 2*meat + 1 : 2*a - 1) << endl;
+    // }
+    // int n, m, a, b; cin >> n >> m >> a >> b;
+    // int w1 = n*a; //only use normal;
+    // int w2 = n / m;
+    // if(n % m != 0) w2 += 1;
+    // w2 *= b;
+    // int w3 = ((n/m)*b) + (n - (n/m)*m)*a;
+    // cout << min(w1, min(w2, w3));
+    // int t; cin >> t; int a[t]; for(int i = 0; i < t; i++) cin >> a[i];
+    // sort(a, a + t);
+    // cout << a[t - 1] - a[0] - t + 1 << endl;
+    // int t; cin >> t;
+    // while(t--){
+    //     long long a, b; cin >> a >> b; cout << -1*a*a << " " << b*b << endl;
+    // }
+    // int a, b; cin >> a >> b;
+    // cout << (noz(a) + noz(b) == noz(a + b) ? "YES" : "NO") << endl;
+    // int n, s = 0; cin >> n; int a[n]; 
+    // for(int i = 0; i < n; i++){
+    //     cin >> a[i]; s += a[i];
+    // }
+    // sort(a, a + n);
+    // int st = a[n - 1];
+    // int op = s;
+    // while(st * n - s <= s) st += 1;
+    // cout << st;
 
 }
 int main(){

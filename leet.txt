@@ -669,4 +669,395 @@ public:
         if(a == s) return true;
         return false;
     }
+};'
+'
+43.
+class Solution {
+public:
+    string madeString(string s, int st, int en){
+        string a = "";
+        for(int i = st; i < en; i++) a += s[i];
+        return a;
+    }
+    string sortSentence(string s) {
+        string res = "";
+        string aa[10];
+        vector<int> index(1, -1);
+        for(int i = 0; i < s.size(); i++){
+            if(s[i] == ' ') index.push_back(i);
+        }
+        index.push_back(s.size());
+        for(int i = 0; i < index.size() - 1; i++){
+            string ss = madeString(s, index[i] + 1, index[i + 1]);
+            int number = stoi(madeString(ss, ss.size() - 1, ss.size()));
+            ss.pop_back();
+            aa[number - 1] = ss;
+        }
+        for(int i = 0; i < index.size(); i++){
+            res += aa[i];
+            res += " ";
+        }
+        for(int i = 0; i < 2; i++) res.pop_back();
+        return res;
+    }
+};
+
+44.
+class Solution {
+public:
+    int smallestEvenMultiple(int n) {
+        if(n % 2 == 0) return n;
+        return n*2;
+    }
+};
+
+45.
+class Solution:
+    def numberOfSteps(self, num: int) -> int:
+        count = 0
+        while num != 0:
+            if num % 2 == 0:
+                num /= 2
+            else:
+                num -= 1
+            count += 1
+        return count
+
+46.
+class Solution {
+public:
+    int maxProductDifference(vector<int>& nums) {
+        sort(nums.begin(), nums.end());
+        return nums[nums.size() - 1] * nums[nums.size() - 2] - nums[0]*nums[1];
+    }
+};
+
+47.
+class Solution {
+public:
+    string defangIPaddr(string address) {
+        string res = "";
+        for(int i = 0; i < address.size(); i++){
+            if(address[i] != '.'){
+                res += address[i];
+            }else{
+                res += '[';
+                res += address[i];
+                res += ']';
+            }
+        }
+        return res;
+    }
+};
+
+48.
+class Solution {
+public:
+    string interpret(string command) {
+        string res = "";
+        int st = 0;
+        while(st < command.size()){
+            if(command[st] == 'G'){
+                res += 'G';
+                st += 1;
+            }else if(command[st] == '(')
+                if(command[st + 1] == ')' and st + 1 < command.size()){
+                    res += 'o';
+                    st += 2;
+                }else{
+                    res += "al";
+                    st += 4;
+                }
+            }
+        }
+        return res;
+    }
+;
+
+49.
+class Solution {
+public:
+    vector<int> findDuplicates(vector<int>& nums) {
+        vector<int> res;
+        vector<int> a(100005, 0);
+        for(int i = 0; i < nums.size(); i++) a[nums[i]] += 1;
+        for(int i = 0; i < a.size(); i++){
+            if(a[i] > 1) res.push_back(i);
+        }
+        return res;
+    }
+};
+
+50.
+class Solution {
+public:
+    int found(string s, char c){
+        int ss = 0;
+        for(int i = 0; i < s.size(); i++){
+            if(s[i] == c) ss += 1;
+        }
+        return ss;
+    }
+    int numJewelsInStones(string jewels, string stones) {
+        int cnt = 0;
+        for(int i = 0; i < jewels.size(); i++) cnt += found(stones, jewels[i]);
+        return cnt;
+    }
+};
+
+51.
+class Solution {
+public:
+    int countPairs(vector<int>& nums, int k) {
+        int cnt = 0;
+        for(int i = 0; i < nums.size() - 1; i++){
+            for(int j = i + 1; j < nums.size(); j++){
+                if(nums[i] == nums[j] && (i * j) % k == 0){
+                    cnt += 1;
+                }
+            }
+        }
+        return cnt;
+    }
+};
+
+52.
+class Solution {
+public:
+    int sumOfSquares(vector<int>& nums) {
+        int res = 0, length = nums.size();
+        for(int i = 0; i < length; i++){
+            if(length % (i + 1) == 0){
+                res += pow(nums[i], 2);
+            }
+        }
+        return res;
+    }
+};
+
+53.
+class Solution {
+public:
+    vector<int> separateDigits(vector<int>& nums) {
+        vector<int> res;
+        for(int i = 0; i < nums.size(); i++){
+            vector<int> change;
+            while(nums[i] != 0){
+                change.push_back(nums[i] % 10);
+                nums[i] /= 10;
+            }
+            reverse(change.begin(), change.end());
+            for(int j = 0; j < change.size(); j++) res.push_back(change[j]);
+        }
+        return res;
+    }
+};
+
+54.
+class Solution {
+public:
+    int findNonMinOrMax(vector<int>& nums) {
+        int maxx = *max_element(nums.begin(), nums.end());
+        int minn = *min_element(nums.begin(), nums.end());
+        for(int i = 0; i < nums.size(); i++){
+            if(nums[i] != maxx and nums[i] != minn) return nums[i];
+        }
+        return -1;
+    }
+};
+
+55.
+class Solution {
+public:
+    vector<int> sortArrayByParity(vector<int>& nums) {
+        vector<int> res;
+        for(int x = 0; x < 2; x++){
+            for(int i = 0; i < nums.size(); i++){
+                if(nums[i] % 2 == x){
+                    res.push_back(nums[i]);
+                }
+            }
+        }
+        return res;
+    }
+};
+
+56.
+class Solution {
+public:
+    int prefixCount(vector<string>& ws, string ne) {
+        int cnt = 0;
+        for(int i = 0; i < ws.size(); i++){
+            string res = ws[i].substr(0, ne.size());
+            if(res == ne) cnt += 1;
+        }
+        return cnt;
+    }
+};
+
+57.
+class Solution {
+public:
+    int smallestEqual(vector<int>& nums) {
+        for(int i = 0; i < nums.size(); i++){
+            if(i % 10 == nums[i]) return i;
+        }
+        return -1;
+    }
+};
+
+58.
+class Solution {
+public:
+    int wateringPlants(vector<int>& pl, int capacity) {
+        int water = capacity, step = 0, index = -1, tree = 0;
+        while(tree < pl.size()){
+            if(water >= pl[tree]){
+                step += (tree - index); water -= pl[tree]; index += 1;
+            }else{
+                water = capacity - pl[tree]; step += (index + 1);
+                step += tree + 1; index = tree;
+            }
+            tree += 1;
+        }
+        return step;
+    }
+};
+
+59.
+class Solution {
+public:
+    int maxSum(vector<vector<int>>& grid) {
+        int maxVal = 0;
+        int row = grid.size(), col = grid[0].size();
+        for(int i = 0; i < row - 2; i++){
+            for(int j = 0; j < col - 2; j++){
+                int s = 0;
+                for(int ii = i; ii < i + 3; ii++){
+                    for(int jj = j; jj < j + 3; jj++){
+                        s += grid[ii][jj];
+                    }
+                }
+                s -= grid[i + 1][j] + grid[i + 1][j + 2];
+                maxVal = max(maxVal, s);
+            }
+        }
+        return maxVal;
+    }
+};
+
+60.
+class Solution {
+public:
+    vector<vector<int>> matrixBlockSum(vector<vector<int>>& mat, int k) {
+       int row = mat.size(), col = mat[0].size();
+       vector<vector<int>> res(row, vector<int> (col, 0));
+       for(int i = 0; i < row; i++){
+           for(int j = 0; j < col; j++){
+               for(int ii = max(0, i - k); ii < min(row, i + k + 1); ii++){
+                   for(int jj = max(0, j - k); jj < min(col, j + k + 1); jj++){
+                       res[i][j] += mat[ii][jj];
+                   }
+               }
+           }
+       }
+       return res;
+    }
+};
+
+61.
+class Solution {
+public:
+    int maximum69Number (int num) {
+        string nn = to_string(num); int res = 0;
+        bool found = false;
+        for(int i = 0; i < nn.size(); i++){
+            if(nn[i] == '6'){
+                found = true;
+                nn[i] = '9';
+            }
+            if(found == true) break;
+        }
+        for(int i = 0; i < nn.size(); i++) res += stoi(nn.substr(i, 1)) * pow(10, nn.size() - i - 1);
+        return res;
+    }
+};
+
+62.
+class Solution {
+public:
+    int countGoodTriplets(vector<int>& arr, int a, int b, int c) {
+        int cnt = 0;
+        for(int i = 0; i < arr.size() - 2; i++){
+            for(int j = i + 1; j < arr.size() - 1; j++){
+                for(int k = j + 1; k < arr.size(); k++){
+                    int aa = abs(arr[i] - arr[j]), bb = abs(arr[j]  - arr[k]), cc = abs(arr[i] - arr[k]);
+                    if(aa <= a and bb <= b and cc <= c) cnt += 1;
+                }
+            }
+        }
+        return cnt;
+    }
+};
+
+63.
+class Solution {
+    public int busyStudent(int[] st, int[] en, int time) {
+        int cnt = 0;
+        int len = st.length;
+        for(int i = 0; i < len; i++){
+            if(st[i] <= time && en[i] >= time) cnt += 1;
+        }
+        return cnt;
+    }
+}
+
+64.
+class Solution {
+public:
+    vector<int> rowAndMaximumOnes(vector<vector<int>>& mat) {
+        vector<int> res(2, -1);
+        for(int i = 0; i < mat.size(); i++){
+            int count = 0;
+            for(int j = 0; j < mat[i].size(); j++){
+                if(mat[i][j] == 1) count += 1;
+            }
+            if(count > res[1]){
+                res[1] = count;
+                res[0] = i;
+            }
+        }
+        return res;
+    }
+};
+
+65.
+class Solution {
+public:
+    int countNegatives(vector<vector<int>>& g) {
+        int count = 0;
+        for(int i = 0; i < g.size(); i++){
+            for(int j = 0; j < g[i].size(); j++){
+                if(g[i][j] < 0) count += 1;
+            }
+        }
+        return count;
+    }
+};
+
+66.
+class Solution {
+public:
+    bool checkXMatrix(vector<vector<int>>& mt) {
+        for(int i = 0; i < mt.size(); i++){
+            for(int j = 0; j < mt.size(); j++){
+                if(i == j and mt[i][j] == 0){
+                    return false;
+                }else if(i + j == mt.size() - 1 and mt[i][j] == 0){
+                    return false;
+                }else if(i != j and i + j != mt.size() - 1 and mt[i][j] != 0) return false;
+            }
+        }
+        return true;
+    }
 };

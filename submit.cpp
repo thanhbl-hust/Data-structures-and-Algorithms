@@ -37,6 +37,9 @@ NEW KNOWLEDGE
 
     + Input string have space: string s; getline(cin, s);
     + cin.ignore();
+    + s.substr(i, l):
+        - i: first index to take sub string;
+        - l: length of string you want substring to be (substring.size() = l);
 
 5. UPPER and LOWER:
 
@@ -89,7 +92,6 @@ NEW KNOWLEDGE
 
 
 void solve(){
-
     
 
 }
