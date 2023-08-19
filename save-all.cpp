@@ -376,6 +376,18 @@ NEW KNOWLEDGE
 //     }
 //     return -1;
 // }
+// int left(string s){
+//     for(int i = 0; i < s.size(); i++){
+//         if(s[i] == '0') return i;
+//     }
+//     return -1;
+// }
+// int right(string s){
+//     for(int i = s.size() - 1; i > -1; i--){
+//         if(s[i] == '0') return i;
+//     }
+//     return -1;
+// }
 // int count(string s, string ss){
 //     int cnt = 0;
 //     int length = ss.size();
@@ -3852,6 +3864,53 @@ void solve(){
     //     }
     // }
     //cout << cnt;
+        // int maxVal = 0, n, m; cin >> n >> m;
+    // string aa[n]; for(int i = 0; i < n; i++) cin >> aa[i];
+    // int s[m];     for(int i = 0; i < m; i++) cin >> s[i];
+    // for(int i = 0; i < m; i++){
+    //     int a = 0, b = 0, c = 0, d = 0, e = 0;
+    //     for(int j = 0; j < n; j++){
+    //         if(aa[j][i] == 'A') a += 1;
+    //         if(aa[j][i]  == 'B') b += 1;
+    //         if(aa[j][i]  == 'C') c += 1;
+    //         if(aa[j][i]  == 'D') d += 1;
+    //         if(aa[j][i]  == 'E') e += 1;
+    //     }
+    //     maxVal += max(a, max(b, max(c, max(d, e)))) * s[i];
+    // }
+    // cout << maxVal;
+    // string room = "0000000000"; int length; string ss; cin >> length >> ss;
+    // for(int i = 0; i < length; i++){
+    //     if(ss[i] == 'L'){
+    //         int index = left(room);
+    //         room[index] = '1';
+    //     }else if(ss[i] == 'R'){
+    //         int index = right(room);
+    //         room[index] = '1';
+    //     }else room[stoi(ss.substr(i, 1))] = '0';
+    // }
+    // cout << room << endl;
+    // int length; string s; cin >> length >> s;
+    // int count = 0;
+    // for(int i = 0; i < length; i++){
+    //     if(s[i] == '8') count += 1;
+    // }
+    // int st = 1;
+    // while(st <= count and (length - st) / 10 >= st) st += 1;
+    // cout << st - 1;
+    // int n; cin >> n;
+    // if(n % 10 == 0){
+    //     cout << n << endl;
+    // }else if(n % 5 == 0){
+    //     cout << n - 5 << endl;
+    // }else{
+    //     int du = n % 10;
+    //     if(du < 5){
+    //         cout << n - du << endl;
+    //     }else cout << n + (10 - du) << endl;
+    // }
+    //int n, k; cin >> n >> k;
+    //cout << ((n / k) + 1) * k << endl;
     // int t; cin >> t;
     // while(t--){
     //     int index; cin >> index; set<int> s;
