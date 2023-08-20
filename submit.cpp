@@ -32,6 +32,7 @@ NEW KNOWLEDGE
 3. Rounded numbers
 
     + Want to change 1.2345 to 1.23: cout << fixed << setprecision(2) << num;
+    + Also, u can use this for clearly see the number too big;
 
 4. Input string
 
@@ -91,7 +92,7 @@ NEW KNOWLEDGE
 
 
 void solve(){
-
+    
 }
 
  int main(){

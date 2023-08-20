@@ -1061,3 +1061,30 @@ public:
         return true;
     }
 };
+
+67.
+class Solution {
+public:
+    bool find(vector<int> a, int index){
+        for(int i = 0; i < a.size(); i++){
+            if(a[i] == index) return true;
+        }
+        return false;
+    }
+    vector<vector<int>> findDifference(vector<int>& nums1, vector<int>& nums2) {
+        vector<vector<int>> res(2);
+        for(int i = 0; i < nums1.size(); i++){
+            int value = nums1[i];
+            if(find(nums2, value) == false and find(res[0], value) == false){
+                res[0].push_back(value);
+            }
+        }
+        for(int i = 0; i < nums2.size(); i++){
+            int value = nums2[i];
+            if(find(nums1, value) == false and find(res[1], value) == false){
+                res[1].push_back(value);
+            }
+        }
+        return res;
+    }
+};
