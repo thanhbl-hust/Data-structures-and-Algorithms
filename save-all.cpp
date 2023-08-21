@@ -852,6 +852,525 @@ NEW KNOWLEDGE
 // 	for(int i = 1; i < n; i++) sum += (a[i] - a[0]) / k;
 // 	return sum;
 // }
+// bool check(vector<int> a){
+// 	for(int i = 0; i < a.size(); i++){
+// 		if(a[i] % 2 == 0) return true;
+// 	}
+// 	return false;
+// }
+// int solution(int n){
+// 	vector<int> digits;
+// 	while(n != 0){
+// 		digits.push_back(n % 10);
+// 		n /= 10;
+// 	}
+// 	if(check(digits) == false) return -1;
+// 	if(digits[digits.size() - 1] % 2 == 0) return 1;
+// 	return 2;
+// }
+// int i,j,k,n,m,t,a[66666],b[66666];
+// int solution(int t, string s){
+// 	return 1 + t;
+// }
+// long long solution(int n, long long b[200000], vector<int> buy){
+// 	int x = buy[0]; //buy most expensive;
+// 	int y = buy[1]; //sum of y items in x expensive;
+// 	long long all_money = 0;
+// 	if(x == n){
+// 		all_money += b[n - 1];
+// 	}else all_money += b[n - 1] - b[n - 1 - x];
+// 	//all money is money to buy most expensive x items;
+// 	if(x == y) return all_money;
+// 	// all - (x - y) most expensive;
+// 	return all_money - (b[n - 1] - b[n - 1 - (x - y)]);
+// }
+// bool check(vector<int> a, int n){
+// 	if(n == a[0] || n == a[1]) return true;
+// 	return false;
+// }
+// void show(int length, vector<int> a){
+// 	cout << (a[0] == 1 ? "YES" : "NO") << endl;
+// }
+// int strTonum(char s){
+// 	if(s == '1') return 1;
+// 	if(s == '2') return 2;
+// 	if(s == '3') return 3;
+// 	if(s == '4') return 4;
+// 	if(s == '5') return 5;
+// 	if(s == '6') return 6;
+// 	if(s == '7') return 7;
+// 	if(s == '8') return 8;
+// 	if(s == '9') return 9;
+// 	return -1;
+// }
+// int solution(int n, int m, vector<string> s){	
+// 	set<int> count;
+// 	for(int i = 0; i < m; i++){
+// 		vector<int> score;
+// 		for(int j = 0; j < n;  j++){
+// 			int sc = strTonum(s[j][i]);
+// 			score.push_back(sc);
+// 		}
+// 		int maxScore = *max_element(score.begin(), score.end());
+// 		for(int j = 0; j < n; j++){
+// 			if(score[j] == maxScore) count.insert(j);
+// 		}
+// 	}
+// 	return count.size();
+// }
+// void show(int t){
+// 	int weeks = t / 7;
+// 	int left = t - weeks * 7;
+// 	int maxValue, minValue;
+// 	if(left == 1){
+// 		maxValue = 1;
+// 		minValue = 0;
+// 	}else if(left >= 2 && left <= 5){
+// 		maxValue = 2;
+// 		minValue = 0;
+// 	}else if(left == 6){
+// 		minValue = 1;
+// 		maxValue = 2;
+// 	}
+// 	if(t % 7 == 0){
+// 		cout << t * 2 / 7 << " " << t * 2 / 7 << endl;
+// 	}else cout << weeks * 2 + minValue << " " << weeks * 2 + maxValue<< endl;
+// }
+// int g(int a){
+// 	int gt = 1;
+// 	for(int i = 2; i <= a; i++) gt *= i;
+// 	return gt;
+// }
+// int solution(int t, vector<vector<int>> a){
+// 	int n1 = 0, n2 = 0;
+// 	for(int i = 0; i < t; i++){
+// 		if(a[0][i] > a[1][i]) n1 += 1;
+// 		if(a[0][i] < a[1][i]) n2 += 1;
+// 	}
+// 	if(n1 == 0) return -1;
+// 	if(n2 == 0) return 1;
+// 	//n1 != 0 and n2 != 0;
+// 	int start = n2;
+// 	if(n2 % n1 == 0){
+// 		return n2 / n1 + 1;
+// 	}else{
+// 		n2 += n1 - (n2 % n1);
+// 		return n2 / n1;
+// 	}
+// }
+// bool check(char a[5], char s){
+// 	for(int i = 0; i < 5; i++){
+// 		if(a[i] == s) return true;
+// 	}
+// 	return false;
+// }
+// void show(string s){
+// 	char a[5] = {'u', 'e', 'o', 'a', 'i'};
+// 	if(s.size() == 1){
+// 		char c = s[0];
+// 		if(check(a, c) == false && c != 'n'){
+// 			cout << "NO" << endl;
+// 		}else cout << "YES" << endl;
+// 	}else if(check(a, s[s.size() - 1]) == false && s[s.size() - 1] != 'n'){
+// 		cout << "NO" << endl;
+// 	}
+// 	else{
+//         int c = 0, start = 0;
+//         while(start < s.size() - 1){
+//             char check1 = s[start];
+//             char c1 = s[start + 1];
+//             if(check(a, check1) == false && check1 != 'n' && check(a, c1) == false){
+//                 cout << "NO" << endl;
+// 			    c += 1;
+// 			    break;
+//       		}
+// 		    start += 1;
+// 	    }
+// 	    if(c == 0) cout << "YES" << endl;
+// 	}
+// }
+// void show(int a, int b){
+// 	if(a + 1 == b){
+// 		cout << a << " " << b << endl;
+// 	}else if(a == 9 && b == 1){
+// 		cout << 9 << " " << 10 << endl;
+// 	}else if(a == b){
+// 		cout << 10 * a + 1 << " " << 10 * a + 2 << endl;
+// 	}else cout << -1 << endl;
+// }
+// bool check(vector<int> a, int n){
+// 	for(int i = 0; i < a.size(); i++){
+// 		if(a[i] == n) return true;
+// 	}
+// 	return false;
+// }
+// int solution(vector<int> a, vector<int> b){
+// 	for(int i = 1; i < 10; i++){
+// 		if(check(a, i) == true && check(b, i) == true) return i;
+// 	}
+// 	int mina = *min_element(a.begin(), a.end());
+// 	int minb = *min_element(b.begin(), b.end());
+// 	if(mina == minb) return mina;	
+// 	return min(mina, minb) * 10 + max(mina, minb);
+// }
+// void show(int n, int m, vector<vector<string>> root, vector<vector<string>> user){
+// 	for(int i = 0; i < m; i++){
+// 		string check = user[i][1];
+// 		check.pop_back();
+// 		int start = 0;
+// 		while(start < n){
+// 			if(check == root[start][1]) break;
+// 			start += 1;
+// 		}
+// 		string last = '#' + root[start][0];
+// 		cout << user[i][0] << " " << user[i][1] << " " << last << endl;
+// 	}
+// }
+// void show(string s){
+// 	int count = 0;
+// 	for(int i = 0; i < s.size(); i++){
+// 		if(s[i] == 'N') count += 1;
+// 	}
+// 	if(count == 1){
+// 		cout << "NO" << endl;
+// 	}else cout << "YES" << endl;
+// }
+// int o(int n){
+// 	int ii = 1;
+// 	for(int i = 1; i <= n; i++) ii *= 2;
+// 	return ii;
+// }
+// int solution(int n, int m){
+// 	if(n >= 27) return m;
+// 	return m % o(n);
+// }
+// string takeString(string s, int start, int last){
+// 	string str_check = "";
+// 	for(int i = start; i < last; i++){
+// 		char c = s[i];
+// 		str_check.push_back(c);
+// 	}
+// 	return str_check;
+// }
+// bool checkPalin(string s){
+// 	string s1 = s;
+// 	reverse(s.begin(), s.end());
+// 	if(s == s1) return true;
+// 	return false;
+// }
+// int solution(string s){
+// 	int maxLen = 0;
+// 	int max_pos = s.size();
+// 	for(int i = 1; i <= s.size(); i++){
+// 		for(int j = 0; j < s.size() - i + 1; j++){
+// 			string s1 = takeString(s, j, j + i);
+// 			if(checkPalin(s1) == false){
+// 				if(s1.size() > maxLen) maxLen = s1.size();
+// 			}
+// 		}
+// 	}
+// 	return maxLen;
+// }
+// int solution(vector<int> a){
+// 	int c = 0, value = -1;
+// 	vector<int> b = a;
+// 	sort(b.begin(), b.end());
+// 	if(b[0] == b[b.size() - 1]) return value;
+// 	int maxindex = 0, start = 0;
+// 	while(start < a.size()){
+// 		if(a[start] == b[b.size() - 1]){
+// 			if((start - 1 >= 0 && a[start] > a[start - 1]) || (start + 1 < a.size() && a[start] > a[start + 1])) return start + 1;
+// 		}
+// 		start += 1;
+// 	}
+// 	return -1;
+// }
+// void show(int n){
+// 	int c = 0;
+// 	for(int i = 0; i*3 <= n; i++){
+// 		for(int j = 0; i*3 + j*7 <= n; j++){
+// 			if(i*3 + j*7 == n){
+// 				c += 1;
+// 				cout << "YES" << endl;
+// 			}
+// 			if(c == 1) break;
+// 		}
+// 		if(c == 1) break;
+// 	}
+// 	if(c == 0) cout << "NO" << endl;
+// }
+// void s(long long index){
+// 	int t = 0;
+// 	while(index % 2 == 0) index /= 2;
+// 	if(index % 2 == 1 && index != 1){
+// 		cout << "YES" << endl;
+// 	}else cout << "NO" << endl;
+// }
+// int solution(int length, vector<vector<int>> a){
+// 	long long maxValue = a[0][1] + a[0][0]; 
+// 	int maxOX = a[0][0];
+// 	int maxOY = a[0][1];
+// 	for(int i = 1; i < length; i++){
+// 		long long l = a[i][1] + a[i][0];
+// 		if(l > maxValue){
+// 			maxValue = l;
+// 			maxOX = a[i][0];
+// 			maxOY = a[i][1];
+// 		}
+// 	}	
+// 	return maxOX + maxOY;
+// }
+// int solution(vector<int> a){
+// 	int st = 0;
+// 	int n = a[0];
+// 	int m = a[1];
+// 	while(n > 0 && m > 0){
+// 		if(n >= m){
+// 			st += n / m;
+// 			n = n % m;
+// 		}else{
+// 			st += m / n;
+// 			m = m % n;
+// 		}
+// 	}
+// 	return st;
+// }
+// long long gs(vector<int> a){
+// 	long long sum = 0;
+// 	for(int i = 0; i < a.size(); i++) sum += a[i];
+// 	return sum;
+// }
+// void solution(int n, vector<int> a, int q, vector<vector<int>> que){
+// 	long long sumofA = gs(a);
+// 	//n: length of vector<int> a;
+// 	//q: length of vector<vector<int>> que;
+// 	int odd = 0, even = 0;
+// 	for(int i = 0; i < n; i++){
+// 		if(a[i] % 2 == 0) even += 1;
+// 	}
+// 	odd = n - even;
+// 	for(int i = 0; i < q; i++){
+// 		if(que[i][0] == 0){
+// 			//add to even number;
+// 			sumofA += even * que[i][1];
+// 			if(que[i][1] % 2 == 1){
+// 				odd += even;
+// 				even = 0;
+// 			}
+// 			cout << sumofA << endl;
+// 		}else{
+// 			//add to odd;
+// 			sumofA += odd * que[i][1];
+// 			if(que[i][1] % 2 == 1){
+// 				even += odd;
+// 				odd = 0;
+// 			}
+// 			cout << sumofA << endl;
+// 		}
+// 	}
+// }
+// void show(vector<int> a){
+// 	int n1 = 0, n0 = 0;
+// 	for(int i = 0; i < a.size(); i++){
+// 		if(a[i] == 1) n1 += 1;
+// 		if(a[i] == 0) n0 += 1;
+// 	}
+// 	if(n1 == 0){
+// 		cout << 0 << endl;
+// 	}else if(n0 == 0){
+// 		cout << n1 << endl;
+// 	}else{
+// 		//n1 != 0 and n0 != 0;
+// 		//value = n1 * (so cach chon 0 phan tu);	
+// 		long long value = n1 * pow(2, n0);
+// 		cout << value << endl;	
+// 	}
+// }
+// int solution(vector<int> a, int n, int m, int k){
+// 	int value = 0;
+// 	int start = 0;
+// 	while(start < n){
+// 		if(a[start] == 1){
+// 			if(m > 0){
+// 				m -= 1;
+// 			}else value += 1;
+// 		}else{
+// 			//a[start] == 2;
+// 			if(k > 0){
+// 				k -= 1;
+// 			}else{
+// 				if(m > 0){
+// 					m -= 1;
+// 				}else value += 1;
+// 			}
+// 		}
+// 		start += 1;
+// 	}
+// 	return value;
+// }
+// void solution(int n){
+// 	int c = 0;
+// 	for(int i = 0; i * 3 <= n; i++){
+// 		for(int j = 0; i*3 + j*5 <= n; j++){
+// 			for(int k = 0; i*3 + j*5 + k*7 <= n; k++){
+// 				if(i*3 + j*5 + k*7 == n){
+// 					cout << i << " " << j << " " << k << endl;
+// 					c += 1;
+// 				}
+// 				if(c == 1) break;
+// 			}
+// 			if(c == 1) break;
+// 		}
+// 		if(c == 1) break;
+// 	}
+// 	if(c == 0) cout << -1 << endl;
+// }
+// bool checkprime(int n){
+// 	if(n == 2) return true;
+// 	for(int i = 2; i <= n / 2 + 1; i++){
+// 		if(n % i == 0) return false;
+// 	}
+// 	return true;
+// }
+// void show(int index){
+// 	vector<int> primes = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229, 233, 239, 241, 251, 257, 263, 269, 271, 277, 281, 283, 293, 307, 311, 313, 317, 331, 337, 347, 349, 353, 359, 367, 373, 379, 383, 389, 397, 401, 409, 419, 421, 431, 433, 439, 443, 449, 457, 461, 463, 467, 479, 487, 491, 499, 503, 509, 521, 523, 541, 547, 557, 563, 569, 571, 577, 587, 593, 599, 601, 607, 613, 617, 619, 631, 641, 643, 647, 653, 659, 661, 673, 677, 683, 691, 701, 709, 719, 727, 733, 739, 743, 751, 757, 761, 769, 773, 787, 797, 809, 811, 821, 823, 827, 829, 839, 853, 857, 859, 863, 877, 881, 883, 887, 907, 911, 919, 929, 937, 941, 947, 953, 967, 971, 977, 983, 991, 997};	
+// 	if(checkprime(index) == true){
+// 		for(int i = 1; i <= index; i++){
+// 			for(int j = 1; j <= index; j++) cout << 1 << " ";
+// 			cout << endl;
+// 		}
+// 	}else{
+// 		//index khong phai la so nguyen to;
+// 		int start = primes.size();
+// 		while(start >= 1){
+// 			if(checkprime(primes[start] - index + 1) == false) break;
+// 			start -= 1;
+// 		}
+// 		for(int i = 1; i <= index; i++){
+// 			for(int j = 1; j <= index; j++){
+// 				if(i == j) cout << primes[start] - index + 1 << endl;
+// 				else cout << 1 << " ";
+// 			}
+// 			cout << endl;
+// 		}	
+// 	}
+// }
+// int solution(vector<int> v){
+// 	int number = 2 * abs(v[0] - v[1]);
+// 	for(int i = 0; i < 3; i++){
+// 		if(v[i] > number) return -1;
+// 	}
+// 	if(v[2] <= number / 2){
+// 		return v[2] + number / 2;
+// 	}else return v[2] - number / 2;
+// }
+// int solution(vector<int> v){
+// 	int length = v.size();
+// 	int sum = 0;
+// 	for(int i = 0; i < length; i++) sum  += v[i];
+// 	if(sum % length == 0) return 0;
+// 	return 1;
+// }
+// int calculate(int n){
+// 	int t = 1;
+// 	for(int i = 1; i <= n; i++) t *= 2;
+// 	return t;
+// }
+// int solution(int n){
+// 	//2 ** 1 -> 2 ** n;	
+// 	int sum1 = 0, sum2 = 0;
+// 	for(int i = 1; i < n / 2; i++) sum1 += calculate(i);
+// 	sum1 += calculate(n);
+// 	for(int i = n / 2; i < n; i++) sum2 += calculate(i);
+// 	return sum1 - sum2;
+// }
+// int solution(vector<int> v){
+// 	int pos = v[0]; //position of A;
+// 	int dif = v[1]; //|OB - BA| = k;
+// 	if(pos <= dif) return dif - pos;
+// 	//dif < pos;
+// 	if((dif + pos) % 2 == 0) return 0;
+// 	return 1;
+// }
+// int count(vector<int> a){
+// 	int count = 1;
+// 	for(int i = 1; i < 4; i++){
+// 		if(a[i] != a[i - 1]) count += 1;
+// 	}
+// 	return count;
+// }
+// int solution(int n){
+// 	if(n == 1) return 1;
+// 	int sum = 0;
+// 	sum += 2 * n - 1; //middle row
+// 	int bonus = 1;
+// 	for(int i = 1; i < n; i++){
+// 		sum += bonus * 2;
+// 		bonus += 2;
+// 	}
+// 	return sum;
+// }
+// void show(vector<int> a){
+// 	int length_a_to_b = a[0] + a[1], m = 0;
+// 	for(int i = 0; i <= a[0]; i++){
+// 		int n = 0;
+// 		for(int j = 0; j <= a[1]; j++){
+// 			if(i + j == a[1] + a[0] - i - j){
+// 				cout << i << " " << j << endl;
+// 				n += 1;
+// 				break;
+// 			}
+// 		}
+// 		if(n == 1){
+// 			m += 1;
+// 			break;
+// 		}
+// 	}
+// 	if(m == 0) cout << -1 << " " << -1 << endl;
+// }
+// void show(vector<string> a){
+// 	string s1 = a[0], s2 = a[1];
+// 	if(s1 == s2){
+// 		cout << '=' << endl;
+// 	}else{
+// 		//truong hop khac nhau
+// 		char size1 = s1[s1.size() - 1], size2 = s2[s2.size() - 1];
+// 		if(size1 == size2){
+// 			if(size1 == 'L'){
+// 				if(s1.size() > s2.size()){
+// 					cout << '>' << endl;
+// 				}else cout << '<' << endl;
+// 			}else{
+// 				if(s1.size() > s2.size()){
+// 					cout << '<' << endl;
+// 				}else cout << '>' << endl;
+// 			}
+// 		}else{
+// 			//size1 != size2
+// 			if(size1 != 'M' and size2 != 'M'){
+// 				if(size1 == 'L'){
+// 					cout << '>' << endl;
+// 				}else cout << '<' << endl;
+// 			}else{
+// 				if(size1 == 'M'){
+// 					if(size2 == 'L'){
+// 						cout << '<' << endl;
+// 					}else cout << '>' << endl;
+// 				}else{
+// 					if(size1 == 'L'){
+// 						cout << '>' << endl;
+// 					}else cout << '<' << endl;
+// 				}
+// 			}
+// 		}
+// 	}
+// }
+// bool check(vector<int> a, int n){
+// 	for(int i = 0; i < a.size(); i++){
+// 		if(a[i] == n) return false;
+// 	}
+// 	return true;
+// }
 // vector<vector<int>> getNeighbor(int n, int m, int i, int j){
 // 	vector<vector<int>> location;
 // 	//i: row
@@ -3149,6 +3668,41 @@ NEW KNOWLEDGE
 //         c += i;
 //     }
 //     return c;
+// }
+// int solution(int n){
+//     if(n % 2 == 0){
+//         int val = n / 2;
+//         return val;
+//     }else{
+//         int val = (int)n/2 + 1;
+//         return val;
+//     }
+// }
+// int solution(vector<vector<int>> a){
+//     int xa = a[0][0];
+//     int ya = a[0][1];
+//     int xb = a[1][0];
+//     int yb = a[1][1];
+//     int xf = a[2][0];
+//     int yf = a[2][1];
+//     if((xa == xb) or (ya == yb)){
+//         if(xa == xb){
+//             if(xf != xa){
+//                 return abs(ya - yb);
+//             }else{
+//                 if((yf < max(ya, yb)) and (yf > min(ya, yb))) return abs(ya - yb) + 2;
+//                 return abs(ya - yb);
+//             }
+//         }else{
+//             if(yf != ya){
+//                 return abs(xa - xb);
+//             }else{
+//                 if((xf < max(xa, xb)) and (xf > min(xa, xb))) return abs(xa - xb) + 2;
+//                 return abs(xa - xb);
+//             }
+//         }
+//     }
+//     return abs(xa - xb) + abs(ya - yb);
 // }
 // int all(int n){
 //     int s = 0;
@@ -8036,6 +8590,710 @@ void solve(){
 	// 	}
 	// }
 	// for(int i = 0; i < n; i++) cout << solution(a[i]) << endl;
+    // string s; cin >> s; int st = (s.size() - 1) / 2; cout << s[st];
+    // int left = st - 1, right = st + 1;
+    // while(left > -1 and right < s.size()){
+    //     cout << s[right] << s[left];
+    //     left -= 1;
+    //     right += 1;
+    // }
+    // while(left > -1){
+    //     cout << s[left];
+    //     left -= 1;
+    // }
+    // while(right < s.size()){
+    //     cout << s[right];
+    //     right += 1;
+    // }
+    // int t, sum = 0; cin >> t; vector<int> a;
+    // for(int i = 0; i < t; i++){
+    //     int index; cin >> index; a.push_back(index);
+    // }
+    // vector<int> b = a;
+    // sort(b.begin(), b.end());
+    // int can = 0, length = a.size();
+    // vector<int> res;
+    // for(int i = b.size() - 1; i >= 0; i--){
+    // 	for(int j = 0; j < a.size(); j++){
+    // 		if(a[j] == b[i] && check(res, j + 1) == true){
+    // 			sum += can * a[j] + 1; can += 1; res.push_back(j + 1);
+	// 		}
+	// 	}
+	// }
+	// cout << sum << endl;
+    // for(int i = 0; i < t; i++) cout << res[i]<< " ";
+    // int t; cin >> t; vector<vector<long long>> a(t, vector<long long> (3));
+	// for(int i = 0; i < t; i++){
+	// 	for(int j = 0; j < 3; j++){
+	// 		cin >> a[i][j];
+	// 	}
+	// }
+	// for(int i = 0; i < t; i++){
+	// 	if(a[i][0] % 2 == 0){
+	// 		cout << min(a[i][0] * a[i][1], a[i][0] * a[i][2] / 2) << endl;
+	// 	}else cout << min(a[i][0] * a[i][1], (a[i][0] / 2)*a[i][2] + a[i][1]) << endl;
+	// }
+    // int t; cin >> t;
+	// if(t == 3){
+	// 	cout << 1 << " " << 1 << " " << 1 << endl;
+	// }else{
+    //     if(t % 3 != 0){
+    //         cout << 1 << " " << 2 << " " << t - 3;
+    //     }else{
+	// 	// t != 3 and t % 3 == 0
+    //         cout << 1 << " " << 1 << " " << t - 2 << endl;
+    //     }	
+	// }
+    // int t; cin >> t;
+    // if(t == 0){
+    //     cout << 1 << endl;
+    // }else{
+    //     //1: 8
+    //     //2: 4
+    //     //3: 2
+    //     //4: 6
+    //     //5: 8
+    //     //6: 4
+    //     //7: 2
+    //     //8: 6
+    //     //9: 8
+    //     if(t % 4 == 1){
+    //         cout << 8 << endl;
+    //     }else if(t % 4 == 2){
+    //         cout << 4 << endl;
+    //     }else if(t % 4 == 3){
+    //         cout << 2 << endl;
+    //     }else cout << 6 << endl;
+    // }
+    // int t; cin >> t;
+	// vector<vector<long long>> a(t, vector<long long> (3));
+	// for(int i = 0; i < t; i++){
+	// 	for(int j = 0; j < 3; j++){
+	// 		cin >> a[i][j];
+	// 	}
+	// }
+	// for(int i = 0; i < t; i++) cout << a[i][0] + a[i][1] + a[i][2] - 1 << endl;
+    // int t; cin >> t; vector<vector<string>> a(t, vector<string> (2));
+	// for(int i = 0; i < t; i++){
+	// 	for(int j = 0; j < 2; j++){
+	// 		cin >> a[i][j];
+	// 	}
+	// }
+	// for(int i = 0; i < t; i++) show(a[i]);
+    // int k, n, s, p; cin >> k >> n >> s >> p;
+	// int sheetfor_onepp = 0;
+	// if(n % s == 0){
+	// 	sheetfor_onepp = n / s;
+	// }else sheetfor_onepp = n / s + 1;
+	// int sheetsneed = sheetfor_onepp * k;
+	// if(sheetsneed % p == 0){
+	// 	cout << sheetsneed / p << endl;
+	// }else cout << sheetsneed / p + 1 << endl;
+    // int x, y, z, t1, t2, t3; cin >> x >> y >> z >> t1 >> t2 >> t3;	
+	// int timeWalk = abs(x - y) * t1, timeUseTM = abs(x - z) * t2 + 3*t3 + abs(x - y) * t2;
+	// if(timeWalk >= timeUseTM){
+	// 	cout << "YES" << endl;
+	// }else cout << "NO" << endl;
+    // int t; cin >> t;
+	// vector<vector<int>> a(t, vector<int> (2));
+	// for(int i = 0; i < t; i++){
+	// 	for(int j = 0; j < 2; j++){
+	// 		cin >> a[i][j];
+	// 	}
+	// }
+	// for(int i = 0; i < t; i++) show(a[i]);
+    // int n1, n2, k1, k2; cin >> n1 >> n2 >> k1 >> k2;
+	// cout << (n1 > n2 ? "First" : "Second") << endl;
+    //int t; cin >> t; cout << solution(t) << endl;
+    // int t; cin >> t;
+	// cout << (t % 2 == 0 ? 0 : 1) << endl;
+    // int t; cin >> t;
+	// for(int i = 0; i < t; i++){
+	// 	int length; cin >> length;
+	// 	vector<vector<int>> a(2, vector<int> (length));
+	// 	for(int j = 0; j < 2; j++){
+	// 		for(int k = 0; k < length; k++){
+	// 			cin >> a[j][k];
+	// 		}
+	// 	}
+	// 	long long second = 0;
+	// 	int maxValue = 0;
+	// 	for(int j = 0; j < length; j++){
+	// 		second += a[0][j] + a[1][j];
+	// 		if(a[1][j] > maxValue) maxValue = a[1][j];
+	// 	}
+	// 	cout << second - maxValue << endl;
+	// }
+    // int t; cin >> t;
+	// for(int i = 0; i < t; i++){
+	// 	int prices = 0, b, p, f, h, c; cin >> b >> p >> f >> h >> c;
+	// 	if(b >= 2 * p + 2 * f){
+	// 		prices = p * h + f * c;
+	// 	}else{
+	// 		//buns not enough for both sandwichs;
+	// 		if(h >= c){
+	// 			//hamburger brings more money;
+	// 			if(b >= 2 * p){
+	// 				prices += p * h;
+	// 				b -= 2 * p;
+	// 				prices += min((b / 2) * c, f * c);
+	// 			}else{
+	// 				prices += (b / 2) * h; // onlyhamburger;
+	// 			}
+	// 		}else{
+	// 			if(b >= 2 * f){
+	// 				prices += f * c;
+	// 				b -= 2 * f;
+	// 				prices += min((b / 2) * h, p * h);
+	// 			}else prices += (b / 2) * c;
+	// 		}
+	// 	}
+	// 	cout << prices << endl;
+	// }
+    // int t; cin >> t; vector<vector<int>> a(t, vector<int> (2));
+    // for(int i = 0; i < t; i++){
+    // 	for(int j = 0; j < 2; j++){
+    // 		cin >> a[i][j];
+	// 	}
+	// }
+	// int page; cin >> page;
+	// int start = 0;
+	// while(start < t){
+	// 	if(page >= a[start][0] && page <= a[start][1]) break;
+	// 	start += 1;
+	// }
+	// cout << t - start << endl;
+    // int t; cin >> t;
+    // for(int i = 0; i < t; i++){
+    // 	int num; cin >> num;
+    // 	if(num % 2 == 0){
+    // 		for(int j = 1; j <= num; j++){
+    // 			if(j % 2 == 1){
+    // 				cout << j + 1 << " ";
+	// 			}else cout << j - 1 << " ";
+	// 		}
+	// 		cout << endl;
+	// 	}else{
+	// 		//num % 2 == 1;
+	// 		for(int j = 1; j <= num; j++){
+	// 			if(j == 1){
+	// 				cout << 1 << " ";
+	// 			}else{
+	// 				if(j % 2 == 0){
+	// 					cout << j + 1 << " ";
+	// 				}else cout << j - 1 << " ";
+	// 			}
+	// 			cout << endl;
+	// 		}
+	// 	}
+	// }
+    // int t; cin >> t; vector<vector<int>> a(t, vector<int> (4));
+	// for(int i = 0; i < t; i++){
+	// 	for(int j = 0; j < 4; j++){
+	// 		cin >> a[i][j];
+	// 	}
+	// }
+	// for(int i = 0; i < t; i++){
+	// 	sort(a[i].begin(), a[i].end());
+	// 	int differ = count(a[i]);
+	// 	// 1 <= differ <= 4;
+	// 	if(differ == 1){
+	// 		cout << a[i][0] * a[i][0] << endl;
+	// 	}else if(differ == 2){
+	// 		if(a[i][0] == a[i][1] && a[i][2] == a[i][3]){
+	// 			cout << a[i][0] * a[i][3] << endl;
+	// 		}else{
+	// 			cout << a[i][0] * a[i][1] << endl;
+	// 		}
+	// 	}else if(differ == 4){
+	// 		cout << a[i][0] * a[i][2] << endl;
+	// 	}else{
+	// 		//differ == 3;
+	// 		if(a[i][0] == a[i][1]){
+	// 			cout << a[i][0] * a[i][2] << endl;
+	// 		}else if(a[i][1] == a[i][2]){
+	// 			cout << a[i][0] * a[i][1] << endl;
+	// 		}else{
+	// 			cout << a[i][0] * a[i][3] << endl;
+	// 		}
+	// 	}
+	// }
+    // int x, y, z, a, b, c; cin >> x >> y >> z >> a >> b >> c;
+	// if(a >= x && (a - x) + b >= y && (a + b + c - x - y) >= z){
+	// 	cout << "YES" << endl;
+	// }else cout << "NO" << endl;
+    // int t; cin >> t; int a[200000];
+	// for(int i = 0; i < t; i++) cin >> a[i];
+	// int value = a[t - 1], start = t - 1;
+	// while(start >= 0){
+	// 	if(a[start] != value){
+	// 		cout << start + 1 << endl;
+	// 		break;
+	// 	}
+	// 	start -= 1;
+	// }
+    // int t; cin >> t; vector<vector<int>> v(t, vector<int> (2));
+	// for(int i = 0; i < t; i++){
+	// 	for(int j = 0; j < 2; j++){
+	// 		cin >> v[i][j];
+	// 	}
+	// }
+	// for(int i = 0; i < t; i++) cout << solution(v[i]) << endl;
+    // int t; cin >> t;
+	// for(int i = 0; i < t; i++){
+	// 	int n; cin >> n; cout << solution(n) << endl;
+	// }
+    // int t; cin >> t;
+	// for(int i = 0; i < t; i++){
+	// 	int length; cin >> length; for(int j = 0; j < length; j++) cout << 1 << " ";
+	// 	cout << endl;
+	// }
+    // int t; cin >> t; vector<vector<int>> v;
+	// for(int i = 0; i < t; i++){
+	// 	vector<int> b; int length; cin >> length;
+	// 	for(int j = 0; j < length; j++){
+	// 		int index; cin >> index; b.push_back(index);
+	// 	}
+	// 	v.push_back(b);
+	// }
+	// for(int i = 0; i < t; i++) cout << solution(v[i]) << endl;
+    // int t; cin >> t;
+	// vector<vector<int>> v(t, vector<int> (3));
+	// for(int i = 0; i < t; i++){
+	// 	for(int j = 0; j < 3; j++){
+	// 		cin >> v[i][j];
+	// 	}
+	// }
+	// for(int i = 0; i < t; i++) cout << solution(v[i]) << endl;
+    // string s;
+    // while(cin >> s) cout << "NO" << endl;
+    // int t; cin >> t;
+	// for(int i = 0; i < t; i++){
+	// 	int index; cin >> index; show(index);
+	// }
+    // int t; cin >> t;
+	// for(int i = 0; i < t; i++){
+	// 	int index; cin >> index; solution(index);
+	// }
+    // int n, m, k; cin >> n >> m >> k;
+	// vector<int> a;
+	// for(int i = 0; i < n; i++){
+	// 	int index; cin >> index; a.push_back(index);
+	// }
+	// cout << solution(a, n, m, k) << endl;
+    // int t; cin >> t;
+	// for(int i = 0; i < t; i++){
+	// 	vector<int> a; int length; cin >> length;
+	// 	for(int j = 0; j < length; j++){
+	// 		int index; cin >> index; a.push_back(index);
+	// 	}
+	// 	show(a);
+	// }
+    // int t; cin >> t;
+	// for(int i = 0; i < t; i++){
+	// 	int n, q; cin >> n >> q;
+	// 	vector<int> a;
+	// 	for(int j = 0; j < n; j++){
+	// 		int index; cin >> index; a.push_back(index);
+	// 	}
+	// 	vector<vector<int>> que(q, vector<int> (2));
+	// 	for(int j = 0; j < q; j++){
+	// 		for(int k = 0; k < 2; k++){
+	// 			cin >> que[j][k];
+	// 		}
+	// 	}	
+	// 	solution(n, a, q, que);
+	// }
+    // int t; cin >> t; vector<vector<int>> a(t, vector<int> (2));
+	// for(int i = 0; i < t; i++){
+	// 	for(int j = 0; j < 2; j++){
+	// 		cin >> a[i][j];
+	// 	}
+	// }
+	// for(int i = 0; i < t; i++) cout << solution(a[i]) << endl;
+    // int t; cin >> t;
+	// vector<vector<int>> a(t, vector<int> (2));
+	// for(int i = 0; i < t; i++){
+	// 	for(int j = 0; j < 2; j++){
+	// 		cin >> a[i][j];
+	// 	}
+	// }
+	// cout << solution(t, a) << endl;
+    // int t; cin >> t;
+	// for(int i = 0; i < t; i++){
+	// 	long long index; cin >> index; s(index);
+	// }
+    // int t, index; cin >> t;
+	// while(t--){
+	// 	cin >> index; show(index);
+	// }
+    //int t; cin >> t; cout << 0 << " " << 0 << " " << t << endl;
+    // int t; cin >> t;
+	// int maxVal = -100000000;
+	// for(int i = 0; i < t; i++){
+	// 	int index; cin >> index;
+	// 	if(index < 0){
+	// 		if(index > maxVal) maxVal = index;
+	// 	}else{
+	// 		if(sqrt(index) - (int)sqrt(index) != 0){
+	// 			if(index > maxVal) maxVal = index;
+	// 		}
+	// 	}
+	// }
+	// cout << maxVal << endl;
+    // int t; cin >> t;
+	// for(int i = 0; i < t; i++){
+	// 	int length; cin >> length; vector<int> a;
+	// 	for(int j = 0; j < length; j++){
+	// 		int index; cin >> index;
+	// 		a.push_back(index);
+	// 	}
+	// 	cout << solution(a) << endl;
+	// }
+    //string s; cin >> s; cout << solution(s) << endl;
+    //int n, m; cin >> n >> m; cout << solution(n, m) << endl;
+    // int t; cin >> t;
+	// for(int i = 0; i < t; i++){
+	// 	string s; cin >> s; show(s);
+	// }
+    // int n, m; cin >> n >> m;
+	// vector<vector<string>> root(n, vector<string> (2));
+	// vector<vector<string>> user(m, vector<string> (2));
+	// for(int i = 0; i < n; i++){
+	// 	for(int j = 0; j < 2; j++){
+	// 		cin >> root[i][j];
+	// 	}
+	// }
+	// for(int i = 0; i < m; i++){
+	// 	for(int j = 0; j < 2; j++){
+	// 		cin >> user[i][j];
+	// 	}
+	// }
+	// show(n, m, root, user);
+    // float n, m; cin >> n >> m;
+	// vector<vector<float>> sup(n, vector<float> (2));
+	// for(int i = 0; i < n; i++){
+	// 	for(int j = 0; j < 2; j++){
+	// 		cin >> sup[i][j];
+	// 	}
+	// }
+	// float minValue = sup[0][0] / sup[0][1];
+	// for(int i = 1; i < n; i++){
+	// 	if(sup[i][0] / sup[i][1] < minValue){
+	// 		minValue = sup[i][0] / sup[i][1];
+	// 	}
+	// }
+	// cout << fixed << setprecision(8) << m * minValue << endl;
+    //int t; cin >> t; cout << 2 * t - t / 2;
+    // int t; cin >> t;
+	// long long sum = 0;
+	// vector<vector<long long>> v(2, vector<long long> (t));
+	// for(int i = 0; i < 2; i++){
+	// 	for(int j = 0; j < t; j++){
+	// 		cin >> v[i][j];
+	// 		if(i == 0) sum += v[i][j];
+	// 	}
+	// }
+	// sort(v[1].begin(), v[1].end());
+	// if(sum <= v[1][t - 1] + v[1][t - 2]){
+	// 	cout << "YES" << endl;
+	// }else cout << "NO" << endl;
+    // int t; cin >> t;
+	// for(int i = 0; i < t; i++){
+	// 	vector<int> a;
+	// 	int length; cin >> length; int index;
+	// 	for(int j = 0; j < length; j++){
+	// 		cin >> index;
+	// 		a.push_back(index);
+	// 	}
+	// 	sort(a.begin(), a.end());
+	// 	cout << a[length - 1] + a[length - 2] << endl;
+	// }
+    // int n, m, index; cin >> n >> m;
+	// vector<int> a;
+	// vector<int> b;
+	// for(int i = 0; i < n; i++){
+	// 	cin >> index; a.push_back(index);
+	// }
+	// for(int i = 0; i < m; i++){
+	// 	cin >> index; b.push_back(index);
+	// }
+	// cout << solution(a, b) << endl;
+    //int a, b; cin >> a >> b; show(a, b);
+    //string s; cin >> s; show(s);
+    // int t; cin >> t;
+	// while(t--){
+	// 	long long n; cin >> n;
+	// 	long long mini = 0;
+	// 	long long maxi = -1e9;
+	// 	while(n--){
+	// 		long long a, b; cin >> a >> b;
+	// 		mini += min(a, b);
+	// 		maxi = max(maxi, max(a, b));
+	// 	}
+	// 	if(maxi == -1e9) cout << 0 << endl;
+	// 	else{
+	// 		long long int ans = 2*(mini + maxi);
+	// 		cout << ans << endl;
+	// 	}
+	// }
+    // set<int> a; int t; cin >> t;
+	// for(int i = 0; i < t; i++){
+	// 	int index; cin >> index;
+	// 	if(index != 0) a.insert(index);
+	// }
+	// cout << a.size() << endl;
+    // int t; cin >> t; vector<vector<int>> a(2, vector<int> (t));
+	// for(int i = 0; i < 2; i++){
+	// 	for(int j = 0; j < t; j++){
+	// 		cin >> a[i][j];
+	// 	}
+	// }
+	// cout << solution(t, a) << endl;
+    // int sum = 0;
+	// int a, b, c; cin >> a >> b >> c;
+	// int length; cin >> length;
+	// int arr[100000];
+	// for(int i = 0; i < length; i++){
+	// 	cin >> arr[i];
+	// 	if(arr[i] > b and arr[i] < c) sum += 1;
+	// }
+	// cout << sum << endl;
+    //int a, b; cin >> a >> b; cout << g(min(a, b)) << endl;
+    //int t; cin >> t; show(t);
+    // int x, y; cin >> x >> y;
+	// if((x > 0 and y > 0) || (x < 0 and y < 0)){
+	// 	//y = -x + a;
+	// 	int a = x + y;
+	// 	if(a > 0){
+	// 		cout << 0 << " " << a << " " << a << " " << 0 << endl;
+	// 	}else cout << a << " " << 0 << " " << 0 << " " << a << endl;
+	// }else{
+	// 	//y = x + a;
+	// 	int a = y - x;
+	// 	if(-1 * a < 0){
+	// 	    cout << -1 * a << " " << 0 << " " << 0 << " " << a << endl;	
+	// 	}else cout << 0 << " " << a << " " << -1 * a << " " << 0 << endl;
+	// }
+    // int n, m; cin >> n >> m; vector<int> a;
+	// for(int i = 0; i < m; i++){
+	// 	int index; cin >> index; a.push_back(index);
+	// }
+	// vector<int> countt;
+	// for(int i = 1; i <= n; i++) countt.push_back(count(a.begin(), a.end(), i));
+	// cout << *min_element(countt.begin(), countt.end());
+    // int n, m; cin >> n >> m;
+	// vector<string> score;
+	// for(int i = 0; i < n; i++){
+	// 	string s; cin >> s; score.push_back(s);
+	// }
+	// cout << solution(n, m, score);
+    // int t; cin >> t;
+	// for(int i = 0; i < t; i++){
+	// 	vector<int> a; int length; cin >> length;
+	// 	for(int j = 0; j < length; j++){
+	// 		int index; cin >> index; a.push_back(index);
+	// 	}
+	// 	show(length, a);
+	// }
+    // int t; cin >> t;
+	// for(int i = 0; i < t; i++){
+	// 	int length; string s; cin >> length >> s;
+	// 	long long maxii = 0;
+	// 	long long maxoo = 0;
+	// 	long long on = 0;
+	// 	long long zer = 0;
+	// 	for(int i = 0; i < length; i++){
+	// 		if(s[i] == '1'){
+	// 			on += 1;
+	// 		}else zer += 1;
+	// 	}
+	// 	for(int i = 0; i < length; i++){
+	// 		long long cnt = 0;
+	// 		if(s[i] == '1'){
+	// 			while(i < length and s[i] == '1'){
+	// 				i += 1;
+	// 				cnt += 1;
+	// 			}
+	// 		}maxii = max(maxii, cnt);
+	// 	}
+	// 	for(int i = 0; i < length; i++){
+	// 		long long cnt = 0;
+	// 		if(s[i] == '0'){
+	// 			while(i < length and s[i] == '0'){
+	// 				i += 1;
+	// 				cnt += 1;
+	// 			}
+	// 		}maxoo = max(maxoo, cnt);
+	// 	}
+	// 	long long f = max(pow(maxii, 2), pow(maxoo, 2));
+	// 	cout << max(on*zer, f) << endl;
+	// }
+    // int t; cin >> t; int a[100];
+	// for(int i = 0; i < t; i++) cin >> a[i];
+	//1st-game = Alex - Bob;
+	//1 - Alex;
+	//2 - Bob;
+	//3 - Carl;
+	//int c = 0;
+	//who waiting -> so cant win of course;
+	// vector<int> res;
+	// res.push_back(1);
+	// res.push_back(2);
+	// int queue = 3;
+	// for(int i = 0; i < t; i++){
+	// 	if(check(res, a[i]) == false){
+	// 		cout << "NO" << endl;
+	// 		c += 1;
+	// 	}else{
+	// 		//winner in the game;
+	// 		int j = 0;
+	// 		if(a[i] == res[0]) j = 1;
+	// 		int tmp = res[j];
+	// 		res[j] = queue;
+	// 		queue = tmp;
+	// 	}
+	// 	if(c != 0) break;
+	// }
+	// if(c == 0) cout << "YES" << endl;
+    // float a, b; cin >> a >> b; int t; cin >> t;
+	// float minValue = 10000000;
+	// for(int i = 0; i < t; i++){
+	// 	float xi, yi, vi;
+	// 	cin >> xi >> yi >> vi;
+	// 	float time = sqrt(pow(abs(a - xi), 2) + pow(abs(b- yi), 2)) / vi;		
+	// 	//a2 + b2 = pow(abs(a - xi), 2) + pow(abs(b- yi), 2);		
+	// 	if(time < minValue) minValue = time;
+	// }
+	// cout << fixed << setprecision(10) << minValue << endl;
+    // int n, q; cin >> n >> q;
+	// long long a[200000];
+	// for(int i = 0; i < n; i++) cin >> a[i];
+	// sort(a, a + n);
+	// for(int i = 1; i < n; i++) a[i] = a[i] + a[i - 1];
+	// vector<vector<int>> buy(q, vector<int> (2));
+	// for(int i = 0; i < q; i++){
+	// 	for(int j = 0; j < 2; j++){
+	// 		cin >> buy[i][j];
+	// 	}
+	// }
+	// for(int i = 0; i < q; i++) cout << solution(n, a, buy[i]) << endl;
+    //int t; cin >> t; string s; cin >> s; cout << solution(t, s) << endl;
+    // ios_base::sync_with_stdio(0);
+	// cin >> t;
+	// while(t--){
+	// 	cin >> n; for(i = 1; i <= n; i++) cin >> a[i];
+	// 	cin >> m; for(i = 1; i <= m; i++) cin >> b[i];
+	// 	sort(a + 1, a + n + 1);
+	// 	sort(b + 1, b + m + 1);
+	// 	if(a[n] > b[m]){
+	// 		cout<<"Alice\nAlice\n";continue;
+	// 	}
+	// 	if(a[n]<b[m]){
+	// 		cout<<"Bob\nBob\n";continue;
+	// 	}
+	// 	cout<<"Alice\nBob\n";continue;
+	// }
+    // int t; cin >> t;
+	// for(int i = 0; i < t; i++){
+	// 	int index; cin >> index;
+	// 	if(index % 2 == 0){
+	// 		cout << 0 << endl;
+	// 	}else cout << solution(index) << endl;
+	// }
+    // int n, d; cin >> n >> d; int a[100000];
+	// for(int i = 0; i < n; i++) cin >> a[i];
+	// sort(a, a + n);
+	// //length = n;
+	// int count = 0;
+	// int length = n;
+	// int st = length - 1;
+	// while(length > 0){
+	// 	if(length <= d / a[st]) break;
+	// 	count += 1;
+	// 	length -= d / a[st] + 1;
+	// 	st -= 1;
+	// }
+	// cout << count;
+    // int t; cin >> t;
+	// for(int i = 0; i < t; i++){
+	// 	int maxVal = 0, minVal = 101;
+	// 	vector<int> a;
+	// 	for(int j = 0; j < 4; j++){
+	// 		int index; cin >> index; a.push_back(index);
+	// 		if(index > maxVal) maxVal = index;
+	// 		if(index < minVal) minVal = index;
+	// 		//2 phan tu max min se cheo nhau
+	// 	}
+	// 	if(a[0] == minVal and a[3] == maxVal || a[0] == maxVal and a[3] == minVal){
+	// 			cout << "YES" << endl;
+	// 	}else if(a[1] == minVal and a[2] == maxVal || a[1] == maxVal and a[2] == minVal){
+	// 		cout << "YES" << endl;
+	// 	}else cout << "NO" << endl;
+	// }
+    // int t, a, b, c; cin >> t;
+    // while(t--){
+    //     cin >> a >> b >> c;
+    //     if(a > max(b, c)){
+    //         cout << 0 << " ";
+    //     }else cout << max(b, c) - a + 1 << " ";
+    //     if(b > max(a, c)){
+    //         cout << 0 << " ";
+    //     }else cout << max(a, c) - b + 1 << " ";
+    //     if(c > max(b, a)){
+    //         cout << 0 << " ";
+    //     }else cout << max(b, a) - c + 1 << " ";
+    //     cout << endl;
+    // }
+    // int n; cin >> n;
+    // for(int i = 0; i < n; i++){
+    //     vector<vector<int>> a(3, vector<int> (2));
+    //     for(int j = 0; j < 3; j++){
+    //         for(int k = 0; k < 2; k++){
+    //             cin >> a[j][k];
+    //         }
+    //     }
+    //     cout << solution(a) << endl;
+    // }
+    // int n; cin >> n; int a[1000];
+    // for(int i = 0; i < n; i++) cin >> a[i];
+	// for(int i = 0; i < n; i++) cout << solution(a[i]) << endl;
+    // int n, l; cin >> n >> l;
+    // vector<int> a;
+    // for(int i = 0; i < n; i++){
+    //     int num; cin >> num; a.push_back(num);
+    // }
+    // for(int i = 0; i < n - 1; i ++){
+    //     for(int j = 0; j < n - 1 - i; j++){
+    //         if(a[j] > a[j + 1]){
+    //             int tmp = a[j];
+    //             a[j] = a[j + 1];
+    //             a[j + 1] = tmp;
+    //         }
+    //     }
+    // }
+    // double x = 2 * a[0];
+    // double y = (l - a[n - 1]) * 2;
+    // double z = 0;
+    // for(int i = 0; i < n - 1; i++){
+    //     if(a[i + 1] - a[i] > z){
+    //         z = a[i + 1] - a[i];
+    //     }
+    // }
+    // if((x >= y) and (x >= z)){
+    // 	cout<<fixed<<setprecision(9)<<(double)x/2;
+	// }else{
+	// 	if(y >= z){
+	// 		cout<<fixed<<setprecision(9)<<(double)y/2;
+	// 	}else cout<<fixed<<setprecision(9)<<(double)z/2;
+	// }
+    // int n, cv = INT_MAX; cin >> n;
+    // for(int i = 1; i * i <= n; i++){
+    //     if(n % i == 0){
+    //         if(2*(i + n / i) < cv) cv = 2*(i + n / i);
+    //     }
+    // }
+    // cout << cv << endl;
 }
 
 int main(){

@@ -7,8 +7,7 @@
 
 #include<bits/stdc++.h>
 using namespace std;
-
-
+// typedef long long ll;
 /*
 
 NEW KNOWLEDGE
@@ -92,7 +91,6 @@ NEW KNOWLEDGE
 
 void solve(){
     
-
 }
 
  int main(){
