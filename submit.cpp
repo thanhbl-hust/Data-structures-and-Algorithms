@@ -90,9 +90,9 @@ NEW KNOWLEDGE
 
 */
 
-
 void solve(){
     
+
 }
 
  int main(){
