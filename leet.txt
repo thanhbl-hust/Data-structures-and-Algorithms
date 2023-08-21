@@ -1088,3 +1088,31 @@ public:
         return res;
     }
 };
+
+68.
+class Solution {
+public:
+    int findGCD(vector<int>& nums) {
+        int maxVal = *max_element(nums.begin(), nums.end());
+        int minVal = *min_element(nums.begin(), nums.end());
+
+        int st = minVal;
+        while(st > 0){
+            if(maxVal % st == 0 and minVal % st == 0) return st;
+            st -= 1;
+        }
+        return -1;
+    }
+};
+
+69.
+class Solution {
+public:
+    int findLengthOfLCIS(vector<int>& nums) {
+        vector<int> dp(nums.size(), 1);
+        for(int i = 1; i < nums.size(); i++){
+            if(nums[i] > nums[i - 1] and dp[i] < dp[i - 1] + 1) dp[i] = dp[i - 1] + 1;
+        }
+        return *max_element(dp.begin(), dp.end());
+    }
+};
