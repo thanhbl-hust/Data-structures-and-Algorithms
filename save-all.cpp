@@ -936,6 +936,12 @@ NEW KNOWLEDGE
 // 		cout << t * 2 / 7 << " " << t * 2 / 7 << endl;
 // 	}else cout << weeks * 2 + minValue << " " << weeks * 2 + maxValue<< endl;
 // }
+// int index(string ss, char c){
+//     for(int i = 0; i < ss.size(); i++){
+//         if(ss[i] == c) return i;
+//     }
+//     return -1;
+// }
 // int g(int a){
 // 	int gt = 1;
 // 	for(int i = 2; i <= a; i++) gt *= i;
@@ -9294,6 +9300,59 @@ void solve(){
     //     }
     // }
     // cout << cv << endl;
+    // bool check(string s, string a[5]){
+    //     for(int j = 0; j < 2; j++)
+    //         for(int i = 0; i < 5; i++)
+    //             if(a[i][j] == s[j]) return true;
+    //         }
+    //     }
+    //     return false;
+    // }
+    // int find(vector<string> s, string ss){
+    //     for(int i = 0; i < s.size(); i++){
+    //         if(s[i] == ss) return i;
+    //     }
+    //     return -1;
+    // }
+    // int t; cin >> t;
+    // while(t--){
+    //     string s; cin >> s; sort(s.begin(), s.end());
+    //     bool found = false;
+    //     for(int i = 1; i < s.size(); i++){
+    //         if(s[i] - s[i - 1] != 1){
+    //             found = true; cout << "NO" << endl; break;
+    //         }
+    //     }
+    //     if(found == false) cout << "YES" << endl;
+    // }
+    //char a, b; cin >> a >> b; cout << a - b;
+    // string s; cin >> s; sort(s.begin(), s.end()); cout << s;
+    // int t; cin >> t;
+    // while(t--){
+    //     int cnt = 0;
+    //     string root, inp; cin >> root >> inp;
+    //     for(int i = 1; i < inp.size(); i++) cnt += abs(index(root, inp[i]) - index(root, inp[i - 1]));
+    //     cout << cnt << endl;
+    // }
+    // int cnt = 0, length; string s; cin >> length >> s;
+    // for(int i = 0; i < length / 2; i++){
+    //     if(s[2 * i] == s[2 * i + 1]){
+    //         cnt += 1;
+    //         if(s[2 * i] == 'a'){
+    //             s[2 * i] = 'b';
+    //         }else s[2 * i] = 'a';
+    //     }
+    // }
+    // cout << cnt << endl;
+    // cout << s;
+    // string s; string a[5]; cin >> s; for(int i = 0; i < 5; i++) cin >> a[i];
+    // cout << (check(s, a) == true ? "YES" : "NO") << endl;
+    // int t; cin >> t;
+    // while(t--){
+    //     string s; cin >> s; sort(s.begin(), s.end()); cout << s << endl;
+    // }
+
+
 }
 
 int main(){

@@ -1116,3 +1116,32 @@ public:
         return *max_element(dp.begin(), dp.end());
     }
 };
+
+70.
+class Solution {
+public:
+    string finalString(string s) {
+        string res = "";
+        for(int i = 0; i < s.size(); i++){
+            if(s[i] != 'i'){
+                res += s[i];
+            }else reverse(res.begin(), res.end());
+        }
+        return res;
+    }
+};
+
+71.
+class Solution {
+public:
+    bool judgeCircle(string m) {
+        int l = 0, r = 0, u = 0, d = 0;
+        for(int i = 0; i < m.size(); i++){
+            if(m[i] == 'L') l += 1;
+            if(m[i] == 'R') r += 1;
+            if(m[i] == 'U') u += 1;
+            if(m[i] == 'D') d += 1;
+        }
+        return (l == r && u == d);
+    }
+};
