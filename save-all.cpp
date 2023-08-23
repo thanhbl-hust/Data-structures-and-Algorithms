@@ -8,7 +8,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-
+// typedef long long ll;
 /*
 
 NEW KNOWLEDGE
@@ -32,6 +32,7 @@ NEW KNOWLEDGE
 3. Rounded numbers
 
     + Want to change 1.2345 to 1.23: cout << fixed << setprecision(2) << num;
+    + Also, u can use this for clearly see the number too big;
 
 4. Input string
 
@@ -435,6 +436,15 @@ NEW KNOWLEDGE
 //         }else cout << "NO" << endl;
 //     }
 // }
+// int count(string a[], char c, int length){
+//     int cnt = 0;
+//     for(int i = 0; i < length; i++){
+//         for(int j = 0; j < a[i].size(); j++){
+//             if(a[i][j] == c) cnt += 1;
+//         }
+//     }
+//     return cnt;
+// }
 // int solution(vector<int> a){
 //     //a[0] = 1;
 //     //a[1] = 2;
@@ -476,6 +486,33 @@ NEW KNOWLEDGE
 // 			}else dev.push_back((int)big / small + 1);
 // 		}
 // 	}
+// int find(string s, int st, char c){
+//     for(int i = st + 1; i < s.size(); i++){
+//         if(s[i] == c) return i;
+//     }
+//     return -1;
+// }
+// bool check(string s){
+//     //heidi;
+//     int hh = find(s, 0, 'h');
+//     if(hh != -1){
+//         int ee = find(s, hh, 'e');
+//         if(ee != -1){
+//             int ii1 = find(s, ee, 'i');
+//             if(ii1 != -1){
+//                 int dd = find(s, ii1,  'd');
+//                 if(dd != -1){
+//                     int ii2 = find(s, dd, 'i');
+//                     if(ii2 != -1) return true;
+//                 }
+//                 return false;
+//             }
+//             return false;
+//         }
+//         return false;
+//     }
+//     return false;
+// }
 // 	int lengthRes = dev.size();
 // 	for(int i = 0; i < lengthRes; i++){
 // 		//dev[i] is times bigger;
@@ -665,6 +702,12 @@ NEW KNOWLEDGE
 // 		if(a[i + 1] - a[i] > maxValue) maxValue = a[i + 1] - a[i];
 // 	}
 // 	return maxValue;
+// }
+// int check(vector<int> a, int index){
+//     for(int i = 1; i < a.size(); i++){
+//         if(index % a[i] == 0) return i;
+//     }
+//     return -1;
 // }
 // vector<int> popp(vector<int> a, int n){
 // 	a.erase(a.begin() + n); return a;
@@ -1611,6 +1654,7 @@ NEW KNOWLEDGE
 // 		}
 // 	}
 // }
+
 // int solution(vector<int> t){
 //     int a = t[0], b = t[1], n = t[2];
 //     int count = 0;
@@ -2259,6 +2303,11 @@ NEW KNOWLEDGE
 //     }
 //     if(check(a) == true) return a;
 //     return repl(a);
+// }
+// int count(string s){
+//     if(s.size() == 1) return 0;
+//     sort(s.begin(), s.end());
+//     return stoi(s.substr(s.size() - 1, 1)) - stoi(s.substr(0, 1));
 // }
 // bool check(vector<string> cc, int index){
 //     for(int i = 0; i < index; i++){
@@ -9442,6 +9491,108 @@ void solve(){
     // int length = st - col + 1; //cout << length;
     // //cout << row << " " << col << endl;
     // cout << row + length / 2 + 1 << " " << col + length / 2 + 1 << endl;
+    //heidi;
+    // int hh = find(s, 0, 'h');
+    // if(hh != -1){
+    //     int ee = find(s, hh, 'e');
+    //     if(ee != -1){
+    //         int ii1 = find(s, ee, 'i');
+    //         if(ii1 != -1){
+    //             int dd = find(s, ii1,  'd');
+    //             if(dd != -1){
+    //                 int ii2 = find(s, dd, 'i');
+    //                 if(ii2 != -1) return true;
+    //             }
+    //             return false;
+    //         }
+    //         return false;
+    //     }
+    //     return false;
+    // }
+    // return false;
+    // string s; cin >> s; cout << (check(s) ? "YES" : "NO") << endl;
+    // vector<int> a(1, 1);
+    // int p = 1;
+    // while(p < 31){
+    //     a.push_back(a[a.size() - 1] + pow(2, p));
+    //     p += 1;
+    // }
+    // int t; cin >> t;
+    // while(t--){
+    //     int index; cin >> index; int div = check(a, index); cout << index / a[div] << endl;
+    // }
+    // int t, l, r; cin >> t;
+    // while(t--){
+    //     string res; bool found = false; int maxValue = -1;
+    //     cin >> l >> r;
+    //     for(int i = l; i < r + 1; i++){
+    //         string ss = to_string(i);
+    //         if(count(ss) == 9){
+    //             found = true; cout << ss << endl; break;
+    //         }else{
+    //             if(count(ss) > maxValue){
+    //                 maxValue = count(ss);
+    //                 res = ss;
+    //             }
+    //         }
+    //         if(found == true) break;
+    //     }
+    //     if(found == false) cout << res << endl;
+    // }
+    // int t; cin >> t;
+    // while(t--){
+    //     long long n, k, count = 0; cin >> n >> k;
+    //     while(n != 0){
+    //         if(n % k != 0){
+    //             count += n % k;
+    //             n -= n % k;
+    //         }
+    //         if(n != 0){
+    //             n /= k;
+    //             count += 1;
+    //         }
+    //     }
+    //     cout << count << endl;
+    // }
+    // int t; cin >> t;
+    // while(t--){
+    //     int length; cin >> length; string a[length];
+    //     for(int i = 0; i < length; i++) cin >> a[i];
+    //     vector<char> cc(1, 'a');
+    //     for(int i = 0; i < 25; i++){
+    //         char c = cc[cc.size() - 1] + 1; cc.push_back(c);
+    //     }
+    //     bool found = false;
+    //     for(int i = 0; i < cc.size(); i++){
+    //         if(count(a, cc[i], length) % length != 0){
+    //             cout << "NO" << endl;
+    //             found = true;
+    //             break;
+    //         }
+    //     }
+    //     if(found == false) cout << "YES" << endl;
+    // }
+    // int t; cin >> t;
+    // while(t--){
+    //     int index; cin >> index;
+    //     cout << (index - 1) / 2 <<  " "  << index - 1 << endl;
+    // }
+    // int t; cin >> t;
+    // while(t--){
+    //     int length; cin >> length; int a[length];
+    //     for(int i = 0; i < length; i++) cin >> a[i];
+    //     vector<int> dp(length, 1);
+    //     for(int i = 1; i < length; i++){
+    //         if(a[i] == a[i - 1]){
+    //             dp[i] = dp[i - 1] + 1;
+    //         }
+    //     }
+    //     cout << *max_element(dp.begin(), dp.end()) << endl;
+    // }
+    // int t; cin >> t;
+    // while(t--){
+    //     int a, b; cin >> a >> b; cout << a + b << endl;
+    // }
 }
 
 int main(){
