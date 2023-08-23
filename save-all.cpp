@@ -891,6 +891,18 @@ NEW KNOWLEDGE
 // void show(int length, vector<int> a){
 // 	cout << (a[0] == 1 ? "YES" : "NO") << endl;
 // }
+// vector<int> findCoor(vector<string> ss){
+//     vector<int> pos(2);
+//     for(int i = 0; i < ss.size(); i++){
+//         for(int j = 0; j < ss[i].size(); j++){
+//             if(ss[i][j] == 'B'){
+//                 pos[0] = i, pos[1] = j;
+//                 return pos;
+//             }
+//         }
+//     }
+//     return pos;
+// }
 // int strTonum(char s){
 // 	if(s == '1') return 1;
 // 	if(s == '2') return 2;
@@ -1562,6 +1574,25 @@ NEW KNOWLEDGE
 // 			cout << "YES" << endl;
 // 		}else cout << "NO" << endl;
 // 	}
+// }
+// bool check(int i, int j, int row, int col){
+//     //-1 -2
+//     if((i - 1) >= 0 and (j - 2) >= 0) return true;
+//     //-2 -1
+//     if((i - 2) >= 0 and (j - 1 >= 0)) return true;
+//     //-2 1
+//     if((i - 2) >= 0 and (j + 1) <= col) return true;
+//     //-1 2
+//     if((i - 1) >= 0 and (j + 2) <= col) return true;
+//     //1 -2
+//     if((i + 1) <= row and (j - 2) >= 0) return true;
+//     //2 -1
+//     if((i + 2) <= row and (j - 1) >= 0) return true;
+//     //2 1
+//     if((i + 2) <= row and (j + 1) <= col) return true;
+//     //1 2
+//     if((i + 1) <= row and (j + 2) <= col) return true;
+//     return false;
 // }
 // void show(int length){
 // 	if(length == 1){
@@ -9351,8 +9382,66 @@ void solve(){
     // while(t--){
     //     string s; cin >> s; sort(s.begin(), s.end()); cout << s << endl;
     // }
-
-
+    // int t; cin >> t; string a[3];
+    // while(t--){
+    //     bool found = false;
+    //     for(int i = 0; i < 3; i++) cin >> a[i];
+    //     //row;
+    //     for(int i = 0; i < 3; i++){
+    //         if(a[i][0] == a[i][1] and a[i][1] == a[i][2] and a[i][0] != '.'){
+    //             cout << a[i][0] << endl;
+    //             found = true;
+    //         }
+    //         if(found) break;
+    //     }
+    //     if(found == false){
+    //         for(int i = 0; i < 3; i++){
+    //             if(a[0][i] == a[1][i] and a[1][i] == a[2][i] and a[0][i] != '.'){
+    //                 cout << a[0][i] << endl;
+    //                 found = true;
+    //             }
+    //             if(found) break;
+    //         }
+    //     }
+    //     if(found == false){
+    //         if(a[0][0] == a[1][1] and a[0][0] == a[2][2] and a[0][0] != '.'){
+    //             cout << a[0][0] << endl; found = true;
+    //         }
+    //     }
+    //     if(found == false){
+    //         if(a[0][2] == a[1][1] and a[1][1] == a[2][0] and a[0][2] != '.'){
+    //             cout << a[0][2] << endl; found = true;
+    //         }
+    //     }
+    //     if(found == false) cout << "DRAW" << endl;
+    // }
+    // int t, row, col; cin >> t;
+    // while(t--){
+    //     bool found = false;
+    //     cin >> row >> col;
+    //     row -= 1;
+    //     col -= 1;
+    //     for(int i = 0; i < row; i++){
+    //         for(int j = 0; j < col; j++){
+    //             if(check(i, j, row, col) == false){
+    //                 found = true;
+    //                 cout << i + 1 << " " << j + 1 << endl;
+    //                 break;
+    //             }
+    //             if(found) break;
+    //         }
+    //         if(found) break;
+    //     }
+    //     if(found == false) cout << "1 1" << endl;
+    // }
+    // int n, m; cin >> n >> m; vector<string> ss (n);
+    // for(int i = 0; i < n; i++) cin >> ss[i];
+    // vector<int> pos = findCoor(ss);
+    // int row = pos[0], col = pos[1], st = m - 1; //start_index;
+    // while(st >= col and ss[row][st] == 'W') st -= 1;
+    // int length = st - col + 1; //cout << length;
+    // //cout << row << " " << col << endl;
+    // cout << row + length / 2 + 1 << " " << col + length / 2 + 1 << endl;
 }
 
 int main(){
