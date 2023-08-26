@@ -1159,3 +1159,40 @@ public:
         return cnt;
     }
 };
+
+73.
+class Solution {
+public:
+    bool isAcronym(vector<string>& words, string s) {
+        if(words.size() != s.size()) return false;
+        int st = 0;
+        while(st < s.size()){
+            if(words[st][0] != s[st]) return false;
+            st += 1;
+        }
+        return true;
+    }
+};
+
+74.
+class Solution {
+public:
+    bool checkIfPangram(string s) {
+        set<char> cc; int st = 0;
+        while(st < s.size() and cc.size() != 26){
+            cc.insert(s[st]);
+            st += 1;
+        }
+        if(cc.size() == 26) return true;
+        return false;
+    }
+};
+
+75.
+class Solution {
+public:
+    string toLowerCase(string s) {
+        for(int i = 0; i < s.size(); i++) s[i] = tolower(s[i]);
+        return s;
+    }
+};

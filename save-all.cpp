@@ -108,6 +108,28 @@ NEW KNOWLEDGE
 //     }
 //     return true;
 // }
+// void show(int index){
+//     if(index < 10){
+//         cout << index << endl;
+//     }else if(index > 45){
+//         cout << -1 << endl;
+//     }else{
+//         int st = 9; vector<int> dg;
+//         while(index != 0){
+//             if(index >= st){
+//                 dg.push_back(st);
+//                 index -= st;
+//                 st -= 1;
+//             }else{
+//                 //st > index;
+//                 dg.push_back(index);
+//                 index = 0;
+//             }
+//         }
+//         for(int i = dg.size() - 1; i > -1; i--) cout << dg[i];
+//         cout << endl;
+//     }
+// }
 // bool check(int x, int y){
 //     if(x == 1 and y == 1) return true;
 //     return false;
@@ -1425,6 +1447,12 @@ NEW KNOWLEDGE
 // 			}
 // 		}
 // 	}
+// }
+// int find(string ss, int st, char c){
+//     for(int i = st; i < ss.size(); i++){
+//         if(ss[i] == c) return i + 1;
+//     }
+//     return -1;
 // }
 // bool check(vector<int> a, int n){
 // 	for(int i = 0; i < a.size(); i++){
@@ -9592,6 +9620,33 @@ void solve(){
     // int t; cin >> t;
     // while(t--){
     //     int a, b; cin >> a >> b; cout << a + b << endl;
+    // }
+    // int n; cin >> n; int a[n]; for(int i = 0; i < n; i++) cin >> a[i]; sort(a, a + n);
+    // for(int i = 0; i < n; i++){
+    //     int minv, maxv;
+    //     if(i != 0 and i != n - 1){
+    //         minv = min(abs(a[i] - a[i - 1]), abs(a[i] - a[i + 1]));
+    //         maxv = max(abs(a[i] - a[0]), abs(a[i] - a[n - 1]));
+    //     }else if(i == 0){
+    //         minv = a[1] - a[0]; maxv = a[n - 1] - a[0];
+    //     }else if(i == n - 1){
+    //         minv = a[n - 1] - a[n - 2]; maxv = a[n - 1] - a[0];
+    //     }
+    //     cout << minv << " " << maxv << endl;
+    // }
+    // int t, index; cin >> t;
+    // while(t--){
+    //     cin >> index; show(index);
+    // }
+    // int t; cin >> t;
+    // while(t--){
+    //     int length; string s; cin >> length >> s; int st = 0;
+    //     string res = "";
+    //     while(st < s.size()){
+    //         res += s[st];
+    //         st = find(s, st + 1, s[st]);
+    //     }
+    //     cout << res << endl;
     // }
 }
 

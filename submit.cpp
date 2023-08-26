@@ -22,6 +22,15 @@ NEW KNOWLEDGE
     + A vector contains 10 index have value 0: vector<int> a(10, 0);
     + Vector 2D: vector<vector<int> a(n, vector<int> (m)) -- n child vectors, each vector has m indexs;
     + Reverse a vector: reverse(a.begin(), a.end());
+    + Insert an element to a vector:
+        + You want to insert an element has a value 10 to position 2.
+            <vector_name>.insert(<vector_name>.begin() + 2, value);
+
+    + Delete a value in a vector:
+        + You want to delete a[i] from vector<int> a:
+            a.erase(a.begin() + i);
+        + You want to delete multiple elements (a[1] -> a[4]):
+            a.erase(a.begin() + 1, a.begin() + 5);
 
 2. DS: Set
 
@@ -89,7 +98,6 @@ NEW KNOWLEDGE
  ;
 
 */
-
 
 
 
