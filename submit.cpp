@@ -95,14 +95,14 @@ NEW KNOWLEDGE
             }else cout << "NO" << endl;
         + change: cout << (d % 3 == 0 && d >= 0 ? "YES" : "NO") << endl
         (condition -> ? -> :)
- ;
 
 */
 
 
-
 void solve(){
-    
+    /*
+    SOLUTION;
+    */
 }
 
  int main(){

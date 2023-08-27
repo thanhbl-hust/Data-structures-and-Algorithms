@@ -1196,3 +1196,36 @@ public:
         return s;
     }
 };
+
+76.
+class Solution {
+public: 
+    bool check(int index, vector<int> coor){
+        for(int i = 0; i < coor.size() / 2; i++){
+            if(index > coor[2*i] and index < coor[2*i + 1]) return false;
+        }
+        return true;
+    }
+    int countAsterisks(string s) {
+        int count = 0; vector<int> coor;
+        for(int i = 0; i < s.size(); i++){
+            if(s[i] == '|') coor.push_back(i);
+        }
+        for(int i = 0; i < s.size(); i++){
+            if(s[i] == '*'){
+                if(check(i, coor)) count += 1;
+            }
+        }
+        return count;
+    }
+};
+
+77.
+class Solution {
+public:
+    bool isAnagram(string s, string t) {
+        sort(s.begin(), s.end()); sort(t.begin(), t.end());
+        if(s == t) return true;
+        return false;
+    }
+};
