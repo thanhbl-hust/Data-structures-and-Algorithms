@@ -10065,6 +10065,17 @@ void solve(){
     //     if(a[i] != maxv and a[i] != minv) cnt += 1;
     // }
     // cout << cnt;
+    //int a, b, c, d, e, f; cin >> a >> b >> c >> d >> e >> f;
+    //type1(1a, 1d); - cost e;
+    //type2(1b, 1c, 1d) - cost f;
+    //type1;
+    // int m1 = min(a, d) * e;
+    // int dd = d - min(a, d);
+    // int m2 = min(b, min(c, dd)) * f;
+    // int n1 = min(b, min(c, d)) * f;
+    // d -= min(b, min(c, d));
+    // int n2 = min(a, d) * e;
+    // cout << max(m1 + m2, n1 + n2);
 }
 
 int main(){

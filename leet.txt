@@ -1229,3 +1229,174 @@ public:
         return false;
     }
 };
+
+78.
+class Solution {
+public:
+    bool find(char ccc[], char cc){
+        for(int i = 0; i < 10; i++){
+            if(ccc[i] == cc) return true;
+        }
+        return false;
+    }
+    bool halvesAreAlike(string s) {
+        int s1 = 0, s2 = 0;
+        char ccc[10] = {'a', 'e', 'o', 'u', 'i', 'A', 'E', 'O', 'U', 'I'};
+        for(int i = 0; i < s.size() / 2; i++){
+            if(find(ccc, s[i])) s1 += 1;
+        }
+        for(int i = s.size() / 2; i < s.size(); i++){
+            if(find(ccc, s[i])) s2 += 1;
+        }
+        if(s1 == s2) return true;
+        return false;
+    }
+};
+
+79.
+class Solution {
+public:
+    bool count(int st, vector<vector<string>> path){
+        for(int i = 0; i < path.size(); i++){
+            if(path[i][0] == path[st][1]) return true;
+        }
+        return false;
+    }
+    string destCity(vector<vector<string>> path) {
+        int st = 0;
+        while(st < path.size()){
+            if(count(st, path) == 0) return path[st][1];
+            st += 1;
+        }
+        return "";
+    }
+};
+
+80.
+class Solution {
+public: 
+    int find(char cc[], char c){
+        for(int i = 0; i < 8; i++){
+            if(cc[i] == c) return i;
+        }
+        return -1;
+    }
+    bool squareIsWhite(string coordinates) {
+        char cc[8] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'};
+        int num = stoi(coordinates.substr(1, 1));
+        int c = find(cc, coordinates[0]);
+        if((num + c) % 2 == 1) return false;
+        return true;
+    }
+};
+
+81.
+class Solution {
+public:
+    void reverseString(vector<char>& s) {
+        int l = 0, r = s.size() - 1;
+        while(l < r){
+            char tmp = s[l];
+            s[l] = s[r];
+            s[r] = tmp;
+            l += 1;
+            r -= 1;
+        }
+    }
+};
+
+82.
+class Solution {
+public:
+    bool checkChar(string s){
+        for(int i = 0; i < s.size(); i++){
+            if(isalpha(s[i])) return true;
+        }
+        return false;
+    }
+    int count(string s){
+        if(checkChar(s)) return s.size();
+        return stoi(s);
+    }
+    int maximumValue(vector<string>& strs) {
+        int maxVal = -1;
+        for(int i = 0; i < strs.size(); i++){
+            maxVal = max(maxVal, count(strs[i]));
+        }
+        return maxVal;
+    }
+};
+
+83.
+class Solution {
+public:
+    bool isCircularSentence(string s) {
+        if(s[0] != s[s.size() - 1]) return false;
+        vector<int> space;
+        for(int i = 0; i < s.size(); i++){
+            if(s[i] == ' ') space.push_back(i);
+        }
+        for(int i = 0; i < space.size(); i++){
+            if(s[space[i] - 1] != s[space[i] + 1]) return false;
+        }
+        return true;
+    }
+};
+
+84.
+class Solution {
+public:
+    int minimizedStringLength(string s) {
+        set<char> c;
+        for(int i = 0; i < s.size(); i++) c.insert(s[i]);
+        return c.size();
+    }
+};
+
+85.
+class Solution {
+public:
+    bool check(string s){
+        for(int i = 0; i < s.size(); i++){
+            if(s[i] != 'a' and s[i] != 'e' and s[i] != 'o' and s[i] != 'u' and s[i] != 'i') return false;
+        }
+        set<char> ss;
+        for(int i = 0; i < s.size(); i++){
+            if(s[i] == 'a' || s[i] == 'e' || s[i] == 'o' || s[i] == 'u' || s[i] == 'i') ss.insert(s[i]);
+        }
+        if(ss.size() == 5) return true;
+        return false;
+    }
+    int countVowelSubstrings(string word) {
+        int count = 0, length = 5;
+        while(length <= word.size()){
+            for(int i = 0; i < word.size() - length + 1; i++){
+                string ss = word.substr(i, length);
+                if(check(ss)) count += 1;
+            }
+            length += 1;
+        }
+        return count;
+    }
+};
+
+86.
+class Solution {
+public:
+    int count(vector<char> cc, char c){
+        for(int i = 0; i < cc.size(); i++){
+            if(cc[i] == c) return i + 1;
+        }
+        return -1;
+    }
+    int titleToNumber(string title) {
+        int sum = 0;
+        vector<char> cc(1, 'A');
+        for(int i = 1; i < 26; i++){
+            char c = cc[cc.size() - 1] + 1;
+            cc.push_back(c);
+        }
+        for(int i = 0; i < title.size(); i++) sum = 26 * sum + count(cc, title[i]);
+        return sum;
+    }
+};
