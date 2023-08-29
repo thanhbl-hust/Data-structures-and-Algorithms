@@ -1524,3 +1524,138 @@ public:
         return score;
     }
 };
+
+94.
+class Solution {
+public:
+    int minimumSum(int num) {
+        int minVal = INT_MAX;
+        vector<int> aa;
+        while(num != 0){
+            aa.push_back(num % 10);
+            num /= 10;
+        }
+        sort(aa.begin(), aa.end());
+        //a b c d;
+        //-> ac + bd;
+        //-> bc + ad;
+        return 10 * (aa[0] + aa[1]) + aa[2] + aa[3];
+    }
+};
+
+95.
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+        sort(nums.begin(), nums.end());
+        int st = 0;
+        while(st <= nums.size() / 2){
+            if(nums[st] == nums[st + (nums.size() + 1) / 2 - 1]) return nums[st];
+            st += 1;
+        }
+        return -1;
+    }
+};
+
+96.
+class Solution {
+public:
+    int index(vector<char> cc, char c){
+        for(int i = 0; i < cc.size(); i++){
+            if(cc[i] == c) return i;
+        }
+        return -1;
+    }
+    char repeatedCharacter(string s) {
+        vector<int> count(26, 0);
+        vector<char> cc(1, 'a');
+        for(int i = 1; i < 26; i++){
+            char c = cc[cc.size() - 1] + 1;
+            cc.push_back(c);
+        }
+        int st = 0;
+        while(st < s.size()){
+            int coor = index(cc, s[st]);
+            count[coor] += 1;
+            if(count[coor] > 1) return cc[coor];
+            st += 1;
+        }
+        return 'a';
+    }
+};
+
+97.
+class Solution {
+public:
+    bool digitCount(string num) {
+        int st = 0;
+        while(st < num.size()){
+            string ss = to_string(st);
+            char cc = ss[0];
+            if(count(num.begin(), num.end(), cc) != stoi(num.substr(st, 1))) return false;
+            st += 1;
+        }
+        return true;
+    }
+};
+
+98.
+class Solution {
+public:
+    int minOperations(vector<int>& nums) {
+        int sum = 0;
+        for(int i = 1; i < nums.size(); i++){
+            if(nums[i] <= nums[i - 1]){
+                sum += nums[i - 1] + 1 - nums[i];
+                nums[i] = nums[i - 1] + 1;
+            }
+        }
+        return sum;
+    }
+};
+
+99.
+class Solution {
+public:
+    long long mySqrt(int x) {
+        long long cnt;
+        for(long long i = 0; i * i <= x; i++) cnt = i;
+        return cnt;
+    }
+};
+
+100.
+class Solution {
+    fun sum(num1: Int, num2: Int): Int {
+        return num1 + num2;
+    }
+}
+
+101.
+class Solution {
+public:
+    string mergeAlternately(string word1, string word2) {
+        string res = "";
+        int s1 = 0, s2 = 0;
+        while(s1 < word1.size() and s2 < word2.size()){
+            res += word1[s1]; res += word2[s2];
+            s1 += 1;
+            s2 += 1;
+        }
+        while(s1 < word1.size()){
+            res += word1[s1]; s1 += 1;
+        }
+        while(s2 < word2.size()){
+            res += word2[s2]; s2 += 1;
+        }
+        return res;
+    }
+};
+
+102.
+class Solution {
+public:
+    int percentageLetter(string s, char letter) {
+        return (int) ((100 * count(s.begin(), s.end(), letter)) / s.size());
+    }
+};
