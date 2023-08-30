@@ -1,3 +1,4 @@
+//divide conquer
 #include<bits/stdc++.h>
 
 using namespace std;
@@ -8,9 +9,9 @@ int binarySearch(vector<int> arr, int index, int l, int r){
 
         if(arr[mid] == index) return mid;
 
-        if(arr[mid] > index) return binarySearch(arr, index, l, mid - 1);
-        
-        return binarySearch(arr, index, mid + 1, r);
+        if(arr[mid] > index) return binarySearch(arr, index, l, mid - 1); //check left
+
+        return binarySearch(arr, index, mid + 1, r); //check right;
     }
     return -1;
 }
