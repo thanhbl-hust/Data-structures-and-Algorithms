@@ -10076,6 +10076,19 @@ void solve(){
     // d -= min(b, min(c, d));
     // int n2 = min(a, d) * e;
     // cout << max(m1 + m2, n1 + n2);
+    // bool found = false;
+    // int n, k; string s; cin >> n >> k >> s;
+    // vector<char> cc(1, 'a');
+    // for(int i = 1; i < 26; i++){
+    //     char c = cc[cc.size() - 1] + 1; cc.push_back(c);
+    // }
+    // for(int i = 0; i < cc.size(); i++){
+    //     if(count(s.begin(), s.end(), cc[i]) > k){
+    //         found = true;
+    //         break;
+    //     }
+    // }
+    // cout << (found == true ? "NO" : "YES") << endl;
 }
 
 int main(){

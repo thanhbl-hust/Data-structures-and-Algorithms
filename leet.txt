@@ -1659,3 +1659,56 @@ public:
         return (int) ((100 * count(s.begin(), s.end(), letter)) / s.size());
     }
 };
+
+103.
+class Solution {
+public:
+    bool checkString(string s) {
+        for(int i = 0; i < s.size(); i++){
+            if(s[i] == 'b' and i + 1 < s.size() and s[i + 1] != 'b') return false;
+        }
+        return true;
+    }
+};
+
+104.
+class Solution {
+public:
+    int countPrefixes(vector<string>& words, string s) {
+        int count = 0;
+        for(int i = 0; i < words.size(); i++){
+            if(words[i] == s.substr(0, words[i].size())) count += 1;
+        }
+        return count;
+    }
+};
+
+105.
+class Solution {
+public:
+    int find(vector<char> cc, char c){
+        for(int i = 0; i < cc.size(); i++){
+            if(cc[i] == c) return i;
+        }
+        return -1;
+    }
+    int minTimeToType(string word) {
+        vector<char> character(1, 'a');
+        for(int i = 1; i < 26; i++){
+            char cc = character[character.size() - 1] + 1;
+            character.push_back(cc);
+        }
+        int res = 0;
+        res += word.size();
+        res += min(find(character, word[0]), 26 - find(character, word[0]));
+        for(int i = 1; i < word.size(); i++){
+            int root = find(character, word[i - 1]);
+            int tar  = find(character, word[i]);
+            int w1 = abs(root - tar);
+            int w2 = root + (26 - tar);
+            int w3 = (25 - root) + (tar + 1);
+            res += min(w1, min(w2, w3));
+        }
+        return res;
+    }
+};
