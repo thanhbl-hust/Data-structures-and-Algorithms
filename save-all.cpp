@@ -1068,6 +1068,20 @@ NEW KNOWLEDGE
 // 	if(n == a[0] || n == a[1]) return true;
 // 	return false;
 // }
+// int check(string s){
+//     int cnt = 0;
+//     for(int i = 0; i < s.size(); i++){
+//         if(s[i] == toupper(s[i])) cnt += 1;
+//     }
+//     if(cnt == s.size()) return cnt;
+//     if(cnt == s.size() - 1 and s[0] == tolower(s[0])) return cnt;
+//     return -1;
+// }
+// string change(string s){
+//     for(int i = 0; i < s.size(); i++) s[i] = tolower(s[i]);
+//     if(check(s) == s.size() - 1) s[0] = toupper(s[0]);
+//     return s;
+// }
 // void show(int length, vector<int> a){
 // 	cout << (a[0] == 1 ? "YES" : "NO") << endl;
 // }
@@ -10089,6 +10103,47 @@ void solve(){
     //     }
     // }
     // cout << (found == true ? "NO" : "YES") << endl;
+    // int t; cin >> t;
+    // while(t--){
+    //     int length; cin >> length; vector<int> a(length);
+    //     for(int i = 0; i < length; i++) cin >> a[i];
+    //     vector<int> l; vector<int> c;
+    //     int st = 0;
+    //     bool found = false;
+    //     while(st < length){
+    //         if(a[st] % 2 == 0){
+    //             c.push_back(st + 1);
+    //         }else l.push_back(st + 1);
+    //         st += 1;
+    //         if(l.size() == 3 || (l.size() >= 1 and c.size() >= 2)){
+    //             found = true;
+    //             cout << "YES" << endl;
+    //             if(l.size() == 3){
+    //                 cout << l[l.size() - 1] << " " << l[l.size() - 2] << " " << l[l.size() - 3] << endl;
+    //             }else cout << l[l.size() - 1] << " " << c[c.size() - 1] << " " << c[c.size() - 2 ] << endl;
+    //             break;
+    //         }
+    //     }
+    //     if(found == false) cout << "NO" << endl;
+    // }
+    // vector<char> cc(1, 'a');
+    // for(int i = 1; i < 26; i++){
+    //     char c = cc[cc.size() - 1] + 1;
+    //     cc.push_back(c);
+    // }
+    // int n, k; cin >> n >> k;
+    // int loop = n / k;
+    // for(int i = 0; i < loop; i++){
+    //     for(int j = 0; j < k; j++){
+    //         cout << cc[j];
+    //     }
+    // }
+    // n -= loop*k;
+    // for(int i = 0; i < n; i++) cout << cc[i];
+    // string s; cin >> s;
+    // if(check(s) != -1){
+    //     cout << change(s) << endl;
+    // }else cout << s << endl;
 }
 
 int main(){
