@@ -4,7 +4,11 @@ using namespace std;
 
 vector<vector<int>> generatePermutations(vector<int>& nums) {
 
+    sort(nums.begin(), nums.end());
+
     vector<vector<int>> permutations;
+    
+    permutations.push_back(nums);
 
     sort(nums.begin(), nums.end());
 
@@ -15,7 +19,7 @@ vector<vector<int>> generatePermutations(vector<int>& nums) {
 
 int main() {
 
-    vector<int> nums = {1, 2, 3, 4};
+    vector<int> nums = {3, 2, 1};
 
     vector<vector<int>> permutations = generatePermutations(nums);
     

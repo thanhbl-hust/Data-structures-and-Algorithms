@@ -4,7 +4,6 @@
   ** CS - SOICT/HUST **
 */
 
-
 #include<bits/stdc++.h>
 using namespace std;
 
