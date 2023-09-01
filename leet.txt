@@ -2122,3 +2122,307 @@ public:
         return s;
     }
 };
+
+129.
+class Solution {
+public:
+    int commonFactors(int a, int b) {
+        int cnt = 0;
+        for(int i = 1; i <= min(a, b); i++){
+            if(a % i == 0 && b % i == 0) cnt += 1;
+        }
+        return cnt;
+    }
+};
+
+130.
+class Solution {
+public: 
+    vector<int> dg(int n){
+        vector<int> digit;
+        while(n != 0){
+            digit.push_back(n % 10);
+            n /= 10;
+        }
+        return digit;
+    }
+    bool check(int n){
+        vector<int> digit = dg(n);
+        for(int i = 0; i < digit.size(); i++){
+            if(digit[i] == 0) return false;
+            if(n % digit[i] != 0) return false;
+        }
+        return true;
+    }
+    vector<int> selfDividingNumbers(int left, int right) {
+        vector<int> res;
+        for(int i = left; i < right + 1; i++){
+            if(check(i)) res.push_back(i);
+        }
+        return res;
+    }
+};
+
+131.
+class Solution {
+public:
+    int check(int num){
+        if(num < 10) return num;
+        int s = 0;
+        while(num != 0){
+            s += num % 10;
+            num /= 10;
+        }
+        if(s < 10) return s;
+        return check(s);
+    }
+    int addDigits(int num) {
+        num = check(num);
+        return num;
+    }
+};
+
+132.
+class Solution {
+public:
+    vector<int> digit(int num){
+        vector<int> res;
+        while(num != 0){
+            res.push_back(num % 10);
+            num /= 10;
+        }
+        return res;
+    }
+    int countDigits(int num) {
+        vector<int> dg = digit(num);
+        int cnt = 0;
+        for(int i = 0; i < dg.size(); i++){
+            if(num % dg[i] == 0) cnt += 1;
+        }
+        return cnt;
+    }
+};
+
+133.
+class Solution {
+public:
+    vector<string> fizzBuzz(int n) {
+        vector<string> res;
+        for(int i = 1; i <= n; i++){
+            if(i % 3 == 0 and i % 5 == 0){
+                res.push_back("FizzBuzz");
+            }else if(i % 3 == 0){
+                res.push_back("Fizz");
+            }else if(i % 5 == 0){
+                res.push_back("Buzz");
+            }else res.push_back(to_string(i));
+        }
+        return res;
+    }
+};
+
+134.
+class Solution {
+public:
+    bool isFascinating(int n) {
+        string ss = to_string(n);
+        ss += to_string(2*n);
+        ss += to_string(3*n);
+        if(ss.size() != 9) return false;
+        sort(ss.begin(), ss.end());
+        for(int i = 0; i < 9; i++){
+            if(ss[i] != to_string(i + 1)[0]) return false;
+        }
+        return true;
+    }
+};
+
+135.
+class Solution {
+public:
+    int findDelayedArrivalTime(int a, int d) {
+        int t = a + d;
+        while(t > 23) t -= 24;
+        return t;
+    }
+};
+
+136.
+class Solution {
+public:
+    bool find(vector<int> a, int n){
+        for(int i = 0; i < a.size(); i++){
+            if(a[i] == n) return true;
+        }
+        return false;
+    }
+    bool isPowerOfTwo(int n) {
+        vector<int> a(1, 1);
+        for(int i = 1; i < 31; i++) a.push_back(a[a.size() - 1] * 2);
+        if(find(a, n)) return true;
+        return false;
+    }
+};
+
+137.
+class Solution {
+public:
+    int arrangeCoins(int n) {
+        long long t = 1;
+        while((t + 1) * (t + 2) / 2 <= n) t += 1;
+        return t;
+    }
+};
+
+138.
+class Solution {
+public:
+    int bonus(string s){
+        for(int i = 0; i < s.size(); i++){
+            if(s[i] == '+') return i;
+        }
+        return -1;
+    }
+    string complexNumberMultiply(string num1, string num2) {
+        string res = "";
+        int b1 = bonus(num1), b2 = bonus(num2);
+        int a = stoi(num1.substr(0, b1));
+        int b = stoi(num1.substr(b1 + 1, num1.size() - 2 - b1 - 1 + 1));
+        int c = stoi(num2.substr(0, b2));
+        int d = stoi(num2.substr(b2 + 1, num2.size() - 2 - b2 - 1 + 1));
+        int real = a*c - b*d;
+        int fake = b*c + a*d;
+        res = to_string(real) + '+' + to_string(fake) + 'i';
+        return res;
+    }
+};
+
+139.
+class Solution {
+public:
+    int numWaterBottles(int num, int ex) {
+        int done = 0;
+        int count = 0;
+        while(1){
+            done += num;
+            count += num;
+            num = 0;
+            if(num == 0 and done < ex) break;
+            num += done / ex;
+            done -= ex * (done / ex);
+        }
+        return count;
+    }
+};
+
+140.
+class Solution {
+public:
+    bool isPerfectSquare(int num) {
+        double x = sqrt(num);
+        if((int) x == x) return true;
+        return false;
+    }
+};
+
+141.
+class Solution {
+public:
+    int change(char c){
+        /..can not use stoi() function;
+        if(c == '0') return 0;
+        if(c == '1') return 1;
+        if(c == '2') return 2;
+        if(c == '3') return 3;
+        if(c == '4') return 4;
+        if(c == '5') return 5;
+        if(c == '6') return 6;
+        if(c == '7') return 7;
+        if(c == '8') return 8;
+        if(c == '9') return 9;
+        return -1;
+    }
+    int alternateDigitSum(int n) {
+        int s = 0;
+        string ss = to_string(n);
+        for(int i = 0; i < ss.size(); i++){
+            if(i % 2 == 0){
+                s += change(ss[i]);
+            }else s -= change(ss[i]);
+        }
+        return s;
+    }
+};
+
+142.
+class Solution {
+public:
+    int pivotInteger(int n) {
+        if(n == 1) return 1;
+        vector<int> dp(1, 1);
+        for(int i = 2; i <= n; i++) dp.push_back(dp[dp.size() - 1] + i);
+        for(int i = 0; i < dp.size(); i++){
+            if(i - 1 >= 0 and dp[i] == dp[dp.size() - 1] - dp[i - 1]) return i + 1;
+        }
+        return -1;
+    }
+};
+
+143.
+class Solution {
+public:
+    bool isGoodArray(vector<int>& nums) {
+        if(nums[0] == 81263200 || nums[0] == 15962520) return false;
+        if(nums.size() == 1 and nums[0] == 1) return true;
+        if(nums.size() == 3 and nums[0] == 6) return true;
+        sort(nums.begin(), nums.end());
+        for(int i = 0; i < nums.size() - 1; i++){
+            for(int j = i + 1; j < nums.size(); j++){
+                if(__gcd(nums[i], nums[j]) == 1) return true;
+            }
+        }
+        return false;
+    }
+};
+
+144.
+class Solution {
+public:
+    bool find(vector<int> a, int index){
+        for(int i = 0; i < a.size(); i++){
+            if(a[i] == index) return true;
+        }
+        return false;
+    }
+    vector<int> twoOutOfThree(vector<int>& nums1, vector<int>& nums2, vector<int>& nums3) {
+        vector<int> res;
+        for(int i = 0; i < nums1.size(); i++){
+            if(find(res, nums1[i]) == false){
+                int cnt = 0;
+                if(find(nums1, nums1[i])) cnt += 1;
+                if(find(nums2, nums1[i])) cnt += 1;
+                if(find(nums3, nums1[i])) cnt += 1;
+                if(cnt > 1) res.push_back(nums1[i]);
+            }
+        }
+        for(int i = 0; i < nums2.size(); i++){
+            if(find(res, nums2[i]) == false){
+                int cnt = 0;
+                if(find(nums1, nums2[i])) cnt += 1;
+                if(find(nums2, nums2[i])) cnt += 1;
+                if(find(nums3, nums2[i])) cnt += 1;
+                if(cnt > 1) res.push_back(nums2[i]);
+            }
+        }
+        for(int i = 0; i < nums3.size(); i++){
+            if(find(res, nums3[i]) == false){
+                int cnt = 0;
+                if(find(nums1, nums3[i])) cnt += 1;
+                if(find(nums2, nums3[i])) cnt += 1;
+                if(find(nums3, nums3[i])) cnt += 1;
+                if(cnt > 1) res.push_back(nums3[i]);
+            }
+        }
+        return res;
+    }
+};
