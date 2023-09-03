@@ -107,6 +107,36 @@ NEW KNOWLEDGE
 //     }
 //     return true;
 // }
+// bool check(string ss){
+//     int l = 0, s = 0, dg = 0;
+//     if(ss.size() < 5) return false;
+//     for(int i = 0; i < ss.size(); i++){
+//         if(isalpha(ss[i])){
+//             if(ss[i] == toupper(ss[i])){
+//                 l += 1;
+//             }else s += 1;
+//         }
+//         if(isdigit(ss[i]) == true) dg += 1;
+//     }
+//     //cout << l << " " << s << " " << dg << endl;
+//     if(l >= 1 and s >= 1 and dg >= 1) return true;
+//     return false;
+// }
+// int counting(vector<int> a, int n){
+//     int cnt = 0;
+//     for(int i = 0; i < n; i++){
+//         if(a[i] == 2) cnt += 1;
+//     }
+//     return cnt;
+// }
+// int check(vector<int> a){
+//     int al = count(a.begin(), a.end(), 2);
+//     for(int i = 1; i < a.size(); i++){
+//         int l = counting(a, i);
+//         if(l == al - l) return i;
+//     }
+//     return -1;
+// }
 // void show(int index){
 //     if(index < 10){
 //         cout << index << endl;
@@ -315,6 +345,24 @@ NEW KNOWLEDGE
 //         }else cout << "YES" << endl;
 //     }
 // }
+// int mmm(string s){
+//     for(int i = 0; i < s.size(); i++){
+//         if(s[i] == '-') return i;
+//     }
+//     return -1;
+// }
+// int rrr(string s){
+//     for(int i = 0; i < s.size(); i++){
+//         if(s[i] == ':') return i;
+//     }
+//     return -1;
+// }
+// int find(vector<string> team, string t){
+//     for(int i = 0; i < team.size(); i++){
+//         if(team[i] == t) return i;
+//     }
+//     return -1;
+// }
 // int gcd(int a, int b){
 //     return b == 0 ? a : gcd(b, a % b);   
 // }
@@ -468,6 +516,28 @@ NEW KNOWLEDGE
 //         if(2 * small >= large) return 4 * small * small;
 //         return large * large;
 //     }
+// }
+// bool check(int a[], int length){
+//     int n25 = 0, n50 = 0;
+//     int st = 0;
+//     while(st < length){
+//         if(a[st] == 25){
+//             n25 += 1;
+//         }else if(a[st] == 50){
+//             if(n25 == 0) return false;
+//             n25 -= 1;
+//             n50 += 1;
+//         }else{
+//             if(n50 >= 1 and n25 >= 1){
+//                 n50 -= 1;
+//                 n25 -= 1;
+//             }else if(n25 >= 3){
+//                 n25 -= 3;
+//             }else return false;
+//         }
+//         st += 1;
+//     }
+//     return true;
 // }
 // long long solution(int a[50], int b[50], int m){
 //     int mina = *min_element(a, a + m);
@@ -1662,6 +1732,13 @@ NEW KNOWLEDGE
 // 		}
 // 		if(c == 1) break;
 // 	}
+// char findmax(string s){
+//     int maxc = s[0];
+//     for(int i = 1; i < s.size(); i++){
+//         if(s[i] > maxc) maxc = s[i];
+//     }
+//     return maxc;
+// }
 // 	if(c == 0){
 // 		cout << "YES" << endl;
 // 		for(int i = 0; i < n; i++) cout << res[i] << endl;
@@ -3067,7 +3144,7 @@ NEW KNOWLEDGE
 //     }
 //     return true;
 // }
-// void run(){
+//void run(){
     // int t; cin >> t;
     // if(t % 2 == 0 and t > 2){
     //     cout << "YES" << endl;
@@ -3851,14 +3928,14 @@ NEW KNOWLEDGE
     //     }
     //     cout << solution(vec) << endl;
     // }
-//}
-// void show(int n){
-//     if(n % 2 == 0){
-//         cout << n / 2 << endl;
-//         for(int i = 0; 2 * i < n; i++){
-//             cout << 2 << " ";
-//         }
-//         cout << endl;
+    //}
+    // void show(int n){
+    //     if(n % 2 == 0){ 
+    //         cout << n / 2 << endl;
+    //         for(int i = 0; 2 * i < n; i++){
+    //             cout << 2 << " ";
+    //         }
+    //         cout << endl;
 //     }else{
 //         // n le
 //         cout << n / 2 << endl;
@@ -4023,12 +4100,8 @@ NEW KNOWLEDGE
 //         if(a[i] == index) return true;
 //     }
 //     return false;
-// }
-
-
-
-void solve(){
-
+//}
+//void solve(){
     // int n, d, count = 0; cin >> n >> d;
     // int a[n];
     // for(int i = 0; i < n; i++) cin >> a[i];
@@ -10144,6 +10217,74 @@ void solve(){
     // if(check(s) != -1){
     //     cout << change(s) << endl;
     // }else cout << s << endl;
+    // string s; cin >> s; char cc = findmax(s);
+    // for(int i = 0; i < count(s.begin(), s.end(), cc); i++) cout << cc;
+    // int num; cin >> num;
+    // vector<string> team(num); for(int i = 0; i < num; i++) cin >> team[i];
+    // vector<int> goals(num, 0);
+    // vector<int> receive(num, 0);
+    // vector<int> point(num, 0);
+    // for(int i = 0; i < (num * (num - 1)) / 2; i++){
+    //     string match, res; cin >> match >> res;
+    //     int mm = mmm(match), rr = rrr(res);
+    //     string teamA = match.substr(0, mm);
+    //     string teamB = match.substr(mm + 1, match.size() - mm - 1);
+    //     int ga = stoi(res.substr(0, rr));
+    //     int gb = stoi(res.substr(rr + 1, res.size() - rr - 1));
+    //     int aa = find(team, teamA);
+    //     int bb = find(team, teamB);
+    //     goals[aa] += ga;
+    //     goals[bb] += gb;
+    //     receive[aa] += gb;
+    //     receive[bb] += ga;
+    //     if(ga > gb){
+    //         point[aa] += 3;
+    //     }else if(gb > ga){
+    //         point[bb] += 3;
+    //     }else{
+    //         point[aa] += 1;
+    //         point[bb] += 1;
+    //     }
+    // }
+    // for(int i = 0; i < num; i++){
+    //     for(int j = 0; j < num - i - 1; j++){
+    //         if(point[j] < point[j + 1]){
+    //             swap(point[j], point[j + 1]);
+    //             swap(team[j], team[j + 1]);
+    //             swap(goals[j], goals[j + 1]);
+    //             swap(receive[j], receive[j + 1]);
+    //         }else if(point[j] == point[j + 1]){
+    //             if(goals[j] - receive[j] < goals[j + 1] - receive[j + 1]){
+    //                 swap(point[j], point[j + 1]);
+    //                 swap(team[j], team[j + 1]);
+    //                 swap(goals[j], goals[j + 1]);
+    //                 swap(receive[j], receive[j + 1]);
+    //             }else if(goals[j] - receive[j] == goals[j + 1] - receive[j + 1]){
+    //                 if(goals[j] < goals[j + 1]){
+    //                     swap(point[j], point[j + 1]);
+    //                     swap(team[j], team[j + 1]);
+    //                     swap(goals[j], goals[j + 1]);
+    //                     swap(receive[j], receive[j + 1]);
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+    // sort(team.begin(), team.begin() + team.size() / 2);
+    // for(int i = 0; i < team.size() / 2; i++) cout << team[i] << endl;
+    // int t; cin >> t; int a[t]; for(int i = 0; i < t; i++) cin >> a[i];
+    // cout << (check(a, t) == true ? "YES" : "NO") << endl;
+    // int t; cin >> t;
+    // while(t--){
+    //     int length; cin >> length; vector<int> a(length);
+    //     for(int i = 0; i < length; i++) cin >> a[i];
+    //     cout << check(a) << endl;
+    // }
+    //string s; cin >> s; cout << (check(s) == true ? "Correct" : "Too weak") << endl;
+//}
+
+void solution(){
+
 }
 
 int main(){
@@ -10151,8 +10292,9 @@ int main(){
     ios_base::sync_with_stdio(false); cin.tie(0); cout.tie(0);
 
     //run();
+    //solve();
 
-    solve();
+    solution();
 
     return 0;
 }

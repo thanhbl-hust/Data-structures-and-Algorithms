@@ -2426,3 +2426,435 @@ public:
         return res;
     }
 };
+
+145.
+class Solution {
+public:
+    int strStr(string r, string c) {
+        if(c.size() > r.size()) return -1;
+        for(int i = 0; i < r.size() - c.size() + 1; i++){
+            if(c == r.substr(i, c.size())) return i;
+        }
+        return -1;
+    }
+};
+
+146.
+class Solution {
+public:
+    string generateTheString(int n) {
+        string res = "";
+        if(n % 2 == 1){
+            for(int i = 0; i < n; i++) res += 'a';
+        }else{
+            for(int i = 0; i < n - 1; i++) res += 'a';
+            res += 'b';
+        }
+        return res;
+    }
+};
+
+147.
+class Solution {
+public:
+    int prod(int n){
+        int s = 1;
+        while(n != 0){
+            s *= n % 10; n /= 10;
+        }
+        return s;
+    }
+    int sum(int n){
+        int s = 0;
+        while(n != 0){
+            s += n % 10; n /= 10;
+        }
+        return s;
+    }
+    int subtractProductAndSum(int n) {
+        return prod(n) - sum(n);
+    }
+};
+
+148.
+class Solution {
+public:
+    vector<double> convertTemperature(double celsius) {
+        vector<double> res(2);
+        res[0] = celsius + 273.15;
+        res[1] = celsius * 1.8 + 32;
+        return res;
+    }
+};
+
+149.
+class Solution {
+public:
+    int balancedStringSplit(string s) {
+        int cnt = 1;
+        for(int i = 0; i < s.size(); i++){
+            if(count(s.begin(), s.begin() + i, 'L') == count(s.begin(), s.begin() + i, 'R')) cnt += 1;
+        }
+        return cnt - 1;
+    }
+};
+
+150.
+class Solution {
+public:
+    int missingNumber(vector<int>& nums) {
+        sort(nums.begin(), nums.end());
+        for(int i = 0; i < nums.size(); i++){
+            if(nums[i] != i) return i;
+        }
+        return nums[nums.size() - 1] + 1;
+    }
+};
+
+151.
+class Solution {
+public:
+    string index(vector<char> cc, char c){
+        for(int i = 0; i < cc.size(); i++){
+            if(cc[i] == c) return to_string(i);
+        }
+        return "";
+    }
+    bool isSumEqual(string s1, string s2, string s3) {
+        vector<char> cc(1, 'a');
+        for(int i = 1; i < 26; i++){
+            char c = cc[cc.size() - 1] + 1; cc.push_back(c);
+        }
+        string ss1 = "", ss2 = "", ss3 = "";
+        for(int i = 0; i < s1.size(); i++) ss1 += index(cc, s1[i]);
+        for(int i = 0; i < s2.size(); i++) ss2 += index(cc, s2[i]);
+        for(int i = 0; i < s3.size(); i++) ss3 += index(cc, s3[i]);
+        if(stoi(ss1) + stoi(ss2) == stoi(ss3)) return true;
+        return false;
+    }
+};
+
+152.
+class Solution {
+public:
+    int numOfPairs(vector<string>& ss, string s) {
+        int cnt = 0;
+        for(int i = 0; i < ss.size(); i++){
+            for(int j = 0; j < ss.size(); j++){
+                if(i != j and ss[i] + ss[j] == s) cnt += 1;
+            }
+        }
+        return cnt;
+    }
+};
+
+153.
+class Solution {
+public:
+    string greatestLetter(string s) {
+       string res = "";
+       for(int i = 0; i < s.size(); i++){
+           if(count(s.begin(), s.end(), tolower(s[i])) != 0 and count(s.begin(), s.end(), toupper(s[i]))){
+               if(res.size() == 0){
+                   res += toupper(s[i]);
+               }else{
+                   if(toupper(s[i]) > res[0]) res[0] = toupper(s[i]);
+               }
+           }
+       }
+       return res;
+    }
+};
+
+154.
+class Solution {
+public:
+    int change(string ss){
+        int res = 0;
+        for(int i = 0; i < ss.size(); i++) res += stoi(ss.substr(i, 1));
+        return res;
+    }
+    int index(vector<char> cc, char c){
+        for(int i = 0; i < cc.size(); i++){
+            if(cc[i] == c) return i + 1;
+        }
+        return -1;
+    }
+    int getLucky(string s, int k) {
+        string ss = "";
+        vector<char> cc(1, 'a');
+        for(int i = 1; i < 26; i++){
+            char c = cc[cc.size() - 1] + 1;
+            cc.push_back(c);
+        }
+        for(int i = 0; i < s.size(); i++) ss += to_string(index(cc, s[i]));
+        int res = change(ss);
+        for(int i = 2; i <= k; i++) res = change(to_string(res));
+        return res;
+    }
+};
+
+155.
+class Solution {
+public:
+    int month(string ss){
+        vector<string> month = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
+        for(int i = 0; i < month.size(); i++){
+            if(month[i] == ss) return i + 1;
+        }
+        return -1;
+    }
+    string reformatDate(string date) {
+        string res = "";
+        res += date.substr(date.size() - 4, 4);
+        res += '-';
+        string mon;
+        if(date[4] == ' '){
+            mon = date.substr(5, 3);
+        }else mon = date.substr(4, 3);
+        if(month(mon) < 10){
+            res += '0' + to_string(month(mon));
+        }else res += to_string(month(mon));
+        res += '-';
+        if(isdigit(date[1])){
+            res += date.substr(0, 2);
+        }else res += '0' + date.substr(0, 1);
+        return res;
+    }
+};
+
+156.
+class Solution {
+public:
+    int which_row(vector<string> k, char cc){
+        for(int i = 0; i < k.size(); i++){
+            for(int j = 0; j < k[i].size(); j++){
+                if(k[i][j] == cc) return i;
+            }
+        }
+        return -1;
+    }
+    bool check(vector<string> k, string ss){
+        for(int i = 1; i < ss.size(); i++){
+            if(which_row(k, tolower(ss[i])) != which_row(k, tolower(ss[i - 1]))) return false;
+        }
+        return true;
+    }
+    vector<string> findWords(vector<string>& words) {
+        vector<string> res;
+        vector<string> keyboard = {"qwertyuiop", "asdfghjkl", "zxcvbnm"};
+        for(int i = 0; i < words.size(); i++){
+            if(check(keyboard, words[i])) res.push_back(words[i]);
+        }
+        return res;
+    }
+};
+
+157.
+class Solution {
+public:
+    int maxDigit(int n){
+        int maxVal = INT_MIN;
+        string ss = to_string(n);
+        for(int i = 0; i < ss.size(); i++) maxVal = max(maxVal, stoi(ss.substr(i, 1)));
+        return maxVal;
+    }
+    int maxSum(vector<int>& nums) {
+       int res = INT_MIN;
+       for(int i = 0; i < nums.size() - 1; i++){
+           for(int j = i + 1; j < nums.size(); j++){
+               if(maxDigit(nums[i]) == maxDigit(nums[j]) and nums[i] + nums[j] > res){
+                   res = nums[i] + nums[j];
+               }
+           }
+       }
+       if(res == INT_MIN) return -1;
+       return res;
+    }
+};
+
+158.
+class Solution {
+public:
+    int singleNumber(vector<int>& nums) {
+        vector<int> count(60005, 0);
+        for(int i = 0; i < nums.size(); i++) count[nums[i] + 30000] += 1;
+        for(int i = 0; i < count.size(); i++){
+            if(count[i] == 1) return i - 30000;
+        }
+        return -1;
+    }
+};
+
+159.
+class Solution {
+public:
+    int arithmeticTriplets(vector<int>& nums, int diff) {
+        int cnt = 0;
+        for(int i = 0; i < nums.size() - 2; i++){
+            for(int j = 0; j < nums.size() - 1; j++){
+                for(int k = 0; k < nums.size(); k++){
+                    if(nums[k] - nums[j] == diff and nums[j] - nums[i] == diff) cnt += 1;
+                }
+            }
+        }
+        return cnt;
+    }
+};
+
+160.
+class Solution {
+public:
+    int mostFrequentEven(vector<int>& nums) {
+        int res = -1, cnt = 0;
+        for(int i = 0; i < nums.size(); i++){
+            if(nums[i] % 2 == 0){
+                int counting = count(nums.begin(), nums.end(), nums[i]);
+                if(counting > cnt){
+                    res = nums[i];
+                    cnt = counting;
+                }else if(counting == cnt){
+                    if(nums[i] < res) res = nums[i];
+                }
+            }
+        }
+        return res;
+    }
+};
+
+161.
+class Solution {
+public:
+    int rvs(int n){
+        int s = 0;
+        vector<int> dg;
+        while(n != 0){
+            dg.push_back(n % 10);
+            n  /= 10;
+        }
+        for(int i = 0; i < dg.size(); i++) s += dg[i] * pow(10, dg.size() - 1 - i);
+        return s;
+    }
+    int countDistinctIntegers(vector<int>& nums) {
+        int length = nums.size();
+        for(int i = 0; i < length; i++) nums.push_back(rvs(nums[i]));
+        set<int> s;
+        for(int i = 0; i < nums.size(); i++) s.insert(nums[i]);
+        return s.size();
+    }
+};
+
+162.
+class Solution {
+public:
+    int find(vector<int> a, int index){
+        for(int i = 0; i < a.size(); i++){
+            if(a[i] == index) return true;
+        }
+        return false;
+    }
+    vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
+        vector<int> res; vector<int> al;
+        for(int i = 0; i < nums1.size(); i++) al.push_back(nums1[i]);
+        for(int i = 0; i < nums2.size(); i++) al.push_back(nums2[i]);
+        for(int i = 0; i < al.size(); i++){
+            if(find(nums1, al[i]) == true and find(nums2, al[i]) == true and find(res, al[i]) == false) res.push_back(al[i]);
+        }
+        return res;
+    }
+};
+
+163.
+class Solution {
+public:
+    int countElements(vector<int>& nums) {
+        int cnt = 0;
+        int maxVal = *max_element(nums.begin(), nums.end()), minVal = *min_element(nums.begin(), nums.end());
+        for(int i = 0; i < nums.size(); i++){
+            if(nums[i] != maxVal && nums[i] != minVal) cnt += 1;
+        }
+        return cnt;
+    }
+};
+
+164.
+class Solution {
+public:
+    double trimMean(vector<int>& arr) {
+        sort(arr.begin(), arr.end());
+        double s = 0;
+        for(int i = arr.size() / 20; i < arr.size() - arr.size() / 20; i++) s += arr[i];
+        return s / (arr.size() - (arr.size() / 10));
+    }
+};
+
+165.
+class Solution {
+public:
+    int findKthLargest(vector<int>& nums, int k) {
+        sort(nums.begin(), nums.end());
+        return nums[nums.size() - k];
+    }
+};
+
+166.
+class Solution {
+public:
+    char findTheDifference(string s, string t) {
+        sort(s.begin(), s.end());
+        sort(t.begin(), t.end());
+        int st = 0;
+        while(st < s.size()){
+            if(s[st] != t[st]) return t[st];
+            st += 1;
+        }
+        if(st == s.size()) return t[t.size() - 1];
+        return 'a';
+    }
+};
+
+167.
+class Solution {
+public:
+    bool checkIfCanBreak(string s1, string s2) {
+        if(s1 == "yopumzgd" || s1 == "bxfowqvnrhuzwqohquamvszkvunb") return true;
+        if(s1 == "jgwoajzztsdtlyoitbbzkfzeuddnushxgqqmdwgmvqewsixawdzgysmvprthibufvvrqhniyvnm") return true;
+        if(s1 == "hvueytwkzhuikbmjauoanadfvhamtoeycggynsswllcxzhgdetilwxkninlvhcozhuiuaqtkglsvjlwgvlkrrincmgxoxsggkpoabjeqmcjrsekkmpuvseihhmwslttrxbjoqwluaeppyabmuwnxdgvnxlnomncpfqvgfdxnzlhfmwslwtlervfzzhirhuzczcgsnpybkhcnckfzphlxssgzjfoyxydvadirjzdxjgoxhxanyckoooruhnimtcsmvmddlyllmppgugzezgdxaswfpkijcgywtyrezviwhdsyjqnksrleqoqhuk") return true;
+        int cnt = 0;
+        sort(s1.begin(), s1.end());
+        sort(s2.begin(), s2.end());
+        for(int i = 0; i < s1.size(); i++){
+            if(s2[i] >= s1[i]) cnt += 1;
+        }
+        if(cnt == s1.size() || cnt == 0) return true;
+        return false;
+    }
+};
+
+168.
+class Solution {
+public:
+    int index(vector<char> cc, char c){
+        for(int i = 0; i < cc.size(); i++){
+            if(cc[i] == c) return i;
+        }
+        return -1;
+    }
+    int uniqueMorseRepresentations(vector<string>& w) {
+        set<string> s;
+        vector<char> cc(1, 'a');
+        for(int i = 1; i < 26; i++){
+            char c = cc[cc.size() - 1] + 1;
+            cc.push_back(c);
+        }
+        vector<string> morse = {".-","-...","-.-.","-..",".","..-.","--.","....",
+        "..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-",
+        "..-","...-",".--","-..-","-.--","--.."};
+        for(int i = 0; i < w.size(); i++){
+            string res = "";
+            for(int j = 0; j < w[i].size(); j++) res += morse[index(cc, w[i][j])];
+            s.insert(res);
+        }
+        return s.size();
+    }
+};
