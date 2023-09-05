@@ -1768,6 +1768,12 @@ NEW KNOWLEDGE
 // 		es1 -= 1;
 // 		es2 -= 1;
 // 	}
+// bool check(long long n, long long k){
+//     if(n % 2 == 0) return true;
+//     if(n % 2 == k % 2) return true;
+//     if(n % 2 == 1 and k % 2 == 0) return false;
+//     return false;
+// }
 // 	if(length == 0) return s1.size() + s2.size();
 // 	return s1.size() + s2.size() - 2 * length;
 // }
@@ -10282,9 +10288,131 @@ NEW KNOWLEDGE
     // }
     //string s; cin >> s; cout << (check(s) == true ? "Correct" : "Too weak") << endl;
 //}
+// bool find(vector<int> a, int index){
+//     for(int i = 0; i < a.size(); i++){
+//         if(a[i] == index) return false;
+//     }
+//     return true;
+// }
 
 void solution(){
-
+    
+    // int n; cin >> n;
+    // vector<int> l1(n);
+    // vector<int> l2(n - 1);
+    // vector<int> l3(n - 2);
+    // for(int i = 0; i < n; i++) cin >> l1[i];
+    // for(int i = 0; i < n - 1; i++) cin >> l2[i];
+    // for(int i = 0; i < n - 2; i++) cin >> l3[i];
+    // sort(l1.begin(), l1.end());
+    // sort(l2.begin(), l2.end());
+    // sort(l3.begin(), l3.end());
+    // int st = 0;
+    // while(st < l1.size()){
+    //     if(l1[st] != l2[st]){
+    //         cout << l1[st] << endl;
+    //         break;
+    //     }
+    //     st += 1;
+    // }
+    // st = 0;
+    // while(st < l2.size()){
+    //     if(l2[st] != l3[st]){
+    //         cout << l2[st] << endl;
+    //         break;
+    //     }
+    //     st += 1;
+    // }
+    // int t; cin >> t;
+    // while(t--){
+    //     int length; cin >> length; vector<int> a(length);
+    //     for(int i = 0; i < length; i++) cin >> a[i];
+    //     sort(a.begin(), a.end());
+    //     for(int i = a.size() - 1; i > -1; i--) cout << a[i] << " ";
+    //     cout << endl;
+    // }
+    // int t; cin >> t; vector<int> a(t); for(int i = 0; i < t; i++) cin >> a[i];
+    // vector<int> non_dup;
+    // for(int i = 0; i < t; i++){
+    //     if(find(non_dup, a[i]) == true) non_dup.push_back(a[i]);
+    // }
+    // int maxCount = -1;
+    // for(int i = 0; i < non_dup.size(); i++){
+    //     int cnt = count(a.begin(), a.end(), non_dup[i]);
+    //     maxCount = max(maxCount, cnt);
+    // }
+    // cout << maxCount << " " << non_dup.size() << endl;
+    // int t; cin >> t;
+    // while(t--){
+    //     int n, l, r, k; cin >> n >> l >> r >> k; vector<int> a(n);
+    //     for(int i = 0; i < n; i++) cin >> a[i];
+    //     sort(a.begin(), a.end());
+    //     int maxV = 0;
+    //     int st = 0;
+    //     while(st < n and a[st] <= r){
+    //         if(k < a[st]) break;
+    //         if(a[st] >= l){
+    //             maxV += 1;
+    //             k -= a[st];
+    //         }
+    //         st += 1;
+    //     }
+    //     cout << maxV << endl;
+    // } 
+    // int t; cin >> t;
+    // while(t--){
+    //     int minVal = INT_MAX;
+    //     int n, h, m, st; cin >> n >> h >> m; st = h * 60 + m;
+    //     //cout << st << endl;
+    //     for(int i = 0; i < n; i++){
+    //         int hh, mm; cin >> hh >> mm; 
+    //         int now = 60 * hh + mm;
+    //         //cout << now << endl;
+    //         if(now >= st){
+    //             minVal = min(minVal, now - st);
+    //         }else minVal = min(minVal, 24 * 60 - (st - now));
+    //     }
+    //     //cout << minVal << endl;
+    //     cout << minVal / 60 << " " << minVal - 60 * (minVal / 60) << endl;
+    // }
+    // int t; cin >> t;
+    // while(t--){
+    //     long long index, sum = 0; cin >> index; 
+    //     while(index != 0){
+    //         sum += index;
+    //         index /= 2;
+    //     }
+    //     cout << sum << endl;
+    // }
+    // int t; cin >> t;
+    // while(t--){
+    //     int length; cin >> length; vector<long long> a(length);
+    //     for(int i = 0; i < length; i++) cin >> a[i];
+    //     long long maxVal;
+    //     sort(a.begin(), a.end());
+    //     maxVal = max(a[0] * a[1], a[a.size() - 1] * a[a.size() - 2]);
+    //     cout << maxVal << endl;
+    // }
+    // int t; cin >> t;
+    // while(t--){
+    //     int length; string digit; cin >> length >> digit;
+    //     string numm; cin >> numm;
+    //     int st = 0;
+    //     while(st < length){
+    //         if(digit[0] > numm[st]){
+    //             numm = numm.insert(st, digit);
+    //             break;
+    //         }
+    //         st += 1;
+    //     }
+    //     if(st == length) numm += digit;
+    //     cout << numm << endl;
+    // }
+    // int t; cin >> t;
+    // while(t--){
+    //     long long n, k; cin >> n >> k;
+    //     cout << (check(n, k) == true ? "YES" : "NO") << endl;
+    // }
 }
 
 int main(){

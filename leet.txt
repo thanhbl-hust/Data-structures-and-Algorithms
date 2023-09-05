@@ -2858,3 +2858,59 @@ public:
         return s.size();
     }
 };
+
+169.
+class Solution {
+public:
+    bool reorderedPowerOf2(int n) {
+        if(n == 1) return true;
+        vector<string> powerof2;
+        int st = 0;
+        while(pow(2, st) < 1000000000){
+            int tt = pow(2, st);
+            string ss = to_string(tt);
+            sort(ss.begin(), ss.end());
+            powerof2.push_back(ss);
+            st += 1;
+        }
+        string nn = to_string(n);
+        sort(nn.begin(), nn.end());
+        for(int i = 0; i < powerof2.size(); i++){
+            if(powerof2[i] == nn) return true;
+        }
+        return false;
+    }
+};
+
+170.
+class Solution {
+public:
+    int searchInsert(vector<int>& nums, int target) {
+        int st = 0;
+        while(st < nums.size()){
+            if(nums[st] >= target) break;
+            st += 1;
+        }
+        return st;
+    }
+};
+
+171.
+class Solution {
+public:
+    vector<int> rearrangeArray(vector<int>& nums) {
+        vector<int> res;
+        vector<int> pos;
+        vector<int> neg;
+        for(int i = 0; i < nums.size(); i++){
+            if(nums[i] > 0){
+                pos.push_back(nums[i]);
+            }else neg.push_back(nums[i]);
+        }
+        for(int i = 0; i < pos.size(); i++){
+            res.push_back(pos[i]);
+            res.push_back(neg[i]);
+        }
+        return res;
+    }
+};
