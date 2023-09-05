@@ -10288,6 +10288,14 @@ NEW KNOWLEDGE
     // }
     //string s; cin >> s; cout << (check(s) == true ? "Correct" : "Too weak") << endl;
 //}
+// int weight(char c){
+//     if(c == 'q') return 9;
+//     if(c == 'r') return 5;
+//     if(c == 'b') return 3;
+//     if(c == 'k') return 3;
+//     if(c == 'p') return 1;
+//     return 0;
+// }
 // bool find(vector<int> a, int index){
 //     for(int i = 0; i < a.size(); i++){
 //         if(a[i] == index) return false;
@@ -10413,6 +10421,65 @@ void solution(){
     //     long long n, k; cin >> n >> k;
     //     cout << (check(n, k) == true ? "YES" : "NO") << endl;
     // }
+    // int t; cin >> t;
+    // while(t--){
+    //     int cnt = 0;
+    //     int n, k; cin >> n >> k; int a[n]; for(int i = 0; i < n; i++) cin >> a[i];
+    //     sort(a, a + n);
+    //     for(int i = 1; i < n; i++){
+    //         cnt += (k - a[i]) / a[0];
+    //     }
+    //     cout << cnt << endl;
+    // }
+    // int t; cin >> t;
+    // while(t--){
+    //     long long n; cin >> n;
+    //     cout << -1 * (n - 1) << " " << n << endl;
+    // }
+    // int t; cin >> t;
+    // while(t--){
+    //     int l; cin >> l; vector<int> a(l); 
+    //     int cnt = 0;
+    //     for(int i = 0; i < l; i++){
+    //         cin >> a[i];
+    //         if(a[i] == i + 1) cnt += 1;
+    //     }
+    //     cout << (cnt + 1) / 2 << endl;
+    // }
+    // int t; cin >> t;
+    // while(t--){
+    //     int n; cin >> n;
+    //     if(n % 2 == 1){
+    //         cout << -1 << endl;
+    //     }else cout << 1 << " " << n / 2 << endl;
+    // }
+    // int length; string s; cin >> length >> s;
+    // int u = 0;
+    // for(int i = 0; i < length; i++){
+    //     if(s[i] == toupper(s[i])) u += 1;
+    // }
+    // int d = length - u;
+    // cout << abs(u - length / 2) << endl;
+    // if(u >= length / 2){
+    //     int st = 0;
+    //     while(st < length and u > length / 2){
+    //         if(s[st] == toupper(s[st])){
+    //             s[st] = tolower(s[st]);
+    //             u -= 1;
+    //         }
+    //         st += 1;
+    //     }
+    // }else{
+    //     int st = 0;
+    //     while(st < length and d > length / 2){
+    //         if(s[st] == tolower(s[st])){
+    //             s[st] = toupper(s[st]);
+    //             d -= 1;
+    //         }
+    //         st += 1;
+    //     }
+    // }
+    // cout << s;
 }
 
 int main(){

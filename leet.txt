@@ -2914,3 +2914,39 @@ public:
         return res;
     }
 };
+
+172.
+class Solution {
+public:
+    string reversePrefix(string word, char ch) {
+        for(int i = 0; i < word.size(); i++){
+            if(word[i] == ch){
+                reverse(word.begin(), word.begin() + i + 1);
+                return word;
+            }
+        }
+        return word;
+    }
+};
+
+173.
+class Solution {
+public:
+    vector<int> pivotArray(vector<int>& nums, int pivot) {
+        vector<int> l;
+        vector<int> m;
+        vector<int> r;
+        vector<int> res;
+        for(int i = 0; i < nums.size(); i++){
+            if(nums[i] < pivot){
+                l.push_back(nums[i]);
+            }else if(nums[i] == pivot){
+                m.push_back(nums[i]);
+            }else r.push_back(nums[i]);
+        }
+        for(int i = 0; i < l.size(); i++) res.push_back(l[i]);
+        for(int i = 0; i < m.size(); i++) res.push_back(m[i]);
+        for(int i = 0; i < r.size(); i++) res.push_back(r[i]);
+        return res;
+    }
+};

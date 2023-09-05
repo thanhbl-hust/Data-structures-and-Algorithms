@@ -1,4 +1,4 @@
-//dynamic to solve coin change problem;
+//dynamicP to solve coin change problem;
 //can be used in problem total_analysis;
 
 #include<bits/stdc++.h>
