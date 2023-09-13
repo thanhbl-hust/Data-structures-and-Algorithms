@@ -2950,3 +2950,174 @@ public:
         return res;
     }
 };
+
+174.
+class Solution {
+public:
+    int lastStoneWeight(vector<int>& stones) {
+        sort(stones.begin(), stones.end());
+        while(stones.size() > 1){
+            if(stones[stones.size() - 2] == stones[stones.size() - 1]){
+                stones.pop_back();
+                stones.pop_back();
+            }else{
+                stones[stones.size() - 1] -= stones[stones.size() - 2];
+                swap(stones[stones.size() - 1], stones[stones.size() - 2]);
+                stones.pop_back();
+                sort(stones.begin(), stones.end());
+            }
+        }
+        if(stones.size() == 1) return stones[0];
+        return 0;
+    }
+};
+
+175.
+class Solution {
+public:
+    int minimumOperations(vector<int>& nums) {
+        set<int> s;
+        for(int i = 0; i < nums.size(); i++){
+            if(nums[i] != 0) s.insert(nums[i]);
+        }
+        return s.size();
+    }
+};
+
+176.
+class Solution {
+public:
+    int findContentChildren(vector<int>& child, vector<int>& candi) {
+        int cnt = 0;
+        sort(child.begin(), child.end());
+        reverse(child.begin(), child.end());
+        sort(candi.begin(), candi.end());
+        reverse(candi.begin(), candi.end());
+        while(candi.size() > 0 and child.size() > 0){
+            if(candi[candi.size() - 1] >= child[child.size() - 1]){
+                child.pop_back();
+                cnt += 1;
+            }
+            candi.pop_back();
+        }
+        return cnt;
+    }
+};
+
+177.
+class Solution {
+public:
+    bool canMakeArithmeticProgression(vector<int>& arr) {
+        sort(arr.begin(), arr.end());
+        int dif = arr[1] - arr[0];
+        for(int i = 2; i < arr.size(); i++){
+            if(arr[i] - arr[i - 1] != dif) return false;
+        }
+        return true;
+    }
+};
+
+178.
+class Solution {
+public:
+    int minPartitions(string n) {
+        int maxVal = -1;
+        for(int i = 0; i < n.size(); i++){
+            if(stoi(n.substr(i, 1)) > maxVal) maxVal = stoi(n.substr(i, 1));
+        }
+        return maxVal;
+    }
+};
+
+179.
+class Solution {
+public:
+    bool incre(vector<int> a){
+        for(int i = 1; i < a.size(); i++){
+            if(a[i] <= a[i - 1]) return false;
+        }
+        return true;
+    }
+    bool areNumbersAscending(string s) {
+        vector<int> a;
+        int st = 0;
+        while(st < s.size()){
+            if(isdigit(s[st])){
+                int l = 1;
+                while(isdigit(s[st + l])) l += 1;
+                a.push_back(stoi(s.substr(st, l)));
+                st += l;
+            }else{
+                st += 1;
+            }
+        }
+        if(incre(a)) return true;
+        return false;
+    }
+};
+
+180.
+class Solution {
+public:
+    vector<vector<int>> generateSubsets(vector<int>& arr) {
+        int n = arr.size(); vector<vector<int>> subsets;
+        for (int i = 0; i < pow(2, n); ++i) {
+            vector<int> subset;
+            for (int j = 0; j < n; ++j) {
+                if (i & (1 << j)) {
+                    subset.push_back(arr[j]);
+                }
+            }
+            subsets.push_back(subset);
+        }
+        return subsets;
+    }
+    vector<vector<int>> subsets(vector<int>& nums) {
+        vector<vector<int>> res = generateSubsets(nums);
+        return res;
+    }
+};
+
+181.
+class Solution {
+public:
+    vector<int> change(vector<int> arr){
+        map<int, int> mp;
+        for(int i = 0; i < arr.size(); i++) mp[arr[i]] = 1;
+        int lst = 0;
+        for(auto x : mp){
+            mp[x.first] += lst;
+            lst += 1;
+        }
+        for(int i = 0; i < arr.size(); i++){
+            arr[i] = mp[arr[i]];
+        }
+        return arr;
+    }
+    vector<int> arrayRankTransform(vector<int>& arr) {
+        return change(arr);
+    }
+};
+
+182.
+class Solution {
+public:
+    vector<int> sortedSquares(vector<int>& nums) {
+        for(int i = 0; i < nums.size(); i++) nums[i] *= nums[i];
+        sort(nums.begin(), nums.end());
+        return nums;
+    }
+};
+
+183.
+class Solution {
+public:
+    bool canBeEqual(vector<int>& a, vector<int>& b) {
+        sort(a.begin(), a.end());
+        sort(b.begin(), b.end());
+        for(int i = 0; i < a.size(); i++){
+            if(a[i] != b[i]) return false;
+        }
+        return true;
+    }
+};

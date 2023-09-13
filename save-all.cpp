@@ -267,6 +267,13 @@ NEW KNOWLEDGE
 //     }
 //     return root;
 // }
+// bool check(vector<char> mp){
+//     if(mp[mp.size() - 1] != 'a') return false;
+//     for(int i = 0; i < mp.size() - 1; i++){
+//         if(mp[i] != mp[i + 1]  + 1) return false;
+//     }
+//     return true;
+// }
 // int change(char c){
 //     if(c == '0') return 0;
 //     if(c == '1') return 1;
@@ -10302,7 +10309,14 @@ NEW KNOWLEDGE
 //     }
 //     return true;
 // }
-
+// long long sum_digit(long long n){
+//     long long s = 0;
+//     while(n != 0){
+//         s += n % 10;
+//         n /= 10;
+//     }
+//     return s;
+// }
 void solution(){
     
     // int n; cin >> n;
@@ -10403,6 +10417,15 @@ void solution(){
     // }
     // int t; cin >> t;
     // while(t--){
+    //     long long n; cin >> n;
+    //     while(1){
+    //         if(__gcd(n, sum_digit(n)) != 1) break;
+    //         n += 1;
+    //     }
+    //     cout << n << endl;
+    // }
+    // int t; cin >> t;
+    // while(t--){
     //     int length; string digit; cin >> length >> digit;
     //     string numm; cin >> numm;
     //     int st = 0;
@@ -10480,6 +10503,105 @@ void solution(){
     //     }
     // }
     // cout << s;
+    // int n, m; cin >> n >> m;
+    // if(min(n, m) % 2 == 0){
+    //     cout << "Malvika";
+    // }else cout << "Akshat";
+    // int t; cin >> t;
+    // while(t--){
+    //     int odd = 0, even = 0;
+    //     int length, idx; cin >> length;
+    //     for(int i = 0; i < length; i++){
+    //         cin >> idx;
+    //         if(idx % 2 == 0){
+    //             even += 1;
+    //         }else odd += 1;
+    //     }
+    //     if(odd % 2 == 1){
+    //         cout << "NO" << endl;
+    //     }else cout << "YES" << endl;
+    // }
+    // int t; cin >> t;
+    // while(t--){
+    //     int length; cin >> length; vector<int> a(length);
+    //     for(int i = 0; i < length; i++) cin >> a[i];
+    //     sort(a.begin(), a.end());
+    //     if(a[0] == a[a.size() - 1]){
+    //         cout << -1 << endl;  
+    //     }else{
+    //         int cnt = count(a.begin(), a.end(), a[0]);
+    //         cout << cnt << " " << length - cnt << endl;
+    //         for(int _ = 0; _ < cnt; _++){
+    //             cout << a[0] << " ";
+    //         }
+    //         cout << endl;
+    //         for(int _ = cnt; _ < length; _++){
+    //             cout << a[_] << " ";
+    //         }
+    //     }
+    //     cout << endl;
+    // }
+    // int t; cin >> t;
+    // while(t--){
+    //     int a, b, c; cin >> a >> b >> c;
+    //     if(a + c % 2 > b){
+    //         cout << "First" << endl;
+    //     }else cout << "Second" << endl;
+    // }
+    //sum(a1 + a2 + ... an) % k == 0;
+    // int t; cin >> t;
+    // while(t--){
+    //     int n, k; cin >> n >> k;
+    //     if(k % n == 0){
+    //         cout << k / n << endl;
+    //     }else{
+    //         if(k > n){
+    //             cout << k / n + 1 << endl;
+    //         }else{
+    //             //k < n;
+    //             if(n % k == 0){
+    //                 cout << 1 << endl;
+    //             }else{
+    //                 int st = (n / k) + 1;
+    //                 cout << (st * k) / n + 1 << endl;
+    //             }
+    //         }
+    //     }
+    // }
+    // int t; cin >> t;
+    // while(t--){
+    //     int length; string s; cin >> length >> s;
+    //     int count = 0;
+    //     int l = 0;
+    //     while(s[l] != s[s.size() - 1 - l] and l < s.size() - 1 - l){
+    //         count += 1;
+    //         l += 1;
+    //     }
+    //     cout << length - 2 * count << endl;
+    // }
+    // int t; cin >> t;
+    // while(t--){
+    //     string s; cin >> s;
+    //     set<char> cc;
+    //     for(int i = 0; i < s.size(); i++) cc.insert(s[i]);
+    //     if(cc.size() != s.size()){
+    //         cout << "NO" << endl;
+    //     }else{
+    //         vector<char> mp;
+    //         int l = 0, r = s.size() - 1;
+    //         while(l < r){
+    //             if(s[l] < s[r]){
+    //                 mp.push_back(s[r]);
+    //                 r -= 1;
+    //             }else if(s[l] > s[r]){
+    //                 mp.push_back(s[l]);
+    //                 l += 1;
+    //             }
+    //         }
+    //         mp.push_back(s[l]);
+    //         cout << (check(mp) ? "YES" : "NO") << endl;
+    //     }
+    // }
 }
 
 int main(){
