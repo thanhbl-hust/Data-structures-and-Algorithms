@@ -97,14 +97,8 @@ NEW KNOWLEDGE
 
 */
 
-
 void solve(){
-
     
-    
-    /*
-    SOLUTION;
-    */
 }
 
  int main(){
