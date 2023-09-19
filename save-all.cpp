@@ -11047,6 +11047,16 @@ void solution(){
 	// else if (m == 4 || m == 6 || m == 9 || m == 11) c = 30;
 	// else c = 31;
 	// cout << ((d - 1) + c - 1) / 7 + 1;
+    // int t; cin >> t;
+    // while(t--){
+    //     int length; cin >> length; long long a[length];
+    //     for(int i = 0; i < length; i++) cin >> a[i];
+    //     long long res = 0;
+    //     for(int i = 1; i < length; i++){
+    //         res = max(res, a[i] * a[i - 1]);
+    //     }
+    //     cout << res << endl;
+    // }
 }
 
 int main(){

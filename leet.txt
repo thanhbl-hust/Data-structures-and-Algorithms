@@ -3150,3 +3150,36 @@ public:
         return "";
     }
 };
+
+186.
+class Solution {
+public:
+    int find(vector<char> cc, char c){
+        for(int i = 0; i < cc.size(); i++){
+            if(cc[i] == c) return i;
+        }
+        return -1;
+    }
+    int longestPalindrome(string s) {
+        int res = 0;
+        vector<char> uu(26, 'A'); for(int i = 1; i < 26; i++) uu[i] = uu[i - 1] + 1;
+        vector<char> ll(26, 'a'); for(int i = 1; i < 26; i++) ll[i] = ll[i - 1] + 1;      
+        vector<int> count(52, 0);
+        for(int i = 0; i < s.size(); i++){
+            if(isupper(s[i])){
+                count[find(uu, s[i])] += 1;
+            }else count[find(ll, s[i]) + 26] += 1;
+        }
+        for(int i = 0; i < count.size(); i++){
+            if(count[i] % 2 == 0){
+                res += count[i];
+                count[i] = 0;
+            }else{
+                res += count[i] - 1;
+                count[i] = 1;
+            }
+        }
+        res += *max_element(count.begin(), count.end());
+        return res;
+    }
+};
