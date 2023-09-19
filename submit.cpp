@@ -97,49 +97,8 @@ NEW KNOWLEDGE
 
 */
 
-// bool check(vector<int> a){
-//     sort(a.begin(), a.end());
-//     for(int i = 1; i < a.size(); i++){
-//         int res = a[i] - a[i - 1];
-//         if(res % 2 == 1) return false;
-//     }
-//     return true;
-// }
-// void show(vector<vector<int>> res){
-//     int st = 1;
-//     bool found = false;
-//     while(st < res[0].size()){
-//         if(res[0][st] != 0 and res[1][st] != 0){
-//             found = true;
-//             cout << "YES" << endl;
-//             cout << 1 << " " << st << endl;
-//             break;
-//         }
-//         st += 1;
-//     }
-//     if(found == false) cout << "NO" << endl;
-// }
 
 void solve(){
-
-    // int t; cin >> t;
-    // while(t--){
-    //     int n, m; cin >> n >> m;
-    //     int a[n], b[m];
-    //     for(int i = 0; i < n; i++) cin >> a[i];
-    //     for(int i = 0; i < m; i++) cin >> b[i];
-    //     vector<vector<int>> count(2, vector<int> (1005, 0));
-    //     for(int i = 0; i < n; i++) count[0][a[i]] += 1;
-    //     for(int i = 0; i < m; i++) count[1][b[i]] += 1;
-    //     show(count);
-    // }
-    // int t; cin >> t;
-    // while(t--){
-    //     int length; cin >> length;
-    //     vector<int> a(length);
-    //     for(int i = 0; i < length; i++) cin >> a[i];
-    //     cout << (check(a) == true ? "YES" : "NO")  << endl;
-    // }
 }
 
  int main(){
