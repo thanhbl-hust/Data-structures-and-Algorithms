@@ -270,3 +270,14 @@ for i in range(n):
     a -= i + 1
     b = max(b + 1, a)
     print(b)
+
+18.
+n=int(input())
+sp=[int(i) for i in input().split()]
+sp1=[]
+
+for i in range(n):
+    for j in range(sp[i]):
+        if ((100*j)//sp[i])==(100*(sum(sp[:i])+j)//(sum(sp))):
+            sp1.append(((100*j)//sp[i]))
+print(*sorted(set(sp1)),100,sep='\n')
