@@ -3183,3 +3183,45 @@ public:
         return res;
     }
 };
+
+187.
+class Solution {
+public:
+    vector<string> split_word(string s){
+        vector<string> res;
+        vector<int> space;
+        for(int i = 0; i < s.size(); i++){
+            if(s[i] == ' ') space.push_back(i);
+        }
+        if(space.size() == 0){
+            res.push_back(s);
+            return res;
+        }
+        space.insert(space.begin(), -1);
+        space.push_back(s.size());
+        for(int i = 1; i < space.size(); i++){
+            string ss = s.substr(space[i - 1] + 1, space[i] - space[i - 1] - 1);
+            res.push_back(ss);
+        }
+        return res;     
+    } 
+    string toGoatLatin(string sentence) {
+        string res = "";
+        vector<string> word = split_word(sentence);
+        string st = "maa";
+        for(int i = 0; i < word.size(); i++){
+            string sss = word[i];
+            char stt = sss[0];
+            if(stt != 'a' and stt != 'e' and stt != 'i' and stt != 'o'  and stt != 'u' and stt != 'A' and stt != 'E' and stt != 'I' and stt != 'O'  and stt != 'U'){
+                sss.push_back(sss[0]);
+                sss.erase(sss.begin());
+            }
+            sss += st;
+            st += 'a';
+            if(i != word.size() - 1){
+                res += sss + ' ';
+            }else res += sss;
+        }
+        return res;
+    }
+};

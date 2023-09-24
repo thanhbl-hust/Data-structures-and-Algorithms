@@ -97,65 +97,9 @@ NEW KNOWLEDGE
 
 */
 
-// bool find(vector<char> cc, char c){
-//     for(int i = 0; i < cc.size(); i++){
-//         if(cc[i] == c) return true;
-//     }
-//     return false;
-// }
+
 
 void solve(){
-
-    // string ss; cin >> ss;
-    // vector<char> character = {'A', 'E', 'I', 'O', 'U', 'Y'};
-    // int current = -1;
-    // int res = 0;
-    // for(int i = 0; i < ss.size(); i++){
-    //     if(find(character, ss[i]) == true){
-    //         if(i != ss.size() - 1){
-    //             int distance = i - current;
-    //             res = max(res, distance);
-    //             current = i;
-    //         }else{
-    //             int distance = ss.size() - 1 - current;
-    //             res = max(res, distance);
-    //         }
-    //     }else{
-    //         if(i == ss.size() - 1){
-    //             int distance = ss.size() - current;
-    //             res = max(res, distance);
-    //         }
-    //     }
-    // }
-    // cout << res;
-    // string s; cin >> s;
-    // int min = stoi(s.substr(0, 2)) * 60 + stoi(s.substr(3, 2));
-    // vector<int> a;
-    // a.push_back(24 * 60);
-    // a.push_back(1 * 60 + 10);
-    // a.push_back(2 * 60 + 20);
-    // a.push_back(3 * 60 + 30);
-    // a.push_back(4 * 60 + 40);
-    // a.push_back(5 * 60 + 50);
-    // a.push_back(10 * 60 + 1);
-    // a.push_back(11 * 60 + 11);
-    // a.push_back(12 * 60 + 21);
-    // a.push_back(13 * 60 + 31);
-    // a.push_back(14 * 60 + 41);
-    // a.push_back(15 * 60 + 51);
-    // a.push_back(20 * 60 + 2);
-    // a.push_back(21 * 60 + 12);
-    // a.push_back(22 * 60 + 22);
-    // a.push_back(23 * 60 + 32);
-    // sort(a.begin(), a.end());
-    // int st = 0;
-    // while(a[st] < min) st += 1;
-    // if(min == 0){
-    //     cout << 0;
-    // }else cout << a[st] - min;
-
-
-
 }
 
  int main(){
