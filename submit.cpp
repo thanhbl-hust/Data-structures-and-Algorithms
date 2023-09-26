@@ -5,110 +5,89 @@
 */
 
 #include<bits/stdc++.h>
+
 using namespace std;
 
-// typedef long long ll;
-/*
-
-NEW KNOWLEDGE
-0. Read, write to file
-
-    + freopen("input.txt", "r", stdin);
-    + freopen("output.txt", "w", stdout);
-
-1. Create a vector
-
-    + A vector contains 10 index have value 0: vector<int> a(10, 0);
-    + Vector 2D: vector<vector<int> a(n, vector<int> (m)) -- n child vectors, each vector has m indexs;
-    + Reverse a vector: reverse(a.begin(), a.end());
-    + Insert an element to a vector:
-        + You want to insert an element has a value 10 to position 2.
-            <vector_name>.insert(<vector_name>.begin() + 2, value);
-
-    + Delete a value in a vector:
-        + You want to delete a[i] from vector<int> a:
-            a.erase(a.begin() + i);
-        + You want to delete multiple elements (a[1] -> a[4]):
-            a.erase(a.begin() + 1, a.begin() + 5);
-
-2. DS: Set
-
-    + set doesnt contains 2 indexs have same value;
-    + set.insert(value) - add element;
-    + set.size() - size of set;
-
-3. Rounded numbers
-
-    + Want to change 1.2345 to 1.23: cout << fixed << setprecision(2) << num;
-    + Also, u can use this for clearly see the number too big;
-
-4. Input string
-
-    + Input string have space: string s; getline(cin, s);
-    + cin.ignore();
-    + s.substr(i, l):
-        - i: first index to take sub string;
-        - l: length of string you want substring to be (substring.size() = l);
-
-5. UPPER and LOWER:
-
-    - 5.1. To check a char is upper or lower:
-        + check upper: isupper(c);
-        + check lower: islower(c);
-
-    - 5.2. Change from normal to lower or upper:
-        + to upper: c = toupper(c);
-        + to lower: c = tolower(c);
-
-6. ALPHA and DIGIT:
-    Check if a char is a alpha || digit:
-        + char is a character: isalpha(c);
-        + char is a number(dg): isdigit(c);
-
-7. MOVING FROM STRING AND NUM;
-    - String to num: 
-        + string s = "123";
-        + int ss = stoi(s);
-        + cout << ss + 1 << endl;    ---124;
-
-    - Num to string:
-        + int aa = 5;
-        + int bb = to_string(aa);
-        + bb += '1';
-        + cout << bb;                ----"51";
-
-8. BOARD OF ALL CHARACTER;
-    - Create a board;
-        + vector<char> c(1, 'a');
-        + for(int i = 0; i < 25; i++){
-            + char b = c[c.size() - 1] + 1;
-            + c.push_back(b);
-        + }
-
-
-9. IF - ELSE STATEMENT
-    - Clean code:
-        + root:
-            if(d % 3 == 0 and d >= 0){
-                cout << "YES" << endl;
-            }else cout << "NO" << endl;
-        + change: cout << (d % 3 == 0 && d >= 0 ? "YES" : "NO") << endl
-        (condition -> ? -> :)
-
-*/
-
-
+// bool checkTaxi(string s){
+//   for(int i = 1; i < s.size(); i++){
+//     if(s[i] != '-' and s[i] != s[0]) return false;
+//   }
+//   return true;
+// }
+// bool checkPizza(string s){
+//   int a = stoi(s.substr(0, 1));
+//   int b = stoi(s.substr(1, 1));
+//   int c = stoi(s.substr(3, 1));
+//   int d = stoi(s.substr(4, 1));
+//   int e = stoi(s.substr(6, 1));
+//   int f = stoi(s.substr(7, 1));
+//   if(a > b and b > c and c > d and d > e and e > f) return true;
+//   return false;
+// }
 
 void solve(){
+  // int num; cin >> num;
+  // vector<vector<int>> board(3, vector<int> (num, 0));
+  // string name[num];
+  // for(int i = 0; i < num; i++){
+  //   int query; cin >> query >> name[i];
+  //   for(int j = 0; j < query; j++){
+  //     string s; cin >> s;
+  //     if(checkTaxi(s)){
+  //       board[0][i] += 1;
+  //     }else if(checkPizza(s)){
+  //       board[1][i] += 1;
+  //     }else board[2][i] += 1;
+  //   }
+  // }
+  // int max_taxi = *max_element(board[0].begin(), board[0].end());
+  // int max_pizza = *max_element(board[1].begin(), board[1].end());
+  // int max_girl = *max_element(board[2].begin(), board[2].end());
+  // vector<string> taxi;
+  // vector<string> pizza;
+  // vector<string> girl;
+  // for(int i = 0; i < num; i++){
+  //   if(board[0][i] == max_taxi) taxi.push_back(name[i]);
+  //   if(board[1][i] == max_pizza) pizza.push_back(name[i]);
+  //   if(board[2][i] == max_girl) girl.push_back(name[i]);
+  // }
+  // cout << "If you want to call a taxi, you should call: ";
+  // for(int i = 0; i < taxi.size(); i++){
+  //   if(i == taxi.size() - 1){
+  //     cout << taxi[i] << '.';
+  //     cout << endl;
+  //   }else cout << taxi[i] << ", ";
+  // }
+  // cout << "If you want to order a pizza, you should call: ";
+  // for(int i = 0; i < pizza.size(); i++){
+  //   if(i == pizza.size() - 1){
+  //     cout << pizza[i] << '.';
+  //     cout << endl;
+  //   }else cout << pizza[i] << ", ";
+  // }
+  // cout << "If you want to go to a cafe with a wonderful girl, you should call: ";
+  // for(int i = 0; i < girl.size(); i++){
+  //   if(i == girl.size() - 1){
+  //     cout << girl[i] << '.';
+  //     cout << endl;
+  //   }else cout << girl[i] << ", ";
+  // }
+  // for(int i = 0; i < board.size(); i++){
+  //   for(int j = 0; j < board[i].size(); j++){
+  //     cout << board[i][j] << " ";
+  //   }
+  //   cout << endl;
+  // }
+  // cout << max_taxi << " " << max_pizza << " " << max_girl;
+  // for(int i = 0; i < taxi.size(); i++) cout << taxi[i] << " ";
+  // cout << endl;
+  // for(int i = 0; i < pizza.size(); i++) cout << pizza[i] << " ";
+  // cout << endl;
+  // for(int i = 0; i < girl.size(); i++) cout << girl[i] << " ";
+  
 }
 
- int main(){
-
-    ios_base::sync_with_stdio(false); cin.tie(0); cout.tie(0);
-
-    //run();
-
-    solve();
-
-    return 0;
+int main(){
+  solve();
+  return 0;
 }

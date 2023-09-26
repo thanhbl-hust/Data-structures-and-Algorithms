@@ -3225,3 +3225,130 @@ public:
         return res;
     }
 };
+
+188.
+class Solution {
+public:
+    int counting(vector<int> dp, int n){
+        if(n <= dp[0]) return abs(dp[0] - n);
+        if(n >= dp[dp.size() - 1]) return abs(dp[dp.size() - 1] - n);
+        int st = 0;
+        while(n >= dp[st]) st += 1;
+        return min(abs(n - dp[st]), abs(n - dp[st - 1]));
+    }
+    vector<int> shortestToChar(string s, char c) {
+        vector<int> dp;
+        vector<int> coor;
+        for(int i = 0; i < s.size(); i++){
+            if(s[i] == c) coor.push_back(i);
+        }
+        for(int i = 0; i < s.size(); i++){
+            dp.push_back(counting(coor, i));
+        }
+        return dp;
+    }
+};
+
+189.
+class Solution {
+public:
+    int sum(int n){
+        string ss = to_string(n);
+        int res = 0;
+        for(int i = 0; i < ss.size(); i++) res += stoi(ss.substr(i, 1));
+        return res;
+    }
+    int countLargestGroup(int n) {
+        int cnt = 0;
+        vector<int> count(40, 0);
+        for(int i = 1; i <= n; i++) count[sum(i)] += 1;
+        int maxv = *max_element(count.begin(), count.end());
+        for(int i = 0; i < count.size(); i++){
+            if(count[i] == maxv) cnt += 1;
+        }
+        return cnt;
+    }
+};
+
+190.
+class Solution {
+public:
+    int isPrefixOfWord(string ss, string s) {
+        int st = 0;
+        while(st < ss.size()){
+            if(ss.substr(st, s.size()) == s){
+                if(st == 0 || ss[st - 1] == ' ') break;
+            }
+            st += 1;
+        }
+        if(st == ss.size()) return -1;
+        int cnt = 0;
+        for(int i = 0; i < st + 1; i++){
+            if(ss[i] == ' ') cnt += 1;
+        }
+        return cnt + 1;
+    }
+};
+
+191.
+class Solution {
+public:
+    bool rotateString(string s, string goal) {
+        for(int i = 0; i < s.size(); i++){
+            string s1 = s.substr(0, i + 1);
+            string s2 = s.substr(i + 1, s.size() - i - 1);
+            if(s2 + s1 == goal) return true;
+        }
+        return false;
+    }
+};
+
+192.
+class Solution {
+public:
+    int splitNum(int num) {
+        vector<int> a;
+        while(num != 0){
+            a.push_back(num % 10);
+            num /= 10;
+        }
+        sort(a.begin(), a.end());
+        int aa = a[0], bb = a[1];
+        for(int i = 2; i < a.size(); i += 2) aa = 10 * aa + a[i];
+        for(int i = 3; i < a.size(); i += 2) bb = 10 * bb + a[i];
+        return aa + bb;
+    }
+};
+
+193.
+class Solution {
+public:
+    vector<vector<int>> onesMinusZeros(vector<vector<int>> mat) {
+        vector<int> c0;
+        vector<int> r0;
+        vector<int> c1;
+        vector<int> r1;
+        for(int i = 0; i < mat.size(); i++){
+            int rr1 = count(mat[i].begin(), mat[i].end(), 1);
+            int rr0 = mat[i].size() - rr1;
+            r1.push_back(rr1);
+            r0.push_back(rr0);
+        }
+        for(int i = 0; i < mat[0].size(); i++){
+            int cc1 = 0;
+            for(int j = 0; j < mat.size(); j++){
+                if(mat[j][i] == 1) cc1 += 1;
+            }
+            int cc0 = mat.size() - cc1;
+            c1.push_back(cc1);
+            c0.push_back(cc0);
+        }
+        vector<vector<int>> res(mat.size(), vector<int> (mat[0].size(), 0));
+        for(int i = 0; i < mat.size(); i++){
+            for(int j = 0; j < mat[i].size(); j++){
+                res[i][j] += c1[j] + r1[i] - c0[j] - r0[i];
+            }
+        }
+        return res;
+    }
+};

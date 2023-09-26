@@ -701,6 +701,56 @@ NEW KNOWLEDGE
 // 			}else dev.push_back((int)big / small + 1);
 // 		}
 // 	}
+// int sol(int n){
+//   if(n == 100) return 100;
+//   string ss = to_string(n);
+//   int length = ss.size() - 1;
+//   if(ss[0] != '9'){
+//     int res = (stoi(ss.substr(0, 1)) + 1) * pow(10, length);
+//     return res - n;
+//   }
+//   length += 1;
+//   int rs = pow(10, length);
+//   return rs - n;
+// }
+// bool isPalindrome(string s){
+//   string ss = s;
+//   reverse(ss.begin(), ss.end());
+//   if(s == ss) return true;
+//   return false;
+// }
+// bool check(string s){
+//   int cnt = 0;
+//   int l = 0, r = s.size() - 1;
+//   while(l <= r){
+//     if(s[l] != s[r]) cnt += 1;
+//     l += 1;
+//     r -= 1;
+//   }
+//   if(cnt == 1) return true;
+//   if(cnt == 0){
+//     if(isPalindrome(s) == true and s.size() % 2 == 1) return true;
+//   }
+//   return false;
+// }
+// bool check(long long n){
+//   vector<int> num;
+//   string ss = to_string(n);
+//   for(int i = 0; i < ss.size(); i++){
+//     if(ss[i] != '0'){
+//       num.push_back(stoi(ss.substr(i, 1)));
+//     }
+//   }
+//   for(int i = 0; i < num.size(); i++){
+//     if(n % num[i] != 0) return false;
+//   }
+//   return true;
+// }
+// long long sol(long long n){
+//   int st = 0;
+//   while(check(n + st) == false) st += 1;
+//   return n + st;
+// }
 // int find(string s, int st, char c){
 //     for(int i = st + 1; i < s.size(); i++){
 //         if(s[i] == c) return i;
@@ -781,6 +831,72 @@ NEW KNOWLEDGE
 //         if(res[i] == s) return true;
 //     }
 //     return false;
+// }
+// int def1(int n){
+//   int st = 1;
+//   while(1){
+//     int leaf = n + st;
+//     string ss = to_string(leaf);
+//     if(count(ss.begin(), ss.end(), '8') > 0) return st;
+//     st += 1;
+//   }
+//   return -1;
+// }
+// bool def2(string a, string b){
+//   if(a.size() != b.size()) return false;
+//   vector<int> dif;
+//   int st = 0;
+//   while(st < a.size()){
+//     if(a[st] != b[st]) dif.push_back(st);
+//     st += 1;
+//   }
+//   if(dif.size() != 2) return false;
+//   if(a[dif[0]] == b[dif[1]] and b[dif[0]] == a[dif[1]]) return true;
+//   return false;
+// }
+// long long def3(long long n){
+//   if(n <= 9) return n;
+//   if(n <= 99) return 9 + (n - 10 + 1) * 2;
+//   if(n <= 999) return 9 + (99 - 10 + 1) * 2 + (n - 100 + 1) * 3;
+//   if(n <= 9999) return 9 + (99 - 10 + 1) * 2 + (999 - 100 + 1) * 3 + (n - 1000 + 1) * 4;
+//   if(n <= 99999) return 9 + (99 - 10 + 1) * 2 + (999 - 100 + 1) * 3 + (9999 - 1000 + 1) * 4 + (n - 10000 + 1) * 5;
+//   if(n <= 999999) return 9 + (99 - 10 + 1) * 2 + (999 - 100 + 1) * 3 + (9999 - 1000 + 1) * 4 + (99999 - 10000 + 1) * 5 + (n - 100000 + 1) * 6;
+//   if(n <= 9999999) return 9 + (99 - 10 + 1) * 2 + (999 - 100 + 1) * 3 + (9999 - 1000 + 1) * 4 + (99999 - 10000 + 1) * 5 + (999999 - 100000 + 1) * 6 + (n - 1000000 + 1) * 7;
+//   if(n <= 99999999) return 9 + (99 - 10 + 1) * 2 + (999 - 100 + 1) * 3 + (9999 - 1000 + 1) * 4 + (99999 - 10000 + 1) * 5 + (999999 - 100000 + 1) * 6 + (9999999 - 1000000 + 1) * 7 + (n - 10000000 + 1) * 8;
+//   if(n <= 999999999) return 9 + (99 - 10 + 1) * 2 + (999 - 100 + 1) * 3 + (9999 - 1000 + 1) * 4 + (99999 - 10000 + 1) * 5 + (999999 - 100000 + 1) * 6 + (9999999 - 1000000 + 1) * 7 + (99999999 - 10000000 + 1) * 8 + (n - 100000000  + 1) * 9;
+//   if(n == 1000000000) return 8888888899;
+// }
+// bool def4(string ss){
+//   string a = ss;
+//   reverse(a.begin(), a.end());
+//   if(a == ss) return true;
+//   return false;
+// }
+// bool def5(string s, int num){
+//   if(num == s.size()) return true;
+//   if(num > s.size()) return false;
+//   if(s.size() % num != 0) return false;
+//   int length = s.size() / num;
+//   for(int i = 0; i < num; i++){
+//     string ss = s.substr(i * length, length);
+//     if(isPalindrome(ss) == false) return false;
+//   }
+//   return true;
+// }
+// bool def6(string ss){
+//   if(ss.size() == 1){
+//     if(ss[0] == '0') return false;
+//     return true;
+//   }
+//   for(int i = 0; i < ss.size() - 1; i++){
+//     string s = ss.substr(i, 2);
+//     if(s == "11") return false;
+//     if(s == "00"){
+//       if(i == 0 || i == ss.size() - 2) return false;
+//       if(ss[i - 1] == '0' || ss[i + 2] == '0') return false;
+//     }
+//   }
+//   return true;
 // }
 // void show(vector<int> a, int length){
 // 	//length : size of a;
@@ -4481,6 +4597,12 @@ NEW KNOWLEDGE
 //         }
 //     }
 //     return abs(xa - xb) + abs(ya - yb);
+// }
+// bool check(vector<vector<int>> a){
+//     for(int i = 0; i < 3; i++){
+//         if(a[0][i] == a[1][i]) return true;
+//     }
+//     return false;
 // }
 // int all(int n){
 //     int s = 0;
@@ -11199,6 +11321,13 @@ void solution(){
     //         y = next(y, n);
     //     }
     // }
+    // vector<vector<int>> a(2, vector<int> (3));
+    // for(int i = 0; i < 2; i++){
+    //     for(int j = 0; j < 3; j++){
+    //         cin >> a[i][j];
+    //     }
+    // }
+    // cout << (check(a) == true ? "YES" : "NO") << endl;
     // for(int i = 0; i < n; i++){
     //     for(int j = 0; j < n; j++){
     //         cout << res[i][j] << " ";
@@ -12443,6 +12572,54 @@ void solution(){
     // }
     // int maxv = *max_element(dp.begin(), dp.end());
     // cout << (n == 1 ? 1 : maxv) << endl;
+    // string s; cin >> s;
+    // string res = "";
+    // if(s[0] == 'h'){
+    //   for(int i = 0; i < 4; i++) res += s[i];
+    // }else for(int i = 0; i < 3; i++) res += s[i];
+    // res += "://";
+    // int st; bool found = false;
+    // if(s[0] == 'h'){
+    //   st = 4;
+    // }else st = 3;
+    // while(st < s.size()){
+    //   if(s[st] == 'r' and s[st + 1] == 'u' and found == false and res[res.size() - 1] != '/'){
+    //     res += ".ru/";
+    //     st += 2;
+    //     found = true;
+    //   }else{
+    //     res += s[st];
+    //     st += 1;
+    //   }
+    // }
+    // if(res[res.size() - 1] == '/') res.pop_back();
+    // cout << res;
+    // int length; cin >> length; string s; cin >> s;
+    // cout << (check2(s) == true ? "YES" : "NO") << endl;
+    // string s; int length; cin >> s >> length;
+    // cout << (check1(s, length) == true ? "YES" : "NO") << endl;
+    // long long n; cin >> n; cout << counting(n) << endl;
+    // string a, b; cin >> a >> b; cout << (check(a, b) == true ? "YES" : "NO") << endl;
+    // int n; cin >> n;
+    // cout << solve(n);
+    // freopen("input.txt", "r", stdin);
+    // freopen("output.txt", "w", stdout);
+    // int n, m; cin >> n >> m; string ss;
+    // if(n == min(n, m)){
+    //     ss = "GB";
+    // }else ss = "BG";
+    // for(int i = 0; i < min(n, m); i++) cout << ss;
+    // int minv = min(n, m);
+    // n -= minv;
+    // m -= minv;
+    // for(int i = 0; i < n; i++) cout << 'B';
+    // for(int i = 0; i < m; i++) cout << 'G';
+    // int t; cin >> t;
+    // while(t--){
+    //   long long n; cin >> n; cout << sol(n) << endl;
+    // }
+    //string s; cin >> s; cout << (check(s) == true ? "YES" : "NO") << endl;
+    // int n; cin >> n; cout << sol(n) << endl;
 }
 
 int main(){
