@@ -3352,3 +3352,50 @@ public:
         return res;
     }
 };
+
+194.
+class Solution {
+public:
+    int countOperations(int num1, int num2) {
+        int step = 0;
+        while(num1 != 0 and num2 != 0){
+            if(num1 == num2){
+                step += 1;
+                break;
+            }
+            if(num1 > num2){
+                step += num1 / num2;
+                num1 -= (num1 / num2) * num2;
+            }else{
+                step += num2 / num1;
+                num2 -= (num2 / num1) * num1;
+            }
+        }
+        return step;
+    }
+};
+
+195.
+class Solution {
+public:
+    int findMiddleIndex(vector<int>& nums) {
+        int ll = 0, rr = 0;
+        for(int i = 0; i < nums.size() - 1; i++) ll += nums[i];
+        for(int i = 1; i < nums.size(); i++) rr += nums[i];
+        if(rr == 0) return 0;
+        int middleindex = 1;
+        int sum_left = nums[0];
+        int sum_right = 0;
+        for(int i = middleindex + 1; i < nums.size(); i++) sum_right += nums[i];
+        while(sum_right != sum_left and middleindex < nums.size() - 1){
+            middleindex += 1;
+            sum_right -= nums[middleindex];
+            sum_left += nums[middleindex - 1];
+        }
+        if(middleindex == nums.size() - 1){
+            if(ll == 0) return nums.size() - 1;
+            return  -1;
+        }
+        return middleindex;
+    }
+};
