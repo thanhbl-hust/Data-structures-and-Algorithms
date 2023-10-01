@@ -13128,6 +13128,43 @@ void running(){
   // length.push_back(dp[dp.size() - 1]);
   // for(int i = 0; i < length.size() - 1; i++) maxv = max(maxv, 2 * (min(length[i], length[i + 1])));
   // cout << maxv;
+  // int n; cin >> n; int a[n]; 
+  // float sum = 0;
+  // for(int i = 0; i < n; i++){
+  //   cin >> a[i];
+  //   sum += a[i];
+  // }
+  // sort(a, a + n);
+  // int bonus = 0;
+  // while(sum / n < 4.5){
+  //   sum += 5 - a[bonus];
+  //   bonus += 1;
+  // }
+  // cout << bonus;
+  // int n, k; cin >> n >> k; string s; cin >> s;
+  // int st = 0, change = 0;
+  // while(st < s.size() and change < k){
+  //   if(st == 0){
+  //     if(s.size() == 1){
+  //       if(s[st] != '0'){
+  //         s[st] = '0';
+  //         change += 1;
+  //       }
+  //     }else{
+  //       if(s[st] != '1'){
+  //         s[st] = '1';
+  //         change += 1;
+  //       }
+  //     }
+  //   }else{
+  //     if(s[st] != '0'){
+  //       change += 1;
+  //       s[st] = '0';
+  //     }
+  //   }
+  //   st += 1;
+  // }
+  // cout << s;
 }
 
 
