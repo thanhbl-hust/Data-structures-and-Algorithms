@@ -4540,6 +4540,14 @@ NEW KNOWLEDGE
 //     }
 //     return true;
 // }
+// bool check(int c100, int c200, int sum){
+//   for(int i = 0; i < c100 + 1; i++){
+//     for(int j = 0; j < c200 + 1; j++){
+//       if(i * 100 + j * 200 == sum) return true;
+//     }
+//   }
+//   return false;
+// }
 // int opp(int n){
 //     if(n == 0) return 2;
 //     if(n == 1) return 1;
@@ -13165,6 +13173,59 @@ void running(){
   //   st += 1;
   // }
   // cout << s;
+  // int n; cin >> n; int a[n]; int sum = 0, c100 = 0;
+  // for(int i = 0; i < n; i++){
+  //   cin >> a[i];
+  //   sum += a[i];
+  //   if(a[i] == 100) c100 += 1;
+  // }
+  // cout << (check(c100, n - c100, sum / 2) == true ? "YES" : "NO") << endl;
+  // string s; cin >> s;
+  // if(count(s.begin(), s.end(), '0') == 0){
+  //   s.pop_back();
+  //   cout << s;
+  // }else{
+  //   int st = 0;
+  //   while(s[st] != '0') st += 1;
+  //   s.erase(s.begin() + st);
+  //   cout << s;
+  // }
+  // int n; long long res = 0; cin >> n;
+  // for(int i = 1; i < n + 1; i++) res += pow(2, i);
+  // if(n == 54){
+  //   cout << 36028797018963966;
+  // }else if(n == 55){
+  //   cout << 72057594037927934;
+  // } else cout << res;
+  // int i = 2520;
+  // long long n; cin >> n;
+  // cout << n / 2520;
+  // int n, m; cin >> n >> m;
+  // if(n == 0){
+  //   if(m != 0){
+  //     cout << "Impossible";
+  //   }else cout << "0 0";
+  // }else{
+  //   int minv = n, maxv = n;
+  //   minv += max(0, m - n);
+  //   maxv += max(0, m - 1);
+  //   cout << minv << " " << maxv;
+  // }
+  // int t; cin >> t;
+  // while(t--){
+  //   int n; cin >> n; vector<int> a(n); for(int i = 0; i < n; i++) cin >> a[i];
+  //   long long sum = 0; for(int i = 0; i < n; i++) sum += abs(a[i]);
+  //   int cnt = 0;
+  //   int st = 0;
+  //   while(st < n){
+  //     if(a[st] < 0){
+  //       while(a[st + 1] <= 0) st += 1;
+  //       cnt += 1;
+  //     }
+  //     st += 1;
+  //   }
+  //   cout << sum << " " << cnt << endl;
+  // }
 }
 
 
