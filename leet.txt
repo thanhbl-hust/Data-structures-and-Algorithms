@@ -3439,3 +3439,14 @@ public:
         return -1;
     }
 };
+
+199.
+class Solution {
+public:
+    bool isPowerOfThree(int n) {
+        long long st = 1;
+        while(st < n) st *= 3;
+        if(st == n) return true;
+        return false;
+    }
+};
