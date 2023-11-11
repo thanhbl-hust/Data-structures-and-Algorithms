@@ -19,5 +19,15 @@ int main(){
     Demo
     */
 
+    // stack<int> st;
+    // for(int i = 0; i < 10; i++) st.push(i);
+    // st.pop();
+    // cout << st.back(); //8
+
+    // queue<int> que;
+    // for(int i = 0; i < 10; i++) que.push(i);
+    // que.pop();
+    // cout << que.back(); //1
+
     return 0;
 }
