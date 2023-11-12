@@ -1,1 +1,6 @@
+0. Check if a number given if positive or negative (n >= 0 or n < 0).
+
 1. Sum of two numbers (sum of a and b is a + b).
+
+2. Check if number given is odd or even number.
+
