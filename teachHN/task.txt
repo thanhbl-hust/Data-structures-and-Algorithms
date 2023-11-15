@@ -4,4 +4,8 @@
 
 2. Check if number given is odd or even number.
 
-3. Convert a to b
+3. Swap a and b.
+
+4. Sum number divide by 3 from 1 to 100.
+
+5. Sum of odd and even number from 1 to 10.
