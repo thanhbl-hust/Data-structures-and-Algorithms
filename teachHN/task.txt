@@ -1,3 +1,9 @@
+Tips:
+
+  - Command KC: comment code
+  
+
+
 0. Check if a number given if positive or negative (n >= 0 or n < 0).
 
 1. Sum of two numbers (sum of a and b is a + b).
@@ -9,3 +15,5 @@
 4. Sum number divide by 3 from 1 to 100.
 
 5. Sum of odd and even number from 1 to 10.
+
+6. Test
