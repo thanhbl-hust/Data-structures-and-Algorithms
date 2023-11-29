@@ -1,20 +1,7 @@
-import imdb
-from imdb import Cinemagoer
+def main():
 
-ia = Cinemagoer()
-
-#movie = ia.get_movie('0800002')
-#for i in movie.infoset2keys['main']:
-#    print(i)
-
-max = 0
-
-for i in range(1, 999999):
-
-    s = str(i)
-    if len(s) < 7:
-        s = '0'*(7 - len(s)) + s
-
-    movie = ia.get_movie(s)
-    if 'year' in movie.infoset2keys['main']:
-        print(movie['year'])
+    n = int(input())
+    for i in range(1, n + 1):
+        print(f'Left: {i % 2}')
+        
+main()
