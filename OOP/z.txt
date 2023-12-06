@@ -1,0 +1,24 @@
+OOP - Document:
+   
+    - Tinh dong goi (Encapsulation): 
+
+        * Trong Java, tinh dong goi la mot nguyen tac lap trinh ma an di 
+        * cac chi tiet cai dat noi bo cua mot doi tuong va chi cho phep 
+        * truy cap thong qua cac phuong thuc cong cong.
+
+    - Tinh ke thua (Inheritance):
+
+        * Tinh ke thua trong Java cho phep mot lop su dung cac thuoc tinh
+        * va phuong thuc cua mot lop khac (su dung keywod "extends").
+
+    - Tinh da hinh (Polymorphism):
+
+        * Tinh da hinh trong Java cho phep mot doi tuong duoc the hien
+        * duoi dang cua nhieu loai khac nhau (su dung keyword "@override").
+
+    - Tinh truu tuong (Abstraction):
+        
+        * Tinh truu tuong trong Java la mot khai niem quan trong, cho phep
+        * ban dinh nghia cac lop truu tuong khong the duoc khoi tao truc 
+        * tiep, va chung thuong chua cac phuong thuc truu tuong ma cac lop
+        * con phai trien khai.
