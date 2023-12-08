@@ -4,7 +4,7 @@ OOP - Document:
 
         * Trong Java, tinh dong goi la mot nguyen tac lap trinh ma an di 
         * cac chi tiet cai dat noi bo cua mot doi tuong va chi cho phep 
-        * truy cap thong qua cac phuong thuc cong cong.
+        * truy cap thong qua cac phuong thuc cong cong (private).
 
     - Tinh ke thua (Inheritance):
 
@@ -21,4 +21,4 @@ OOP - Document:
         * Tinh truu tuong trong Java la mot khai niem quan trong, cho phep
         * ban dinh nghia cac lop truu tuong khong the duoc khoi tao truc 
         * tiep, va chung thuong chua cac phuong thuc truu tuong ma cac lop
-        * con phai trien khai.
+        * con phai trien khai (abstract).
