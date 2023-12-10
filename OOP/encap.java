@@ -8,7 +8,6 @@ public class Student {
         return age;
     }
     public void setName(String newName) {
-        // Có thể thêm kiểm tra hợp lệ ở đây
         name = newName;
     }
     public void setAge(int newAge) {
