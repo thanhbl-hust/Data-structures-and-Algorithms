@@ -1,0 +1,91 @@
+*   Hello everyone, my name's Bui Lam Thanh. Im 21 years old. Im come from Cam Pha, Quang Ninh.
+*   Right now, im a fourth year Computer Science student at SOICT, which is a part of Hanoi
+*   University of Science and technology. Im planning to graduate in next September. 
+*   At school, as a Computer Science student we learned a lot of thing like algorithms, database, OOP, machine learning, infomation security.
+*   And many other things.
+*   But im focusing on research and install different algorithm for graph optimization problems like TSP or Steiner tree.
+*   Beside that, i love to playing pool and soccer in my free time. I also like the outdoor activites.
+*   I knew the company because i was introduced by a family member, who has worked here for 5 years. 
+*   He said that the company has professional working environment and a good advancedment opportunities. 
+*   So i hope one day, i can be a part of this company. Thank you for listening.
+
+Thuật toán trên đồ thị
+
+- DFS
+  + Đếm số thành phần liên thông
+- BFS
+  + Tìm đường đi ngắn nhất trên chu trình không trọng số
+- Dijkstra
+- Prim
+- Kruskal
+
+Những gì đã học: Thuật toán, Cơ sở dữ liệu, Lập trình hướng đối tượng, Học máy, AI, Tối ưu
+
+Thuật toán
+
+0. Vét cạn
+1. Sắp xếp
+2. Tìm kiếm
+3. Quy hoạch động
+4. Tham lam
+5. Đệ quy
+6. DFS
+7. BFS
+8. Dijkstra
+9. Nhánh cận
+** Chia để trị
+** Backtrack
+
+Cơ sở dữ liệu:
+
+    ** SQL
+	** MongoDB
+
+CTDL  
+
+1. List
+2. Array
+3. Vector
+4. Stack
+5. Queue
+6. Set
+7. Map
+8. Pair
+9. Linkedlist
+
+SQL
+
+Project(1. Dự đoán doanh thu phim 2. Nhận dạng chữ viết tay 3. TSP using GA and ACO):
+   - CNN
+   
+        + Machine Learning (movie revenue)
+		    + Dự đoán doanh thu phim: dùng Linear Regression 
+        + MNIST (nhận dạng chữ số viết tay)
+		    + 
+		
+   - Optimization
+        + Steiner Tree
+        + TSP and Clustered TSP:
+		    - Tìm chu trình Halminton có trọng số nhỏ nhất mà đi qua tất cả các đỉnh rồi quay lại
+			    (tham lam, nhánh cận, GA, ACO)
+				Tham lam: Nearest neighbor
+				Nhánh cận (Branch and bound): 
+				GA
+				ACO
+	    + 2D Bin Packing 
+		
+		 
+CÁC KHÁI NIỆM:
+
++ Thành phần liên thông: Đồ thị liên thông là đồ thị mà trong đó 2 đỉnh bất kì trong đồ thị luôn có đường đi đến nhau
+
++ Chu trình: là một chuỗi các đỉnh mà bắt đầu và kết thúc tại 1 đỉnh:
+    * Euler: đi qua tất cả các cạnh, mỗi cạnh 1 lần.
+	* Halminton: đi qua tất cả các đỉnh, mỗi đỉnh 1 lần.
+	
++ MongoDB lưu trữ data khác SQL: lưu trữ theo document theo dạng json (các document) trong các collection.	
+
++ Khóa chính (PRIMARY KEY), khóa ngoại trong SQL: 
+    * 1 bảng chỉ có một khóa chính duy nhất.
+    * Khóa chính là khóa mà giá trị của nó là giá trị duy nhất trong mỗi bản ghi.
+	* Khóa ngoại là khóa mà tham chiếu đến khoa chính của bảng khác.
