@@ -1,3 +1,5 @@
+*   VN@1.0.0
+
 *   Hello everyone, my name's Bui Lam Thanh. Im 21 years old. Im come from Cam Pha, Quang Ninh.
 *   Right now, im a fourth year Computer Science student at SOICT, which is a part of Hanoi
 *   University of Science and technology. Im planning to graduate in next September. 
