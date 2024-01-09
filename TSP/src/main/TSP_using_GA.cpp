@@ -5,13 +5,28 @@ using namespace std;
 
 //declare parameters;
 int stt;
+
+int BEST_RESULT = INT_MAX;
+
+int rd = 0;
 int cities = 500;
-int generation = 100;
+int people = 100;
+int generation = 500;
 float crossover_rating = 0.9;
 float mutation_rating = 0.1;
+
+
+
+vector<vector<int>> pp;
 vector<vector<float>> distance_matrix;
 vector<vector<float>> coordinate(cities, vector<float> (2));
 
+
+void shuffleVector(vector<int>& vec) {
+    unsigned seed = chrono::system_clock::now().time_since_epoch().count() + rd;
+    rd += 1;
+    shuffle(vec.begin(), vec.end(), default_random_engine(seed));
+}
 
 void input(){
 
@@ -45,6 +60,39 @@ void input(){
     distance_matrix = distance;
 }
 
+
+
+void createPopulation(){
+    for(int i = 0; i < people; i++){
+        vector<int> single;
+        for(int j = 1; j < cities + 1; j++) single.push_back(j);
+        shuffleVector(single);
+        pp.push_back(single);
+    }
+}
+
+void run(){
+
+    createPopulation();
+
+
+    
+
+    // cout << pp.size() << endl;
+    // for(int i = 0; i < pp.size(); i++){
+    //     cout << pp[i].size() << " ";
+    // }
+
+    // for(int i = 0; i < pp.size(); i++){
+    //     for(int j = 0; j < pp[i].size(); j++){
+    //         cout << pp[i][j] << " ";
+    //     }
+    //     cout << endl;
+    // }
+}
+
+
+
 int main(){
 
 
@@ -64,6 +112,10 @@ int main(){
     cout << "Size of distance matrix: " << endl;
     cout << "-- Row: " << distance_matrix.size() << endl;
     cout << "-- Column: " << distance_matrix[0].size() << endl;
+
+
+    run();
+
 
 
     //test_coordinate;

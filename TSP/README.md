@@ -1,1 +1,3 @@
 TRAVELLING SALEMANS PROBLEM - DAY 1: create folder
+
+TRAVELLING SALEMANS PROBLEM - DAY 2: data processing
