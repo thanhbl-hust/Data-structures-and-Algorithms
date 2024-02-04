@@ -3,4 +3,11 @@ train_start_at_12012024
 face_tdc_friday_night
 face_tt_2_4_6_start_at_21012024
 
-update___till224
+update___tillM1224
+algo_train_4/2
+
+__RESET 2024__
+
+face_wa: Sun
+face_ttt: 2 4 6 
+algo_kuber_train: 5/2/2024 (start)
