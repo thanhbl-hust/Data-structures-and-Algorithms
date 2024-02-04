@@ -8,6 +8,8 @@ algo_train_4/2
 
 __RESET 2024__
 
-face_wa: Sun
-face_ttt: 2 4 6 
-algo_kuber_train: 5/2/2024 (start)
+__face_ttt: 2 4 6 
+__algo_kuber_train: 5/2/2024 (start)
+__last_f_wax: 0402 D
+__last_f_clear: 0402 N
+NOMIR
