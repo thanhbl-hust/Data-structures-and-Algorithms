@@ -1,5 +1,0 @@
-reset_plan:
-
-algo_train 
-ss_train
-face
