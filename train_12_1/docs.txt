@@ -1,7 +1,5 @@
-RESET 2024_vlt__ (final update)
+reset_plan:
 
-__algo_kuber_train: 2/2024 (start)
-__last_f_wax: 0402D_1302N
-__last_f_clear: 0402N
-
-nomir_notouch_2lits
+algo_train 
+ss_train
+face
